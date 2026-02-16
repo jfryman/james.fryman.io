@@ -1,0 +1,8 @@
+baseURL = "https://james.fryman.io/"
+languageCode = "en-us"
+title = "James Fryman"
+theme = "terminal"
+
+[params]
+  description = "Technologist, Entrepreneur, Hacker and General Human"
+  author = "James Fryman"

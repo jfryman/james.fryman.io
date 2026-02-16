@@ -1,0 +1,6 @@
+name = "Terminal"
+license = "MIT"
+description = "A terminal/hacker themed Hugo theme"
+
+[author]
+  name = "James Fryman"

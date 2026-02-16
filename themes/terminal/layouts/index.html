@@ -1,0 +1,137 @@
+{{ define "main" }}
+<div class="container">
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1 class="hero-name">James Fryman<span class="cursor">_</span></h1>
+    <p class="hero-tagline">Technologist, Entrepreneur, Hacker and General Human</p>
+  </header>
+
+  <!-- About -->
+  <section class="terminal-card">
+    <div class="terminal-titlebar">
+      <span class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></span>
+      <span class="terminal-title">$ about</span>
+    </div>
+    <div class="terminal-body">
+      <p>Engineering leader and DevOps architect who bridges the gap between technical excellence and business impact. Public speaker, author, open source contributor, and mentor based in Nashville, TN.</p>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="terminal-card">
+    <div class="terminal-titlebar">
+      <span class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></span>
+      <span class="terminal-title">$ experience</span>
+    </div>
+    <div class="terminal-body">
+      <div class="entry">
+        <h3><!-- TODO: Current Role Title --></h3>
+        <span class="meta"><!-- TODO: Company Name --> · <!-- TODO: Date Range --></span>
+        <p><!-- TODO: Description of current role --></p>
+      </div>
+      <div class="entry">
+        <h3><!-- TODO: Previous Role Title --></h3>
+        <span class="meta"><!-- TODO: Company Name --> · <!-- TODO: Date Range --></span>
+        <p><!-- TODO: Description --></p>
+      </div>
+      <div class="entry">
+        <h3><!-- TODO: Previous Role Title --></h3>
+        <span class="meta"><!-- TODO: Company Name --> · <!-- TODO: Date Range --></span>
+        <p><!-- TODO: Description --></p>
+      </div>
+      <div class="entry">
+        <h3><!-- TODO: Previous Role Title --></h3>
+        <span class="meta"><!-- TODO: Company Name --> · <!-- TODO: Date Range --></span>
+        <p><!-- TODO: Description --></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section class="terminal-card">
+    <div class="terminal-titlebar">
+      <span class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></span>
+      <span class="terminal-title">$ publications</span>
+    </div>
+    <div class="terminal-body">
+      <div class="entry">
+        <h3>"ChatOps for Dummies"</h3>
+        <span class="meta">Wiley Publishing · April 2015</span>
+        <p>Wrote foreword and contributed.</p>
+      </div>
+      <div class="entry">
+        <h3>"Puppet Cookbook, 3rd Edition"</h3>
+        <span class="meta">Packt Publishing · February 2015</span>
+        <p>Technical reviewer.</p>
+      </div>
+      <div class="entry">
+        <h3>"Puppet Reporting and Monitoring"</h3>
+        <span class="meta">Packt Publishing · June 2014</span>
+        <p>Technical reviewer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speaking -->
+  <section class="terminal-card">
+    <div class="terminal-titlebar">
+      <span class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></span>
+      <span class="terminal-title">$ speaking</span>
+    </div>
+    <div class="terminal-body">
+      <div class="entry">
+        <h3>"ChatOps: Technology and Philosophy"</h3>
+        <span class="meta">January 2015</span>
+        <p><a href="https://www.youtube.com/watch?v=37LmuHToYjQ" target="_blank" rel="noopener">▶ Watch on YouTube</a></p>
+      </div>
+      <div class="entry">
+        <h3>"DevOps: Day 2 — People and Process"</h3>
+        <span class="meta">DevOpsDays Berlin · October 2014</span>
+        <p><a href="http://vimeo.com/110484640" target="_blank" rel="noopener">▶ Watch on Vimeo</a></p>
+      </div>
+      <div class="entry">
+        <h3>"Design Patterns in Configuration Management"</h3>
+        <span class="meta">May 2014</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Volunteer -->
+  <section class="terminal-card">
+    <div class="terminal-titlebar">
+      <span class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></span>
+      <span class="terminal-title">$ volunteer</span>
+    </div>
+    <div class="terminal-body">
+      <div class="entry">
+        <h3>Nashville Software School</h3>
+        <span class="meta">Mentor · July 2014 — July 2017</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Links -->
+  <section class="terminal-card">
+    <div class="terminal-titlebar">
+      <span class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></span>
+      <span class="terminal-title">$ links</span>
+    </div>
+    <div class="terminal-body">
+      <ul class="links-list">
+        <li><a href="https://www.linkedin.com/in/jamesfryman/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/jfryman" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://x.com/jfryman" target="_blank" rel="noopener">X / Twitter</a></li>
+        <li><span class="muted">Facebook — coming soon</span></li>
+        <li><span class="muted">Bluesky — coming soon</span></li>
+        <li><span class="muted">Mastodon — coming soon</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; {{ now.Year }} James Fryman</p>
+  </footer>
+
+</div>
+{{ end }}
