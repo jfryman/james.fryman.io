@@ -1,5 +1,62 @@
 {{ define "main" }}
 <div class="vim-container">
+  <!-- DOS QBasic Style Menubar -->
+  <nav class="qbasic-menubar">
+    <div class="menubar-items">
+      <div class="menu-item" data-menu="blog">
+        <span class="menu-label"><span class="menu-key">B</span>log</span>
+        <div class="menu-dropdown">
+          {{ $pages := where site.RegularPages "Type" "posts" }}
+          {{ if gt (len $pages) 0 }}
+            {{ range first 3 $pages }}
+            <a href="{{ .RelPermalink }}" class="menu-link">{{ .Title }}</a>
+            {{ end }}
+            <div class="menu-divider"></div>
+          {{ end }}
+          <a href="/posts/" class="menu-link">More...</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-menu="projects">
+        <span class="menu-label"><span class="menu-key">P</span>rojects</span>
+        <div class="menu-dropdown">
+          <a href="/projects/" class="menu-link">View All Projects</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-menu="resume">
+        <span class="menu-label"><span class="menu-key">R</span>esume</span>
+        <div class="menu-dropdown">
+          <a href="/resume/" class="menu-link">📄 Online Version</a>
+          <a href="/resume.pdf" class="menu-link">📥 PDF Download</a>
+          <a href="/resume.md" class="menu-link">📝 Markdown</a>
+          <div class="menu-divider"></div>
+          <a href="/resume.yaml" class="menu-link">⚙️  YAML</a>
+          <a href="/resume.json" class="menu-link">🔧 JSON</a>
+          <a href="/resume.xml" class="menu-link">📋 XML</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-menu="contact">
+        <span class="menu-label"><span class="menu-key">C</span>ontact</span>
+        <div class="menu-dropdown contact-dropdown">
+          <a href="https://github.com/jfryman" target="_blank" class="menu-link contact-link">
+            <span class="contact-icon github-icon"></span>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/jamesfryman/" target="_blank" class="menu-link contact-link">
+            <span class="contact-icon linkedin-icon"></span>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://x.com/jfryman" target="_blank" class="menu-link contact-link">
+            <span class="contact-icon twitter-icon"></span>
+            <span>X / Twitter</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
   <div class="vim-splash">
     <!-- VIM Header -->
     <div class="vim-header">
@@ -14,31 +71,10 @@
       <p class="vim-version">version 2026.02 - technologist · entrepreneur · hacker</p>
     </div>
 
-    <!-- VIM Help Text -->
+    <!-- VIM Help Text (minimal) -->
     <div class="vim-help">
-      <p class="vim-help-line">type  :blog&lt;Enter&gt;           to read recent writing</p>
-      <p class="vim-help-line">type  :projects&lt;Enter&gt;       to see what I'm building</p>
-      <p class="vim-help-line">type  :resume&lt;Enter&gt;         for experience &amp; credentials</p>
-      <p class="vim-help-line">type  :contact&lt;Enter&gt;        to get in touch</p>
-      <p class="vim-help-line empty"></p>
-      <p class="vim-help-line">type  :help&lt;Enter&gt;           for keyboard shortcuts</p>
-      <p class="vim-help-line">type  :q&lt;Enter&gt;              to leave (or just close the tab)</p>
+      <p class="vim-help-line">type  :help&lt;Enter&gt;           for keyboard shortcuts and commands</p>
     </div>
-
-    <!-- Recent Blog Posts -->
-    {{ $pages := where site.RegularPages "Type" "posts" }}
-    {{ if gt (len $pages) 0 }}
-    <div class="vim-recent">
-      <p class="vim-section-title">Recent Posts</p>
-      {{ range first 2 $pages }}
-      <div class="vim-post">
-        <a href="{{ .RelPermalink }}" class="vim-post-title">{{ .Title }}</a>
-        <span class="vim-post-date">{{ .Date.Format "2006-01-02" }}</span>
-      </div>
-      {{ end }}
-      <p class="vim-more"><a href="/posts/">:posts&lt;Enter&gt; for all →</a></p>
-    </div>
-    {{ end }}
 
     <!-- Command Line -->
     <div class="vim-cmdline">
@@ -50,11 +86,11 @@
     <!-- Status Line -->
     <div class="vim-statusline">
       <span class="vim-status-left">james.fryman.io</span>
-      <span class="vim-status-right">Press : for commands</span>
+      <span class="vim-status-right">Press : for commands | Alt+Letter for menu</span>
     </div>
   </div>
 
-  <!-- Navigation Menu (hidden by default, shown on :help) -->
+  <!-- Help Menu (hidden by default) -->
   <div id="vim-menu" class="vim-menu hidden">
     <div class="vim-menu-header">
       <h3>Available Commands</h3>
@@ -80,10 +116,12 @@
         </ul>
       </div>
       <div class="vim-menu-section">
-        <h4>Meta</h4>
+        <h4>Keyboard Shortcuts</h4>
         <ul>
-          <li><code>:help</code> — This menu</li>
-          <li><code>:q</code> — Close tab</li>
+          <li><code>Alt+B</code> — Blog menu</li>
+          <li><code>Alt+P</code> — Projects menu</li>
+          <li><code>Alt+R</code> — Resume menu</li>
+          <li><code>Alt+C</code> — Contact menu</li>
           <li><code>Esc</code> — Clear input / close menu</li>
         </ul>
       </div>
@@ -94,8 +132,11 @@
 <script>
 (function() {
   const input = document.getElementById('vim-input');
-  const menu = document.getElementById('vim-menu');
+  const helpMenu = document.getElementById('vim-menu');
   const menuClose = document.getElementById('vim-menu-close');
+  const menuItems = document.querySelectorAll('.menu-item');
+  
+  let activeMenu = null;
 
   // Command mappings
   const commands = {
@@ -108,7 +149,7 @@
     'linkedin': 'https://www.linkedin.com/in/jamesfryman/',
     'twitter': 'https://x.com/jfryman',
     'x': 'https://x.com/jfryman',
-    'help': () => menu.classList.remove('hidden'),
+    'help': () => helpMenu.classList.remove('hidden'),
     'q': () => window.close(),
     'quit': () => window.close()
   };
@@ -116,10 +157,13 @@
   // Focus input on page load
   input.focus();
 
-  // Keep input focused
+  // Keep input focused when clicking outside menus
   document.addEventListener('click', (e) => {
-    if (!menu.classList.contains('hidden')) return;
-    input.focus();
+    if (!helpMenu.classList.contains('hidden')) return;
+    if (!e.target.closest('.qbasic-menubar')) {
+      closeAllMenus();
+      input.focus();
+    }
   });
 
   // Handle command execution
@@ -137,20 +181,72 @@
       }
     } else if (e.key === 'Escape') {
       input.value = '';
-      menu.classList.add('hidden');
+      helpMenu.classList.add('hidden');
+      closeAllMenus();
     }
   });
 
-  // Close menu button
+  // Close help menu
   menuClose.addEventListener('click', () => {
-    menu.classList.add('hidden');
+    helpMenu.classList.add('hidden');
     input.focus();
   });
 
-  // Close menu on Escape
+  // Menu bar interactions
+  function closeAllMenus() {
+    menuItems.forEach(item => {
+      item.classList.remove('active');
+      const dropdown = item.querySelector('.menu-dropdown');
+      if (dropdown) dropdown.style.display = 'none';
+    });
+    activeMenu = null;
+  }
+
+  function openMenu(item) {
+    closeAllMenus();
+    item.classList.add('active');
+    const dropdown = item.querySelector('.menu-dropdown');
+    if (dropdown) {
+      dropdown.style.display = 'block';
+      activeMenu = item;
+    }
+  }
+
+  menuItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (item.classList.contains('active')) {
+        closeAllMenus();
+      } else {
+        openMenu(item);
+      }
+    });
+
+    item.addEventListener('mouseenter', () => {
+      if (activeMenu && activeMenu !== item) {
+        openMenu(item);
+      }
+    });
+  });
+
+  // Keyboard shortcuts (Alt+Letter for menu bar)
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      menu.classList.add('hidden');
+    if (e.altKey) {
+      const key = e.key.toLowerCase();
+      const menuMap = {
+        'b': 0, // Blog
+        'p': 1, // Projects
+        'r': 2, // Resume
+        'c': 3  // Contact
+      };
+      
+      if (menuMap[key] !== undefined) {
+        e.preventDefault();
+        openMenu(menuItems[menuMap[key]]);
+      }
+    } else if (e.key === 'Escape') {
+      helpMenu.classList.add('hidden');
+      closeAllMenus();
       input.focus();
     }
   });
@@ -158,12 +254,120 @@
 </script>
 
 <style>
+/* QBasic Menubar */
+.qbasic-menubar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #00a;
+  color: #fff;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  z-index: 100;
+  border-bottom: 2px solid #0f0;
+}
+
+.menubar-items {
+  display: flex;
+  padding: 0;
+}
+
+.menu-item {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu-label {
+  display: block;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  transition: background 0.1s;
+}
+
+.menu-item:hover .menu-label,
+.menu-item.active .menu-label {
+  background: #0f0;
+  color: #000;
+}
+
+.menu-key {
+  text-decoration: underline;
+}
+
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #00a;
+  border: 2px solid #0f0;
+  min-width: 200px;
+  box-shadow: 4px 4px 0 rgba(0, 255, 0, 0.3);
+  z-index: 101;
+}
+
+.menu-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.1s;
+}
+
+.menu-link:hover {
+  background: #0f0;
+  color: #000;
+}
+
+.menu-divider {
+  height: 1px;
+  background: #0f0;
+  margin: 0.25rem 0;
+}
+
+/* Contact dropdown with icons */
+.contact-dropdown {
+  min-width: 220px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contact-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Pixelated social icons */
+.github-icon {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23fff"><rect x="6" y="2" width="4" height="2"/><rect x="4" y="4" width="2" height="2"/><rect x="10" y="4" width="2" height="2"/><rect x="2" y="6" width="2" height="6"/><rect x="12" y="6" width="2" height="6"/><rect x="4" y="12" width="2" height="2"/><rect x="10" y="12" width="2" height="2"/><rect x="6" y="14" width="4" height="2"/></svg>') center/contain no-repeat;
+}
+
+.linkedin-icon {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23fff"><rect width="16" height="16"/><rect x="2" y="2" width="12" height="12" fill="%2300a"/><rect x="4" y="4" width="2" height="2" fill="%23fff"/><rect x="4" y="7" width="2" height="5" fill="%23fff"/><rect x="7" y="7" width="2" height="5" fill="%23fff"/><rect x="10" y="9" width="2" height="3" fill="%23fff"/></svg>') center/contain no-repeat;
+}
+
+.twitter-icon {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23fff"><rect x="3" y="3" width="2" height="2"/><rect x="5" y="5" width="2" height="2"/><rect x="7" y="7" width="2" height="2"/><rect x="9" y="9" width="2" height="2"/><rect x="11" y="11" width="2" height="2"/><rect x="9" y="3" width="2" height="2"/><rect x="7" y="5" width="2" height="2"/><rect x="3" y="11" width="2" height="2"/><rect x="5" y="9" width="2" height="2"/></svg>') center/contain no-repeat;
+}
+
+/* Main container */
 .vim-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  padding-top: 5rem; /* Account for fixed menubar */
   font-family: 'JetBrains Mono', 'Courier New', monospace;
   background: #001a00;
 }
@@ -203,58 +407,6 @@
   font-size: 0.95rem;
   padding: 0.3rem 0;
   padding-left: 2rem;
-}
-
-.vim-help-line.empty {
-  padding: 0.5rem 0;
-}
-
-.vim-recent {
-  margin: 3rem 0;
-  padding-left: 2rem;
-}
-
-.vim-section-title {
-  color: #4af626;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.vim-post {
-  margin: 0.75rem 0;
-  display: flex;
-  gap: 1rem;
-  align-items: baseline;
-}
-
-.vim-post-title {
-  color: var(--green, #00ff41);
-  text-decoration: none;
-  flex: 1;
-}
-
-.vim-post-title:hover {
-  text-decoration: underline;
-}
-
-.vim-post-date {
-  color: #8b949e;
-  font-size: 0.85rem;
-}
-
-.vim-more {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-}
-
-.vim-more a {
-  color: #4af626;
-  text-decoration: none;
-}
-
-.vim-more a:hover {
-  text-decoration: underline;
 }
 
 .vim-cmdline {
@@ -307,6 +459,7 @@
   font-weight: bold;
 }
 
+/* Help menu */
 .vim-menu {
   position: fixed;
   top: 50%;
@@ -406,10 +559,6 @@
     font-size: 0.85rem;
   }
   
-  .vim-recent {
-    padding-left: 1rem;
-  }
-  
   .vim-cmdline {
     padding: 0 1rem;
   }
@@ -417,6 +566,11 @@
   .vim-statusline {
     padding: 0.5rem 1rem;
     font-size: 0.75rem;
+  }
+
+  .menu-label {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
   }
 }
 </style>
