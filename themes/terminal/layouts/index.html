@@ -54,6 +54,16 @@
           </a>
         </div>
       </div>
+
+      <div class="menu-item" data-menu="theme">
+        <span class="menu-label"><span class="menu-key">T</span>heme</span>
+        <div class="menu-dropdown">
+          <a href="#" class="menu-link theme-option" data-theme="green">✓ Green Screen</a>
+          <a href="#" class="menu-link theme-option" data-theme="qbasic">QBasic</a>
+          <a href="#" class="menu-link theme-option" data-theme="solarized-dark">Solarized Dark</a>
+          <a href="#" class="menu-link theme-option" data-theme="solarized-light">Solarized Light</a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -122,6 +132,7 @@
           <li><code>Alt+P</code> — Projects menu</li>
           <li><code>Alt+R</code> — Resume menu</li>
           <li><code>Alt+C</code> — Contact menu</li>
+          <li><code>Alt+T</code> — Theme menu</li>
           <li><code>Esc</code> — Clear input / close menu</li>
         </ul>
       </div>
@@ -237,7 +248,8 @@
         'b': 0, // Blog
         'p': 1, // Projects
         'r': 2, // Resume
-        'c': 3  // Contact
+        'c': 3, // Contact
+        't': 4  // Theme
       };
       
       if (menuMap[key] !== undefined) {
@@ -250,21 +262,107 @@
       input.focus();
     }
   });
+
+  // Theme Switching
+  const themeOptions = document.querySelectorAll('.theme-option');
+  const currentTheme = localStorage.getItem('theme') || 'green';
+  document.body.setAttribute('data-theme', currentTheme);
+
+  // Update checkmarks
+  function updateThemeCheckmarks() {
+    themeOptions.forEach(opt => {
+      const theme = opt.getAttribute('data-theme');
+      if (theme === document.body.getAttribute('data-theme')) {
+        opt.textContent = '✓ ' + opt.textContent.replace(/^✓ /, '');
+      } else {
+        opt.textContent = opt.textContent.replace(/^✓ /, '');
+      }
+    });
+  }
+  updateThemeCheckmarks();
+
+  themeOptions.forEach(opt => {
+    opt.addEventListener('click', (e) => {
+      e.preventDefault();
+      const theme = opt.getAttribute('data-theme');
+      document.body.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      updateThemeCheckmarks();
+      closeAllMenus();
+    });
+  });
 })();
 </script>
 
 <style>
+/* Theme Variables */
+body[data-theme="green"] {
+  --bg: #001a00;
+  --text: #00ff41;
+  --text-soft: #4af626;
+  --text-muted: #208020;
+  --menubar-bg: #00a;
+  --menubar-fg: #fff;
+  --menubar-border: #0f0;
+  --menubar-hover-bg: #0f0;
+  --menubar-hover-fg: #000;
+  --status-bg: #4af626;
+  --status-fg: #001a00;
+}
+
+body[data-theme="qbasic"] {
+  --bg: #000080;
+  --text: #ffff55;
+  --text-soft: #00ffff;
+  --text-muted: #aaaaaa;
+  --menubar-bg: #00a;
+  --menubar-fg: #fff;
+  --menubar-border: #aaa;
+  --menubar-hover-bg: #fff;
+  --menubar-hover-fg: #000;
+  --status-bg: #aaa;
+  --status-fg: #000;
+}
+
+body[data-theme="solarized-dark"] {
+  --bg: #002b36;
+  --text: #839496;
+  --text-soft: #268bd2;
+  --text-muted: #586e75;
+  --menubar-bg: #073642;
+  --menubar-fg: #839496;
+  --menubar-border: #268bd2;
+  --menubar-hover-bg: #268bd2;
+  --menubar-hover-fg: #002b36;
+  --status-bg: #268bd2;
+  --status-fg: #002b36;
+}
+
+body[data-theme="solarized-light"] {
+  --bg: #fdf6e3;
+  --text: #657b83;
+  --text-soft: #268bd2;
+  --text-muted: #93a1a1;
+  --menubar-bg: #eee8d5;
+  --menubar-fg: #657b83;
+  --menubar-border: #268bd2;
+  --menubar-hover-bg: #268bd2;
+  --menubar-hover-fg: #fdf6e3;
+  --status-bg: #268bd2;
+  --status-fg: #fdf6e3;
+}
+
 /* QBasic Menubar */
 .qbasic-menubar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: #00a;
-  color: #fff;
+  background: var(--menubar-bg);
+  color: var(--menubar-fg);
   font-family: 'JetBrains Mono', 'Courier New', monospace;
   z-index: 100;
-  border-bottom: 2px solid #0f0;
+  border-bottom: 2px solid var(--menubar-border);
 }
 
 .menubar-items {
@@ -287,8 +385,8 @@
 
 .menu-item:hover .menu-label,
 .menu-item.active .menu-label {
-  background: #0f0;
-  color: #000;
+  background: var(--menubar-hover-bg);
+  color: var(--menubar-hover-fg);
 }
 
 .menu-key {
@@ -300,8 +398,8 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: #00a;
-  border: 2px solid #0f0;
+  background: var(--menubar-bg);
+  border: 2px solid var(--menubar-border);
   min-width: 200px;
   box-shadow: 4px 4px 0 rgba(0, 255, 0, 0.3);
   z-index: 101;
@@ -310,20 +408,20 @@
 .menu-link {
   display: block;
   padding: 0.6rem 1rem;
-  color: #fff;
+  color: var(--menubar-fg);
   text-decoration: none;
   font-size: 0.85rem;
   transition: all 0.1s;
 }
 
 .menu-link:hover {
-  background: #0f0;
-  color: #000;
+  background: var(--menubar-hover-bg);
+  color: var(--menubar-hover-fg);
 }
 
 .menu-divider {
   height: 1px;
-  background: #0f0;
+  background: var(--menubar-border);
   margin: 0.25rem 0;
 }
 
@@ -369,7 +467,7 @@
   padding: 2rem;
   padding-top: 5rem; /* Account for fixed menubar */
   font-family: 'JetBrains Mono', 'Courier New', monospace;
-  background: #001a00;
+  background: var(--bg);
 }
 
 .vim-splash {
@@ -382,25 +480,25 @@
 }
 
 .vim-logo {
-  color: var(--green, #00ff41);
+  color: var(--text);
   font-size: 0.6rem;
   line-height: 1.2;
   text-align: center;
   margin: 0;
   font-weight: bold;
-  text-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.3);
 }
 
 .vim-version {
   text-align: center;
-  color: #4af626;
+  color: var(--text-soft);
   font-size: 0.9rem;
   margin-top: 1rem;
 }
 
 .vim-help {
   margin: 3rem 0;
-  color: var(--text, #c9d1d9);
+  color: var(--text);
 }
 
 .vim-help-line {
@@ -418,7 +516,7 @@
 }
 
 .vim-prompt {
-  color: var(--green, #00ff41);
+  color: var(--text);
   font-size: 1.1rem;
   margin-right: 0.5rem;
 }
@@ -427,7 +525,7 @@
   flex: 1;
   background: transparent;
   border: none;
-  color: var(--text, #c9d1d9);
+  color: var(--text);
   font-family: inherit;
   font-size: 1rem;
   outline: none;
@@ -439,7 +537,7 @@
   left: calc(2rem + 1.5ch);
   width: 0.6rem;
   height: 1.2rem;
-  background: var(--green, #00ff41);
+  background: var(--text);
   animation: blink 1s step-end infinite;
 }
 
@@ -453,8 +551,8 @@
   justify-content: space-between;
   padding: 0.5rem 2rem;
   margin-top: 1rem;
-  color: #001a00;
-  background: #4af626;
+  color: var(--status-fg);
+  background: var(--status-bg);
   font-size: 0.85rem;
   font-weight: bold;
 }
