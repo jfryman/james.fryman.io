@@ -1,56 +1,310 @@
 {{ define "main" }}
-<div class="container">
-  <header class="page-header">
-    <h1>{{ .Title }}</h1>
-  </header>
-
-  <div class="content">
-    {{ .Content }}
-
-    {{ if .Pages }}
-    <section class="post-list">
-      {{ range .Pages }}
-      <article class="post-entry">
-        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        {{ if .Date }}
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-        {{ end }}
-        {{ if .Summary }}
-        <p>{{ .Summary }}</p>
-        {{ end }}
-      </article>
-      {{ end }}
-    </section>
-    {{ end }}
+<!-- Mac OS 7 Style Navigation Bar -->
+<div class="macos-menubar">
+  <div class="menubar-left">
+    <span class="apple-logo">🍎</span>
+    <span class="site-title">{{ .Site.Title }}</span>
+  </div>
+  <div class="menubar-right">
+    <span class="menubar-time" id="macos-time"></span>
   </div>
 </div>
 
+<!-- Mac OS 7 Folder Navigation -->
+<div class="macos-desktop">
+  <div class="folder-nav">
+    <a href="/" class="folder-item">
+      <div class="folder-icon"></div>
+      <span>Home</span>
+    </a>
+    <a href="/posts/" class="folder-item">
+      <div class="folder-icon"></div>
+      <span>Blog</span>
+    </a>
+    <a href="/projects/" class="folder-item">
+      <div class="folder-icon"></div>
+      <span>Projects</span>
+    </a>
+    <a href="/resume/" class="folder-item">
+      <div class="folder-icon"></div>
+      <span>Resume</span>
+    </a>
+  </div>
+
+  <!-- Mac OS 7 Window -->
+  <div class="macos-window">
+    <!-- Title Bar -->
+    <div class="macos-titlebar">
+      <div class="macos-buttons">
+        <div class="macos-button close" onclick="window.history.back()"></div>
+        <div class="macos-button minimize"></div>
+        <div class="macos-button zoom"></div>
+      </div>
+      <div class="macos-title">{{ .Title }}</div>
+      <div class="macos-stripes"></div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="macos-content">
+      {{ .Content }}
+
+      {{ if .Pages }}
+      <section class="post-list">
+        {{ range .Pages }}
+        <article class="post-entry">
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          {{ if .Date }}
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          {{ end }}
+          {{ if .Summary }}
+          <p>{{ .Summary }}</p>
+          {{ end }}
+        </article>
+        {{ end }}
+      </section>
+      {{ end }}
+    </div>
+
+    <!-- Status Bar -->
+    <div class="macos-statusbar">
+      <div class="status-left">{{ len .Pages }} items</div>
+      <div class="status-right">{{ .Section | humanize }}</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Update Mac OS clock
+function updateClock() {
+  const now = new Date();
+  const time = now.toLocaleTimeString('en-US', { 
+    hour: 'numeric', 
+    minute: '2-digit',
+    hour12: true 
+  });
+  const date = now.toLocaleDateString('en-US', { 
+    weekday: 'short', 
+    month: 'short', 
+    day: 'numeric' 
+  });
+  document.getElementById('macos-time').textContent = `${date} ${time}`;
+}
+updateClock();
+setInterval(updateClock, 1000);
+</script>
+
 <style>
-.page-header {
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--green, #00ff41);
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Chicago', 'Geneva', 'Helvetica', sans-serif;
+  background: var(--desktop-bg, #008080);
 }
 
-.page-header h1 {
-  color: var(--green, #00ff41);
-  font-family: 'JetBrains Mono', monospace;
+/* Mac OS 7 Menu Bar */
+.macos-menubar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: #fff;
+  border-bottom: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 12px;
+  z-index: 1000;
+  font-family: 'Chicago', monospace;
 }
 
-.content {
-  max-width: 760px;
+.menubar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.apple-logo {
+  font-size: 14px;
+}
+
+.site-title {
+  font-weight: bold;
+}
+
+.menubar-time {
+  font-size: 11px;
+}
+
+/* Mac OS 7 Desktop */
+.macos-desktop {
+  min-height: 100vh;
+  padding: 40px 20px 20px;
+  background: var(--desktop-bg, #008080);
+}
+
+/* Folder Navigation */
+.folder-nav {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.folder-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: #000;
+  font-size: 11px;
+  text-align: center;
+  min-width: 60px;
+}
+
+.folder-item span {
+  background: #fff;
+  padding: 1px 4px;
+  border: 1px solid transparent;
+}
+
+.folder-item:hover span {
+  background: #000;
+  color: #fff;
+}
+
+.folder-icon {
+  width: 32px;
+  height: 26px;
+  background: linear-gradient(135deg, #ccc 0%, #eee 40%, #fff 50%, #eee 60%, #ccc 100%);
+  border: 1px solid #000;
+  border-bottom: none;
+  position: relative;
+}
+
+.folder-icon::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 2px;
+  width: 14px;
+  height: 6px;
+  background: linear-gradient(135deg, #ccc 0%, #eee 50%, #fff 70%);
+  border: 1px solid #000;
+  border-bottom: none;
+}
+
+.folder-icon::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%);
+}
+
+/* Mac OS 7 Window */
+.macos-window {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  background: #fff;
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.5);
+}
+
+.macos-titlebar {
+  height: 19px;
+  background: #fff;
+  border-bottom: 1px solid #000;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  position: relative;
+}
+
+.macos-buttons {
+  display: flex;
+  gap: 6px;
+  padding: 0 4px;
+}
+
+.macos-button {
+  width: 11px;
+  height: 11px;
+  border: 1px solid #000;
+  background: #fff;
+  cursor: pointer;
+}
+
+.macos-button.close {
+  position: relative;
+}
+
+.macos-button.close::before,
+.macos-button.close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  height: 1px;
+  background: #000;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.macos-button.close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.macos-button:active {
+  background: #000;
+}
+
+.macos-title {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Chicago', monospace;
+  letter-spacing: 0.5px;
+}
+
+.macos-stripes {
+  position: absolute;
+  top: 1px;
+  right: 4px;
+  bottom: 1px;
+  width: 100px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #000 0px,
+    #000 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.macos-content {
+  padding: 20px 30px;
+  min-height: 400px;
+  background: #fff;
+  font-family: 'Geneva', 'Helvetica', sans-serif;
+  line-height: 1.6;
 }
 
 .post-list {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .post-entry {
   margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--border, #30363d);
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #ccc;
 }
 
 .post-entry:last-child {
@@ -59,27 +313,60 @@
 
 .post-entry h2 {
   margin-bottom: 0.5rem;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .post-entry h2 a {
-  color: var(--green, #00ff41);
-  text-decoration: none;
+  color: #00f;
+  text-decoration: underline;
 }
 
 .post-entry h2 a:hover {
-  text-decoration: underline;
+  color: #00a;
 }
 
 .post-entry time {
   display: block;
-  color: var(--text-muted, #8b949e);
-  font-size: 0.9rem;
+  font-size: 11px;
+  color: #666;
   margin-bottom: 0.75rem;
+  font-family: 'Chicago', monospace;
 }
 
 .post-entry p {
-  color: var(--text, #c9d1d9);
-  line-height: 1.7;
+  font-size: 13px;
+  color: #000;
+}
+
+.macos-statusbar {
+  height: 15px;
+  border-top: 1px solid #000;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 10px;
+  font-family: 'Chicago', monospace;
+}
+
+@media (max-width: 768px) {
+  .macos-desktop {
+    padding: 30px 10px 10px;
+  }
+
+  .macos-window {
+    max-width: 100%;
+  }
+
+  .macos-content {
+    padding: 15px 20px;
+  }
+
+  .folder-nav {
+    gap: 15px;
+  }
 }
 </style>
 {{ end }}

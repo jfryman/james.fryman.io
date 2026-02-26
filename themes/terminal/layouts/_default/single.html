@@ -17,17 +17,18 @@
       <div class="folder-icon"></div>
       <span>Home</span>
     </a>
-    {{ if eq .Section "posts" }}
     <a href="/posts/" class="folder-item">
       <div class="folder-icon"></div>
       <span>Blog</span>
     </a>
-    {{ else if eq .Section "projects" }}
     <a href="/projects/" class="folder-item">
       <div class="folder-icon"></div>
       <span>Projects</span>
     </a>
-    {{ end }}
+    <a href="/resume/" class="folder-item">
+      <div class="folder-icon"></div>
+      <span>Resume</span>
+    </a>
   </div>
 
   <!-- Mac OS 7 Window -->
