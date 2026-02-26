@@ -2,29 +2,30 @@
 set -e
 
 # Build resume in multiple formats from data/resume.yaml
-# Outputs to static/resume.{json,xml,md,pdf,yaml}
+# Outputs to static/jamesfryman-resume.{json,xml,md,pdf,yaml}
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 DATA_FILE="$PROJECT_DIR/data/resume.yaml"
 OUTPUT_DIR="$PROJECT_DIR/static"
+BASENAME="jamesfryman-resume"
 
 echo "Building resume formats from $DATA_FILE..."
 
 # Copy YAML source
-cp "$DATA_FILE" "$OUTPUT_DIR/resume.yaml"
-echo "✓ YAML: $OUTPUT_DIR/resume.yaml"
+cp "$DATA_FILE" "$OUTPUT_DIR/${BASENAME}.yaml"
+echo "✓ YAML: $OUTPUT_DIR/${BASENAME}.yaml"
 
 # Convert YAML → JSON
 if command -v yq &> /dev/null; then
-  yq eval -o=json "$DATA_FILE" > "$OUTPUT_DIR/resume.json"
-  echo "✓ JSON: $OUTPUT_DIR/resume.json"
+  yq eval -o=json "$DATA_FILE" > "$OUTPUT_DIR/${BASENAME}.json"
+  echo "✓ JSON: $OUTPUT_DIR/${BASENAME}.json"
 else
   echo "⚠️  yq not found, skipping JSON generation (brew install yq)"
 fi
 
 # Generate Markdown from YAML
-cat > "$OUTPUT_DIR/resume.md" <<'EOF'
+cat > "$OUTPUT_DIR/${BASENAME}.md" <<'EOF'
 # James Fryman
 
 **Engineering Leader & DevOps Architect**  
@@ -95,10 +96,10 @@ May 2014
 **Mentor** · July 2014 — July 2017
 EOF
 
-echo "✓ Markdown: $OUTPUT_DIR/resume.md"
+echo "✓ Markdown: $OUTPUT_DIR/${BASENAME}.md"
 
 # Generate XML from YAML (simple structure)
-cat > "$OUTPUT_DIR/resume.xml" <<'EOF'
+cat > "$OUTPUT_DIR/${BASENAME}.xml" <<'EOF'
 <?xml version="1.0" encoding="UTF-8"?>
 <resume>
   <name>James Fryman</name>
@@ -166,23 +167,23 @@ cat > "$OUTPUT_DIR/resume.xml" <<'EOF'
 </resume>
 EOF
 
-echo "✓ XML: $OUTPUT_DIR/resume.xml"
+echo "✓ XML: $OUTPUT_DIR/${BASENAME}.xml"
 
 # Generate PDF from Markdown using pandoc
 if command -v pandoc &> /dev/null; then
-  pandoc "$OUTPUT_DIR/resume.md" \
+  PATH="/Library/TeX/texbin:$PATH" pandoc "$OUTPUT_DIR/${BASENAME}.md" \
     -f markdown \
     -t pdf \
     --pdf-engine=xelatex \
     -V geometry:margin=1in \
     -V fontsize=11pt \
-    -o "$OUTPUT_DIR/resume.pdf" 2>/dev/null || {
+    -o "$OUTPUT_DIR/${BASENAME}.pdf" 2>/dev/null || {
       echo "⚠️  PDF generation failed (xelatex not found). Install BasicTeX:"
       echo "    brew install --cask basictex"
     }
   
-  if [ -f "$OUTPUT_DIR/resume.pdf" ]; then
-    echo "✓ PDF: $OUTPUT_DIR/resume.pdf"
+  if [ -f "$OUTPUT_DIR/${BASENAME}.pdf" ]; then
+    echo "✓ PDF: $OUTPUT_DIR/${BASENAME}.pdf"
   fi
 else
   echo "⚠️  pandoc not found, skipping PDF generation"
@@ -191,8 +192,8 @@ fi
 echo ""
 echo "Resume formats built successfully!"
 echo "Files available at:"
-echo "  - /resume.yaml (YAML source)"
-echo "  - /resume.json (JSON)"
-echo "  - /resume.xml (XML)"
-echo "  - /resume.md (Markdown)"
-echo "  - /resume.pdf (PDF)"
+echo "  - /${BASENAME}.yaml (YAML source)"
+echo "  - /${BASENAME}.json (JSON)"
+echo "  - /${BASENAME}.xml (XML)"
+echo "  - /${BASENAME}.md (Markdown)"
+echo "  - /${BASENAME}.pdf (PDF)"
