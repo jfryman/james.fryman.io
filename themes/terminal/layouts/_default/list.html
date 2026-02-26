@@ -54,23 +54,29 @@
 
     <!-- Content Area -->
     <div class="macos-content">
-      <article class="post-content">
-        {{ if .Date }}
-        <div class="post-meta">
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-        </div>
-        {{ end }}
+      {{ .Content }}
 
-        <div class="post-body">
-          {{ .Content }}
-        </div>
-      </article>
+      {{ if .Pages }}
+      <section class="post-list">
+        {{ range .Pages }}
+        <article class="post-entry">
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          {{ if .Date }}
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          {{ end }}
+          {{ if .Summary }}
+          <p>{{ .Summary }}</p>
+          {{ end }}
+        </article>
+        {{ end }}
+      </section>
+      {{ end }}
     </div>
 
     <!-- Status Bar -->
     <div class="macos-statusbar">
-      <div class="status-left">{{ .WordCount }} words</div>
-      <div class="status-right">{{ .ReadingTime }} min read</div>
+      <div class="status-left">{{ len .Pages }} items</div>
+      <div class="status-right">{{ .Section | humanize }}</div>
     </div>
   </div>
 </div>
@@ -339,69 +345,53 @@ body {
   color: #000;
 }
 
-.post-meta {
-  font-size: 11px;
-  color: #000;
-  margin-bottom: 20px;
-  font-family: 'Chicago', monospace;
-}
-
-.post-body {
-  font-size: 13px;
-}
-
-.post-body h1 {
-  font-size: 18px;
-  margin: 24px 0 12px;
-  font-weight: bold;
+.macos-content h1,
+.macos-content h2,
+.macos-content h3,
+.macos-content p {
   color: #000;
 }
 
-.post-body h2 {
+.post-list {
+  margin-top: 1rem;
+}
+
+.post-entry {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.post-entry:last-child {
+  border-bottom: none;
+}
+
+.post-entry h2 {
+  margin-bottom: 0.5rem;
   font-size: 16px;
-  margin: 20px 0 10px;
   font-weight: bold;
-  color: #000;
 }
 
-.post-body h3 {
-  font-size: 14px;
-  margin: 16px 0 8px;
-  font-weight: bold;
-  color: #000;
-}
-
-.post-body p {
-  margin: 12px 0;
-  color: #000;
-}
-
-.post-body a {
+.post-entry h2 a {
   color: #00f;
   text-decoration: underline;
 }
 
-.post-body code {
-  background: #f0f0f0;
-  padding: 1px 4px;
-  font-family: 'Monaco', 'Courier New', monospace;
-  font-size: 11px;
-  border: 1px solid #ccc;
+.post-entry h2 a:hover {
+  color: #00a;
 }
 
-.post-body pre {
-  background: #f0f0f0;
-  padding: 12px;
-  border: 1px solid #000;
-  overflow-x: auto;
+.post-entry time {
+  display: block;
   font-size: 11px;
-  margin: 12px 0;
+  color: #000;
+  margin-bottom: 0.75rem;
+  font-family: 'Chicago', monospace;
 }
 
-.post-body pre code {
-  background: none;
-  border: none;
-  padding: 0;
+.post-entry p {
+  font-size: 13px;
+  color: #000;
 }
 
 .macos-statusbar {

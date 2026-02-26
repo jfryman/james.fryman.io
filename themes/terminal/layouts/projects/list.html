@@ -1,0 +1,527 @@
+{{ define "main" }}
+<!-- GNOME Desktop -->
+<div class="gnome-desktop">
+  <!-- Top Panel -->
+  <div class="gnome-panel-top">
+    <div class="gnome-menu-items">
+      <div class="gnome-menu-item" id="applications-menu">
+        Applications
+        <div class="gnome-dropdown">
+          <a href="/posts/" class="gnome-menu-link">📝 Blog</a>
+          <a href="/projects/" class="gnome-menu-link">🔧 Projects</a>
+          <a href="/resume/" class="gnome-menu-link">📄 Resume</a>
+          <a href="/contact/" class="gnome-menu-link">📧 Contact</a>
+        </div>
+      </div>
+      <div class="gnome-menu-item">Places</div>
+      <div class="gnome-menu-item">System</div>
+    </div>
+    <div class="gnome-panel-center">
+      <a href="/" class="gnome-app-button">🏠 Home</a>
+    </div>
+    <div class="gnome-panel-right">
+      <span class="gnome-clock" id="gnome-clock"></span>
+    </div>
+  </div>
+
+  <!-- Nautilus Window -->
+  <div class="gnome-window">
+    <!-- Title Bar -->
+    <div class="gnome-titlebar">
+      <div class="gnome-title">{{ .Title }}</div>
+      <div class="gnome-window-buttons">
+        <button class="gnome-button minimize">_</button>
+        <button class="gnome-button maximize">□</button>
+        <button class="gnome-button close" onclick="window.history.back()">×</button>
+      </div>
+    </div>
+
+    <!-- Menu Bar -->
+    <div class="gnome-menubar">
+      <span class="gnome-menu">File</span>
+      <span class="gnome-menu">Edit</span>
+      <span class="gnome-menu">View</span>
+      <span class="gnome-menu">Go</span>
+      <span class="gnome-menu">Help</span>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="gnome-toolbar">
+      <button class="gnome-tool-button" onclick="window.history.back()">◀</button>
+      <button class="gnome-tool-button">▶</button>
+      <button class="gnome-tool-button">⬆</button>
+      <div class="gnome-location-bar">
+        <span class="location-icon">📁</span>
+        <span class="location-text">/home/james/Projects</span>
+      </div>
+    </div>
+
+    <!-- Window Content -->
+    <div class="gnome-content-area">
+      <!-- Sidebar -->
+      <div class="gnome-sidebar">
+        <a href="/" class="sidebar-item">
+          <span class="sidebar-icon">🏠</span>
+          <span>Home</span>
+        </a>
+        <a href="/posts/" class="sidebar-item">
+          <span class="sidebar-icon">📝</span>
+          <span>Blog</span>
+        </a>
+        <a href="/projects/" class="sidebar-item active">
+          <span class="sidebar-icon">🔧</span>
+          <span>Projects</span>
+        </a>
+        <a href="/resume/" class="sidebar-item">
+          <span class="sidebar-icon">📄</span>
+          <span>Resume</span>
+        </a>
+        <a href="/contact/" class="sidebar-item">
+          <span class="sidebar-icon">📧</span>
+          <span>Contact</span>
+        </a>
+      </div>
+
+      <!-- Main Content -->
+      <div class="gnome-main-content">
+        {{ .Content }}
+
+        {{ if .Pages }}
+        <div class="gnome-icon-view">
+          {{ range .Pages }}
+          <a href="{{ .RelPermalink }}" class="gnome-icon-item">
+            <div class="gnome-file-icon">📦</div>
+            <div class="gnome-file-name">{{ .Title }}</div>
+          </a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="gnome-statusbar">
+      <span>{{ len .Pages }} items</span>
+    </div>
+  </div>
+
+  <!-- Bottom Panel -->
+  <div class="gnome-panel-bottom">
+    <div class="gnome-task-list">
+      <div class="gnome-task-item active">
+        <span class="task-icon">📁</span>
+        <span class="task-label">Projects</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// GNOME clock
+function updateGnomeClock() {
+  const now = new Date();
+  const time = now.toLocaleTimeString('en-US', { 
+    hour: 'numeric', 
+    minute: '2-digit',
+    hour12: true 
+  });
+  const date = now.toLocaleDateString('en-US', { 
+    weekday: 'short',
+    month: 'short', 
+    day: 'numeric' 
+  });
+  document.getElementById('gnome-clock').textContent = `${date} ${time}`;
+}
+updateGnomeClock();
+setInterval(updateGnomeClock, 1000);
+
+// Applications menu
+const appMenu = document.getElementById('applications-menu');
+appMenu.addEventListener('click', (e) => {
+  e.stopPropagation();
+  appMenu.classList.toggle('active');
+});
+
+document.addEventListener('click', () => {
+  appMenu.classList.remove('active');
+});
+</script>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', 'Cantarell', 'Lucida Grande', sans-serif;
+  background: #d3895b;
+  overflow: hidden;
+}
+
+.gnome-desktop {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Panel */
+.gnome-panel-top {
+  height: 24px;
+  background: linear-gradient(to bottom, #4c4c4c, #3a3a3a);
+  border-bottom: 1px solid #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  color: #fff;
+  font-size: 11px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+.gnome-menu-items {
+  display: flex;
+  gap: 2px;
+}
+
+.gnome-menu-item {
+  padding: 4px 12px;
+  cursor: pointer;
+  border-radius: 3px;
+  position: relative;
+}
+
+.gnome-menu-item:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.gnome-menu-item.active .gnome-dropdown {
+  display: block;
+}
+
+.gnome-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 2px;
+  background: #f5f5f5;
+  border: 1px solid #999;
+  border-radius: 4px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  min-width: 180px;
+  padding: 4px 0;
+  z-index: 1001;
+}
+
+.gnome-menu-link {
+  display: block;
+  padding: 6px 16px;
+  color: #000;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+.gnome-menu-link:hover {
+  background: #e8752f;
+  color: #fff;
+}
+
+.gnome-panel-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.gnome-app-button {
+  padding: 2px 12px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 11px;
+}
+
+.gnome-app-button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.gnome-clock {
+  font-size: 11px;
+}
+
+/* GNOME Window */
+.gnome-window {
+  flex: 1;
+  margin: 20px;
+  background: #e8e8e8;
+  border: 1px solid #999;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.gnome-titlebar {
+  background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+  border-bottom: 1px solid #999;
+  padding: 6px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px 5px 0 0;
+}
+
+.gnome-title {
+  font-weight: bold;
+  font-size: 12px;
+  color: #000;
+}
+
+.gnome-window-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.gnome-button {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #999;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, #f8f8f8, #e0e0e0);
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  padding: 0;
+}
+
+.gnome-button:hover {
+  background: linear-gradient(to bottom, #fff, #e8e8e8);
+}
+
+.gnome-button.close:hover {
+  background: linear-gradient(to bottom, #f88, #d66);
+  color: #fff;
+}
+
+.gnome-menubar {
+  background: #e8e8e8;
+  padding: 2px 8px;
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  border-bottom: 1px solid #ccc;
+}
+
+.gnome-menu {
+  padding: 2px 8px;
+  cursor: pointer;
+  border-radius: 2px;
+  color: #000;
+}
+
+.gnome-menu:hover {
+  background: #e8752f;
+  color: #fff;
+}
+
+.gnome-toolbar {
+  background: linear-gradient(to bottom, #f8f8f8, #e8e8e8);
+  padding: 4px 8px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.gnome-tool-button {
+  width: 28px;
+  height: 24px;
+  background: linear-gradient(to bottom, #f8f8f8, #e0e0e0);
+  border: 1px solid #999;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gnome-tool-button:hover {
+  background: linear-gradient(to bottom, #fff, #e8e8e8);
+}
+
+.gnome-tool-button:active {
+  background: linear-gradient(to bottom, #d8d8d8, #e8e8e8);
+}
+
+.gnome-location-bar {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #000;
+}
+
+.location-text {
+  color: #000;
+}
+
+.location-icon {
+  font-size: 14px;
+}
+
+.gnome-content-area {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.gnome-sidebar {
+  width: 150px;
+  background: #f5f5f5;
+  border-right: 1px solid #ccc;
+  padding: 8px 0;
+  overflow-y: auto;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  text-decoration: none;
+  color: #000;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.sidebar-item:hover {
+  background: rgba(232, 117, 47, 0.2);
+}
+
+.sidebar-item.active {
+  background: #e8752f;
+  color: #fff;
+}
+
+.sidebar-icon {
+  font-size: 16px;
+  width: 16px;
+}
+
+.gnome-main-content {
+  flex: 1;
+  background: #fff;
+  padding: 16px;
+  overflow-y: auto;
+  color: #000;
+}
+
+.gnome-main-content h1,
+.gnome-main-content h2,
+.gnome-main-content h3,
+.gnome-main-content p {
+  color: #000;
+}
+
+.gnome-icon-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 16px;
+  padding: 8px;
+}
+
+.gnome-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  text-decoration: none;
+  color: #000;
+  border-radius: 4px;
+  transition: background 0.1s;
+}
+
+.gnome-icon-item:hover {
+  background: rgba(232, 117, 47, 0.1);
+}
+
+.gnome-file-icon {
+  font-size: 48px;
+}
+
+.gnome-file-name {
+  font-size: 11px;
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+.gnome-statusbar {
+  background: linear-gradient(to bottom, #e8e8e8, #d8d8d8);
+  border-top: 1px solid #ccc;
+  padding: 2px 8px;
+  font-size: 10px;
+  color: #000;
+}
+
+/* Bottom Panel */
+.gnome-panel-bottom {
+  height: 24px;
+  background: linear-gradient(to bottom, #4c4c4c, #3a3a3a);
+  border-top: 1px solid #1a1a1a;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  box-shadow: 0 -1px 3px rgba(0,0,0,0.5);
+}
+
+.gnome-task-list {
+  display: flex;
+  gap: 4px;
+}
+
+.gnome-task-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 12px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  font-size: 11px;
+  color: #fff;
+}
+
+.gnome-task-item.active {
+  background: rgba(255,255,255,0.2);
+}
+
+.task-icon {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .gnome-window {
+    margin: 10px;
+  }
+
+  .gnome-sidebar {
+    width: 120px;
+  }
+
+  .gnome-icon-view {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 12px;
+  }
+}
+</style>
+{{ end }}

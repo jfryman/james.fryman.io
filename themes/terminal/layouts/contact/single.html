@@ -1,0 +1,414 @@
+{{ define "main" }}
+<!-- NeXTSTEP Desktop -->
+<div class="nextstep-desktop">
+  <!-- NeXTSTEP Shelf (Dock) -->
+  <div class="nextstep-shelf">
+    <div class="shelf-clock" id="nextstep-clock">
+      <svg viewBox="0 0 64 64" class="clock-face">
+        <circle cx="32" cy="32" r="30" fill="#2a2a2a" stroke="#666" stroke-width="2"/>
+        <circle cx="32" cy="32" r="2" fill="#fff"/>
+        <line id="hour-hand" x1="32" y1="32" x2="32" y2="20" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <line id="minute-hand" x1="32" y1="32" x2="32" y2="14" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="shelf-divider"></div>
+    <a href="/" class="shelf-icon" title="Home">
+      <div class="shelf-app">🏠</div>
+    </a>
+    <a href="/posts/" class="shelf-icon" title="Blog">
+      <div class="shelf-app">📝</div>
+    </a>
+    <a href="/projects/" class="shelf-icon" title="Projects">
+      <div class="shelf-app">🔧</div>
+    </a>
+    <a href="/resume/" class="shelf-icon" title="Resume">
+      <div class="shelf-app">📄</div>
+    </a>
+    <a href="/contact/" class="shelf-icon active" title="Contact">
+      <div class="shelf-app">📧</div>
+    </a>
+  </div>
+
+  <!-- NeXTSTEP Window -->
+  <div class="nextstep-window">
+    <!-- Title Bar -->
+    <div class="nextstep-titlebar">
+      <div class="titlebar-left">
+        <button class="ns-button close" onclick="window.history.back()">×</button>
+        <button class="ns-button minimize">−</button>
+      </div>
+      <div class="titlebar-title">{{ .Title }}</div>
+      <div class="titlebar-right"></div>
+    </div>
+
+    <!-- Menu Bar -->
+    <div class="nextstep-menubar">
+      <div class="menu-section">
+        <a href="/" class="menu-link">Home</a>
+        <a href="/posts/" class="menu-link">Blog</a>
+        <a href="/projects/" class="menu-link">Projects</a>
+        <a href="/resume/" class="menu-link">Resume</a>
+        <a href="/contact/" class="menu-link active">Contact</a>
+      </div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="nextstep-content">
+      <article class="nextstep-article">
+        {{ .Content }}
+      </article>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="nextstep-statusbar">
+      <span>{{ .WordCount }} words</span>
+      <span class="status-sep">•</span>
+      <span>{{ .ReadingTime }} min read</span>
+    </div>
+  </div>
+</div>
+
+<script>
+// NeXTSTEP analog clock
+function updateAnalogClock() {
+  const now = new Date();
+  const hours = now.getHours() % 12;
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+  
+  const hourAngle = (hours * 30) + (minutes * 0.5);
+  const minuteAngle = minutes * 6;
+  
+  const hourHand = document.getElementById('hour-hand');
+  const minuteHand = document.getElementById('minute-hand');
+  
+  if (hourHand && minuteHand) {
+    hourHand.setAttribute('transform', `rotate(${hourAngle} 32 32)`);
+    minuteHand.setAttribute('transform', `rotate(${minuteAngle} 32 32)`);
+  }
+}
+
+updateAnalogClock();
+setInterval(updateAnalogClock, 1000);
+</script>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  background: #808080;
+  overflow: hidden;
+}
+
+.nextstep-desktop {
+  height: 100vh;
+  display: flex;
+  padding: 20px;
+  padding-right: 20px;
+  gap: 20px;
+  position: relative;
+}
+
+/* NeXTSTEP Shelf (Dock) */
+.nextstep-shelf {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 64px;
+  background: linear-gradient(90deg, #2a2a2a 0%, #1a1a1a 100%);
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  z-index: 1000;
+  border-radius: 4px;
+}
+
+.shelf-clock {
+  width: 56px;
+  height: 56px;
+  padding: 4px;
+}
+
+.clock-face {
+  width: 100%;
+  height: 100%;
+}
+
+.shelf-divider {
+  width: 80%;
+  height: 1px;
+  background: #444;
+  margin: 4px 0;
+}
+
+.shelf-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 3px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.shelf-icon:hover {
+  background: rgba(255,255,255,0.15);
+  transform: scale(1.05);
+}
+
+.shelf-icon.active {
+  background: rgba(255,255,255,0.25);
+}
+
+.shelf-icon:hover::after {
+  content: attr(title);
+  position: absolute;
+  right: 100%;
+  margin-right: 8px;
+  background: rgba(0,0,0,0.9);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  white-space: nowrap;
+  z-index: 1001;
+  pointer-events: none;
+}
+
+.shelf-app {
+  font-size: 32px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+/* NeXTSTEP Window */
+.nextstep-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #c0c0c0;
+  border: 1px solid #000;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.6);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.nextstep-titlebar {
+  height: 28px;
+  background: linear-gradient(180deg, #4a4a4a 0%, #2a2a2a 100%);
+  border-bottom: 1px solid #000;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  justify-content: space-between;
+}
+
+.titlebar-left {
+  display: flex;
+  gap: 8px;
+}
+
+.ns-button {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #6a6a6a, #3a3a3a);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.ns-button:hover {
+  background: linear-gradient(180deg, #7a7a7a, #4a4a4a);
+}
+
+.ns-button:active {
+  background: linear-gradient(180deg, #3a3a3a, #6a6a6a);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.ns-button.close:hover {
+  background: linear-gradient(180deg, #cc0000, #880000);
+}
+
+.titlebar-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  flex: 1;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+.titlebar-right {
+  width: 20px;
+}
+
+/* NeXTSTEP Menu Bar */
+.nextstep-menubar {
+  background: linear-gradient(180deg, #e8e8e8 0%, #d0d0d0 100%);
+  border-bottom: 1px solid #999;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-section {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-link {
+  font-size: 12px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+
+.menu-link:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+.menu-link.active {
+  background: #000;
+  color: #fff;
+}
+
+/* Content Area */
+.nextstep-content {
+  flex: 1;
+  background: #fff;
+  padding: 32px;
+  overflow-y: auto;
+  border-top: 1px solid #e0e0e0;
+}
+
+.nextstep-article {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.nextstep-article h1 {
+  font-size: 32px;
+  font-weight: 300;
+  margin: 0 0 24px;
+  color: #000;
+  letter-spacing: -0.5px;
+}
+
+.nextstep-article h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 32px 0 16px;
+  color: #000;
+  letter-spacing: -0.3px;
+}
+
+.nextstep-article h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 24px 0 12px;
+  color: #000;
+}
+
+.nextstep-article p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 16px 0;
+  color: #222;
+}
+
+.nextstep-article a {
+  color: #0066cc;
+  text-decoration: none;
+  border-bottom: 1px solid #0066cc;
+}
+
+.nextstep-article a:hover {
+  color: #004499;
+  border-bottom-color: #004499;
+}
+
+.nextstep-article ul {
+  margin: 16px 0;
+  padding-left: 24px;
+}
+
+.nextstep-article li {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 8px 0;
+  color: #222;
+}
+
+/* Status Bar */
+.nextstep-statusbar {
+  background: linear-gradient(180deg, #d0d0d0 0%, #b8b8b8 100%);
+  border-top: 1px solid #999;
+  padding: 4px 12px;
+  font-size: 11px;
+  color: #222;
+  display: flex;
+  gap: 12px;
+}
+
+.status-sep {
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .nextstep-desktop {
+    padding: 10px;
+  }
+
+  .nextstep-shelf {
+    right: 10px;
+    top: 10px;
+    width: 56px;
+  }
+
+  .shelf-clock {
+    width: 48px;
+    height: 48px;
+  }
+
+  .shelf-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .shelf-app {
+    font-size: 28px;
+  }
+
+  .nextstep-content {
+    padding: 20px;
+  }
+
+  .nextstep-article h1 {
+    font-size: 24px;
+  }
+
+  .nextstep-article h2 {
+    font-size: 20px;
+  }
+}
+</style>
+{{ end }}
