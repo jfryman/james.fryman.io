@@ -6,3 +6,23 @@ theme = "terminal"
 [params]
   description = "Technologist, Entrepreneur, Hacker and General Human"
   author = "James Fryman"
+
+# Custom output formats for resume
+[outputs]
+  page = ["HTML"]
+  home = ["HTML"]
+
+[outputFormats.resumejson]
+  mediaType = "application/json"
+  baseName = "resume"
+  isPlainText = true
+
+[outputFormats.resumexml]
+  mediaType = "application/xml"
+  baseName = "resume"
+  isPlainText = true
+
+[outputFormats.resumemd]
+  mediaType = "text/plain"
+  baseName = "resume"
+  isPlainText = true

@@ -83,7 +83,31 @@
 
     <!-- Menu Bar -->
     <div class="win95-menubar">
-      <span class="menu-item">File</span>
+      <div class="menu-item menu-with-dropdown" id="file-menu">
+        File
+        <div class="win95-dropdown" id="file-dropdown">
+          <a href="/resume/" class="dropdown-item">
+            <span>View Online</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-label">Download As:</div>
+          <a href="/resume.pdf" class="dropdown-item" download>
+            <span>📄 PDF</span>
+          </a>
+          <a href="/resume.md" class="dropdown-item" download>
+            <span>📝 Markdown</span>
+          </a>
+          <a href="/resume.yaml" class="dropdown-item" download>
+            <span>📋 YAML</span>
+          </a>
+          <a href="/resume.json" class="dropdown-item" download>
+            <span>{ } JSON</span>
+          </a>
+          <a href="/resume.xml" class="dropdown-item" download>
+            <span>&lt;/&gt; XML</span>
+          </a>
+        </div>
+      </div>
       <span class="menu-item">Edit</span>
       <span class="menu-item">View</span>
       <span class="menu-item">Insert</span>
@@ -165,6 +189,19 @@ document.querySelectorAll('.has-submenu').forEach(item => {
   item.addEventListener('mouseleave', () => {
     item.querySelector('.start-submenu').style.display = 'none';
   });
+});
+
+// File menu dropdown
+const fileMenu = document.getElementById('file-menu');
+const fileDropdown = document.getElementById('file-dropdown');
+
+fileMenu.addEventListener('click', (e) => {
+  e.stopPropagation();
+  fileDropdown.classList.toggle('visible');
+});
+
+document.addEventListener('click', () => {
+  fileDropdown.classList.remove('visible');
 });
 </script>
 
@@ -315,6 +352,56 @@ body {
 .menu-item:hover {
   background: #000080;
   color: #fff;
+}
+
+.menu-with-dropdown {
+  position: relative;
+}
+
+.win95-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #c0c0c0;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  min-width: 200px;
+  z-index: 1000;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.win95-dropdown.visible {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 4px 20px 4px 8px;
+  color: #000;
+  text-decoration: none;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #000080;
+  color: #fff;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #808080;
+  margin: 2px 0;
+}
+
+.dropdown-label {
+  padding: 4px 8px;
+  font-size: 10px;
+  color: #808080;
+  font-style: italic;
 }
 
 .win95-toolbar {
