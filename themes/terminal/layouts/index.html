@@ -1,137 +1,423 @@
 {{ define "main" }}
-<div class="container">
+<div class="vim-container">
+  <div class="vim-splash">
+    <!-- VIM Header -->
+    <div class="vim-header">
+      <pre class="vim-logo">
+     _                              __                                
+    (_)___ _____ ___  ___  _____   / ____ __ __  ______ ___  ____ ____ 
+   / / __ `/ __ `__ \/ _ \/ ___/  / /_/ __/ // // __ `__ \/ __ `/ __ \
+  / / /_/ / / / / / /  __(__  )  / __/ / / // // / / / / / /_/ / / / /
+ /_/\__,_/_/ /_/ /_/\___/____/()/_/ /_/  \_, //_/ /_/ /_/\__,_/_/ /_/ 
+                                        /___/                          
+      </pre>
+      <p class="vim-version">version 2026.02 - technologist · entrepreneur · hacker</p>
+    </div>
 
-  <!-- Hero -->
-  <header class="hero">
-    <h1 class="hero-name">James Fryman<span class="cursor">_</span></h1>
-    <p class="hero-tagline">Technologist, Entrepreneur, Hacker and General Human</p>
-  </header>
+    <!-- VIM Help Text -->
+    <div class="vim-help">
+      <p class="vim-help-line">type  :blog&lt;Enter&gt;           to read recent writing</p>
+      <p class="vim-help-line">type  :projects&lt;Enter&gt;       to see what I'm building</p>
+      <p class="vim-help-line">type  :resume&lt;Enter&gt;         for experience &amp; credentials</p>
+      <p class="vim-help-line">type  :contact&lt;Enter&gt;        to get in touch</p>
+      <p class="vim-help-line empty"></p>
+      <p class="vim-help-line">type  :help&lt;Enter&gt;           for keyboard shortcuts</p>
+      <p class="vim-help-line">type  :q&lt;Enter&gt;              to leave (or just close the tab)</p>
+    </div>
 
-  <!-- About -->
-  <section class="terminal-card">
-    <div class="terminal-titlebar">
-      <span class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></span>
-      <span class="terminal-title">$ about</span>
+    <!-- Recent Blog Posts -->
+    {{ $pages := where site.RegularPages "Type" "posts" }}
+    {{ if gt (len $pages) 0 }}
+    <div class="vim-recent">
+      <p class="vim-section-title">Recent Posts</p>
+      {{ range first 2 $pages }}
+      <div class="vim-post">
+        <a href="{{ .RelPermalink }}" class="vim-post-title">{{ .Title }}</a>
+        <span class="vim-post-date">{{ .Date.Format "2006-01-02" }}</span>
+      </div>
+      {{ end }}
+      <p class="vim-more"><a href="/posts/">:posts&lt;Enter&gt; for all →</a></p>
     </div>
-    <div class="terminal-body">
-      <p>Engineering leader and DevOps architect who bridges the gap between technical excellence and business impact. Public speaker, author, open source contributor, and mentor based in Nashville, TN.</p>
-    </div>
-  </section>
+    {{ end }}
 
-  <!-- Experience -->
-  <section class="terminal-card">
-    <div class="terminal-titlebar">
-      <span class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></span>
-      <span class="terminal-title">$ experience</span>
+    <!-- Command Line -->
+    <div class="vim-cmdline">
+      <span class="vim-prompt">:</span>
+      <input type="text" id="vim-input" class="vim-input" autocomplete="off" spellcheck="false" />
+      <span class="vim-cursor"></span>
     </div>
-    <div class="terminal-body">
-      <div class="entry">
-        <h3><!-- TODO: Current Role Title --></h3>
-        <span class="meta"><!-- TODO: Company Name --> · <!-- TODO: Date Range --></span>
-        <p><!-- TODO: Description of current role --></p>
-      </div>
-      <div class="entry">
-        <h3><!-- TODO: Previous Role Title --></h3>
-        <span class="meta"><!-- TODO: Company Name --> · <!-- TODO: Date Range --></span>
-        <p><!-- TODO: Description --></p>
-      </div>
-      <div class="entry">
-        <h3><!-- TODO: Previous Role Title --></h3>
-        <span class="meta"><!-- TODO: Company Name --> · <!-- TODO: Date Range --></span>
-        <p><!-- TODO: Description --></p>
-      </div>
-      <div class="entry">
-        <h3><!-- TODO: Previous Role Title --></h3>
-        <span class="meta"><!-- TODO: Company Name --> · <!-- TODO: Date Range --></span>
-        <p><!-- TODO: Description --></p>
-      </div>
-    </div>
-  </section>
 
-  <!-- Publications -->
-  <section class="terminal-card">
-    <div class="terminal-titlebar">
-      <span class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></span>
-      <span class="terminal-title">$ publications</span>
+    <!-- Status Line -->
+    <div class="vim-statusline">
+      <span class="vim-status-left">james.fryman.io</span>
+      <span class="vim-status-right">Press : for commands</span>
     </div>
-    <div class="terminal-body">
-      <div class="entry">
-        <h3>"ChatOps for Dummies"</h3>
-        <span class="meta">Wiley Publishing · April 2015</span>
-        <p>Wrote foreword and contributed.</p>
-      </div>
-      <div class="entry">
-        <h3>"Puppet Cookbook, 3rd Edition"</h3>
-        <span class="meta">Packt Publishing · February 2015</span>
-        <p>Technical reviewer.</p>
-      </div>
-      <div class="entry">
-        <h3>"Puppet Reporting and Monitoring"</h3>
-        <span class="meta">Packt Publishing · June 2014</span>
-        <p>Technical reviewer.</p>
-      </div>
-    </div>
-  </section>
+  </div>
 
-  <!-- Speaking -->
-  <section class="terminal-card">
-    <div class="terminal-titlebar">
-      <span class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></span>
-      <span class="terminal-title">$ speaking</span>
+  <!-- Navigation Menu (hidden by default, shown on :help) -->
+  <div id="vim-menu" class="vim-menu hidden">
+    <div class="vim-menu-header">
+      <h3>Available Commands</h3>
+      <button id="vim-menu-close" class="vim-menu-close">×</button>
     </div>
-    <div class="terminal-body">
-      <div class="entry">
-        <h3>"ChatOps: Technology and Philosophy"</h3>
-        <span class="meta">January 2015</span>
-        <p><a href="https://www.youtube.com/watch?v=37LmuHToYjQ" target="_blank" rel="noopener">▶ Watch on YouTube</a></p>
+    <div class="vim-menu-body">
+      <div class="vim-menu-section">
+        <h4>Navigation</h4>
+        <ul>
+          <li><code>:blog</code> — Recent blog posts</li>
+          <li><code>:posts</code> — All blog posts</li>
+          <li><code>:projects</code> — Things I've built</li>
+          <li><code>:resume</code> — Experience &amp; credentials</li>
+          <li><code>:contact</code> — Get in touch</li>
+        </ul>
       </div>
-      <div class="entry">
-        <h3>"DevOps: Day 2 — People and Process"</h3>
-        <span class="meta">DevOpsDays Berlin · October 2014</span>
-        <p><a href="http://vimeo.com/110484640" target="_blank" rel="noopener">▶ Watch on Vimeo</a></p>
+      <div class="vim-menu-section">
+        <h4>Social</h4>
+        <ul>
+          <li><code>:github</code> — <a href="https://github.com/jfryman" target="_blank">github.com/jfryman</a></li>
+          <li><code>:linkedin</code> — <a href="https://www.linkedin.com/in/jamesfryman/" target="_blank">linkedin.com/in/jamesfryman</a></li>
+          <li><code>:twitter</code> — <a href="https://x.com/jfryman" target="_blank">@jfryman</a></li>
+        </ul>
       </div>
-      <div class="entry">
-        <h3>"Design Patterns in Configuration Management"</h3>
-        <span class="meta">May 2014</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Volunteer -->
-  <section class="terminal-card">
-    <div class="terminal-titlebar">
-      <span class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></span>
-      <span class="terminal-title">$ volunteer</span>
-    </div>
-    <div class="terminal-body">
-      <div class="entry">
-        <h3>Nashville Software School</h3>
-        <span class="meta">Mentor · July 2014 — July 2017</span>
+      <div class="vim-menu-section">
+        <h4>Meta</h4>
+        <ul>
+          <li><code>:help</code> — This menu</li>
+          <li><code>:q</code> — Close tab</li>
+          <li><code>Esc</code> — Clear input / close menu</li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <!-- Links -->
-  <section class="terminal-card">
-    <div class="terminal-titlebar">
-      <span class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></span>
-      <span class="terminal-title">$ links</span>
-    </div>
-    <div class="terminal-body">
-      <ul class="links-list">
-        <li><a href="https://www.linkedin.com/in/jamesfryman/" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="https://github.com/jfryman" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://x.com/jfryman" target="_blank" rel="noopener">X / Twitter</a></li>
-        <li><span class="muted">Facebook — coming soon</span></li>
-        <li><span class="muted">Bluesky — coming soon</span></li>
-        <li><span class="muted">Mastodon — coming soon</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; {{ now.Year }} James Fryman</p>
-  </footer>
-
+  </div>
 </div>
+
+<script>
+(function() {
+  const input = document.getElementById('vim-input');
+  const menu = document.getElementById('vim-menu');
+  const menuClose = document.getElementById('vim-menu-close');
+
+  // Command mappings
+  const commands = {
+    'blog': '/posts/',
+    'posts': '/posts/',
+    'projects': '/projects/',
+    'resume': '/resume/',
+    'contact': '/contact/',
+    'github': 'https://github.com/jfryman',
+    'linkedin': 'https://www.linkedin.com/in/jamesfryman/',
+    'twitter': 'https://x.com/jfryman',
+    'x': 'https://x.com/jfryman',
+    'help': () => menu.classList.remove('hidden'),
+    'q': () => window.close(),
+    'quit': () => window.close()
+  };
+
+  // Focus input on page load
+  input.focus();
+
+  // Keep input focused
+  document.addEventListener('click', (e) => {
+    if (!menu.classList.contains('hidden')) return;
+    input.focus();
+  });
+
+  // Handle command execution
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const cmd = input.value.trim().toLowerCase().replace(/^:/, '');
+      input.value = '';
+
+      if (commands[cmd]) {
+        if (typeof commands[cmd] === 'function') {
+          commands[cmd]();
+        } else {
+          window.location.href = commands[cmd];
+        }
+      }
+    } else if (e.key === 'Escape') {
+      input.value = '';
+      menu.classList.add('hidden');
+    }
+  });
+
+  // Close menu button
+  menuClose.addEventListener('click', () => {
+    menu.classList.add('hidden');
+    input.focus();
+  });
+
+  // Close menu on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      menu.classList.add('hidden');
+      input.focus();
+    }
+  });
+})();
+</script>
+
+<style>
+.vim-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  background: #001a00;
+}
+
+.vim-splash {
+  max-width: 900px;
+  width: 100%;
+}
+
+.vim-header {
+  margin-bottom: 2rem;
+}
+
+.vim-logo {
+  color: var(--green, #00ff41);
+  font-size: 0.6rem;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+}
+
+.vim-version {
+  text-align: center;
+  color: #4af626;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.vim-help {
+  margin: 3rem 0;
+  color: var(--text, #c9d1d9);
+}
+
+.vim-help-line {
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
+  padding-left: 2rem;
+}
+
+.vim-help-line.empty {
+  padding: 0.5rem 0;
+}
+
+.vim-recent {
+  margin: 3rem 0;
+  padding-left: 2rem;
+}
+
+.vim-section-title {
+  color: #4af626;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.vim-post {
+  margin: 0.75rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.vim-post-title {
+  color: var(--green, #00ff41);
+  text-decoration: none;
+  flex: 1;
+}
+
+.vim-post-title:hover {
+  text-decoration: underline;
+}
+
+.vim-post-date {
+  color: #8b949e;
+  font-size: 0.85rem;
+}
+
+.vim-more {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.vim-more a {
+  color: #4af626;
+  text-decoration: none;
+}
+
+.vim-more a:hover {
+  text-decoration: underline;
+}
+
+.vim-cmdline {
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.vim-prompt {
+  color: var(--green, #00ff41);
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
+}
+
+.vim-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text, #c9d1d9);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  caret-color: transparent;
+}
+
+.vim-cursor {
+  position: absolute;
+  left: calc(2rem + 1.5ch);
+  width: 0.6rem;
+  height: 1.2rem;
+  background: var(--green, #00ff41);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+.vim-statusline {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  margin-top: 1rem;
+  color: #001a00;
+  background: #4af626;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.vim-menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #161b22;
+  border: 2px solid var(--green, #00ff41);
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+  z-index: 1000;
+}
+
+.vim-menu.hidden {
+  display: none;
+}
+
+.vim-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #30363d;
+}
+
+.vim-menu-header h3 {
+  color: var(--green, #00ff41);
+  font-size: 1.2rem;
+}
+
+.vim-menu-close {
+  background: none;
+  border: none;
+  color: var(--text, #c9d1d9);
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+}
+
+.vim-menu-close:hover {
+  color: var(--green, #00ff41);
+}
+
+.vim-menu-section {
+  margin-bottom: 1.5rem;
+}
+
+.vim-menu-section h4 {
+  color: #4af626;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.vim-menu-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.vim-menu-section li {
+  padding: 0.4rem 0;
+  color: var(--text, #c9d1d9);
+}
+
+.vim-menu-section code {
+  color: var(--green, #00ff41);
+  background: #0d1117;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-family: inherit;
+  margin-right: 0.5rem;
+}
+
+.vim-menu-section a {
+  color: #4af626;
+  text-decoration: none;
+}
+
+.vim-menu-section a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .vim-logo {
+    font-size: 0.4rem;
+  }
+  
+  .vim-help-line {
+    padding-left: 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .vim-recent {
+    padding-left: 1rem;
+  }
+  
+  .vim-cmdline {
+    padding: 0 1rem;
+  }
+  
+  .vim-statusline {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+}
+</style>
 {{ end }}

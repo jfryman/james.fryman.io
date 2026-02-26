@@ -1,0 +1,85 @@
+{{ define "main" }}
+<div class="container">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+
+  <div class="content">
+    {{ .Content }}
+
+    {{ if .Pages }}
+    <section class="post-list">
+      {{ range .Pages }}
+      <article class="post-entry">
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{ if .Date }}
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        {{ end }}
+        {{ if .Summary }}
+        <p>{{ .Summary }}</p>
+        {{ end }}
+      </article>
+      {{ end }}
+    </section>
+    {{ end }}
+  </div>
+</div>
+
+<style>
+.page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--green, #00ff41);
+}
+
+.page-header h1 {
+  color: var(--green, #00ff41);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.post-list {
+  margin-top: 2rem;
+}
+
+.post-entry {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border, #30363d);
+}
+
+.post-entry:last-child {
+  border-bottom: none;
+}
+
+.post-entry h2 {
+  margin-bottom: 0.5rem;
+}
+
+.post-entry h2 a {
+  color: var(--green, #00ff41);
+  text-decoration: none;
+}
+
+.post-entry h2 a:hover {
+  text-decoration: underline;
+}
+
+.post-entry time {
+  display: block;
+  color: var(--text-muted, #8b949e);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.post-entry p {
+  color: var(--text, #c9d1d9);
+  line-height: 1.7;
+}
+</style>
+{{ end }}
