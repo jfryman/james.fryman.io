@@ -1,44 +1,77 @@
 {
   "name": "James Fryman",
-  "title": "Engineering Leader & DevOps Architect",
+  "title": "Principal DevOps Engineer",
   "location": "Nashville, TN",
   "email": "james@fryman.io",
-  "website": "https://james.fryman.io",
+  "phone": "615-973-9847",
+  "website": "https://fryman.io",
   "github": "https://github.com/jfryman",
   "linkedin": "https://www.linkedin.com/in/jamesfryman",
-  "about": "Engineering leader and DevOps architect who bridges the gap between technical  excellence and business impact. Public speaker, author, open source contributor,  and mentor based in Nashville, TN.\n",
+  "about": "Engineering leader and DevOps architect who bridges the gap between technical  excellence and human potential. I transform engineering organizations by crafting  efficient systems and cultivating high-performing teams. My approach combines deep  technical expertise with a keen understanding of how people work best, enabling  teams to focus on innovation rather than infrastructure. I thrive on challenges  that require both technical innovation and organizational transformation, always  with the goal of empowering engineers to do their best work.\n",
+  "skills": [
+    "3D Printing",
+    "AutoCAD Mechanical",
+    "Printed Circuit Board (PCB) Design",
+    "Kubernetes",
+    "Platform Engineering",
+    "DevOps",
+    "Infrastructure Automation",
+    "CI/CD"
+  ],
   "experience": [
     {
-      "title": "TODO: Current Role Title",
-      "company": "TODO: Company Name",
-      "period": "TODO: Date Range",
-      "description": "TODO: Description of current role"
+      "title": "Principal Member of Technical Staff",
+      "company": "Salesforce",
+      "period": "May 2021 — Present",
+      "location": "Nashville Metropolitan Area",
+      "description": "Led technical architecture and development of Salesforce Code Builder, a  cloud-based development environment, through Beta and GA launches. Spearheaded  critical infrastructure migrations and cross-organizational partnerships while  managing distributed engineering teams. Architected custom Kubernetes Operator  in GoLang, served as primary technical liaison for AWS partnership, and led  12 engineers across three teams through successful GA launch.\n"
     },
     {
-      "title": "TODO: Previous Role Title",
-      "company": "TODO: Company Name",
-      "period": "TODO: Date Range",
-      "description": "TODO: Description"
+      "title": "Founder & Principal Engineer",
+      "company": "Frykin Industries, Incorporated",
+      "period": "January 2022 — Present",
+      "location": "Nolensville, Tennessee",
+      "description": "Lead specialized engineering and manufacturing consultancy focused on custom  solutions through advanced manufacturing technologies and embedded systems  development. Engineer custom PCB drive controller systems for electric vehicle  conversions, operate advanced manufacturing facility with commercial and custom  3D printers, and design legacy automotive components through reverse engineering.\n"
     },
     {
-      "title": "TODO: Previous Role Title",
-      "company": "TODO: Company Name",
-      "period": "TODO: Date Range",
-      "description": "TODO: Description"
+      "title": "Sr. Staff Engineer, Platform Engineering",
+      "company": "Ripple",
+      "period": "December 2019 — April 2021",
+      "location": "San Francisco, California",
+      "description": "Led global platform transformation initiative while scaling engineering team  from 3 to 9 engineers. Architected and launched Platform v2, a comprehensive  Kubernetes migration initiative. Developed custom Platform Operator using  operator-sdk and established comprehensive Kubernetes training program across  Iceland, India, UK, and US teams.\n"
     },
     {
-      "title": "TODO: Previous Role Title",
-      "company": "TODO: Company Name",
-      "period": "TODO: Date Range",
-      "description": "TODO: Description"
+      "title": "Technical Operations Engineer",
+      "company": "Ripple",
+      "period": "November 2018 — December 2019",
+      "location": "San Francisco Bay Area",
+      "description": "Drove reliability and infrastructure modernization initiatives for Ripple's  core product suite. Authored successful business case for Platform Engineering  team creation. Pioneered Kubernetes adoption, reducing customer integration  engineering costs by $250,000 annually. Architected Google Cloud Platform  infrastructure for data analytics.\n"
+    },
+    {
+      "title": "President",
+      "company": "The Bikeshed, LLC",
+      "period": "October 2014 — October 2020",
+      "location": "Nashville, TN",
+      "description": "Co-working center and technology incubator. Managed Makerspace with prototyping  tools (electronics center, 3D printing). Hosted cloud infrastructure for members  and local hackerspace meetups.\n"
     }
   ],
   "publications": [
     {
+      "title": "Design Patterns in Configuration Management",
+      "date": "May 2014",
+      "role": "Author"
+    },
+    {
+      "title": "DevOps: Day 2 — People and Process",
+      "event": "DevOpsDays Berlin",
+      "date": "October 2014",
+      "role": "Speaker"
+    },
+    {
       "title": "ChatOps for Dummies",
       "publisher": "Wiley Publishing",
       "date": "April 2015",
-      "role": "Wrote foreword and contributed"
+      "role": "Foreword and contributor"
     },
     {
       "title": "Puppet Cookbook, 3rd Edition",
