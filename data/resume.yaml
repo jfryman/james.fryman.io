@@ -25,6 +25,10 @@ skills:
   - DevOps
   - Infrastructure Automation
   - CI/CD
+  - Terraform
+  - Python
+  - GoLang
+  - Elixir
 
 experience:
   - title: "Principal Member of Technical Staff"
@@ -32,54 +36,169 @@ experience:
     period: "May 2021 — Present"
     location: "Nashville Metropolitan Area"
     description: >
-      Led technical architecture and development of Salesforce Code Builder, a 
-      cloud-based development environment, through Beta and GA launches. Spearheaded 
-      critical infrastructure migrations and cross-organizational partnerships while 
-      managing distributed engineering teams. Architected custom Kubernetes Operator 
-      in GoLang, served as primary technical liaison for AWS partnership, and led 
-      12 engineers across three teams through successful GA launch.
+      Led technical architecture and development of Salesforce Code Builder through Beta and GA launches. 
+      Architected custom Kubernetes Operator in GoLang, served as primary technical liaison for AWS 
+      partnership, led 12 engineers across three teams, and pioneered Elixir adoption within Hyperforce platform.
   
   - title: "Founder & Principal Engineer"
     company: "Frykin Industries, Incorporated"
     period: "January 2022 — Present"
     location: "Nolensville, Tennessee"
     description: >
-      Lead specialized engineering and manufacturing consultancy focused on custom 
-      solutions through advanced manufacturing technologies and embedded systems 
-      development. Engineer custom PCB drive controller systems for electric vehicle 
-      conversions, operate advanced manufacturing facility with commercial and custom 
-      3D printers, and design legacy automotive components through reverse engineering.
+      Specialized engineering and manufacturing consultancy. Engineer custom PCB drive controllers for 
+      electric vehicle conversions with CAN bus communication, operate advanced 3D printing facility, 
+      design legacy automotive components through reverse engineering (Fusion 360).
   
   - title: "Sr. Staff Engineer, Platform Engineering"
     company: "Ripple"
     period: "December 2019 — April 2021"
     location: "San Francisco, California"
     description: >
-      Led global platform transformation initiative while scaling engineering team 
-      from 3 to 9 engineers. Architected and launched Platform v2, a comprehensive 
-      Kubernetes migration initiative. Developed custom Platform Operator using 
-      operator-sdk and established comprehensive Kubernetes training program across 
-      Iceland, India, UK, and US teams.
+      Scaled Platform Engineering team from 3 to 9 engineers. Architected and launched Platform v2 
+      (comprehensive Kubernetes migration). Developed custom Platform Operator using operator-sdk. 
+      Established Kubernetes training program across global teams (Iceland, India, UK, US).
   
   - title: "Technical Operations Engineer"
     company: "Ripple"
     period: "November 2018 — December 2019"
     location: "San Francisco Bay Area"
     description: >
-      Drove reliability and infrastructure modernization initiatives for Ripple's 
-      core product suite. Authored successful business case for Platform Engineering 
-      team creation. Pioneered Kubernetes adoption, reducing customer integration 
-      engineering costs by $250,000 annually. Architected Google Cloud Platform 
-      infrastructure for data analytics.
+      Authored business case for Platform Engineering team creation. Pioneered Kubernetes adoption, 
+      reducing customer integration costs by $250K annually. Architected GCP infrastructure for data 
+      analytics. Enhanced infrastructure security with automated certificate management (Salt + Vault).
   
   - title: "President"
     company: "The Bikeshed, LLC"
     period: "October 2014 — October 2020"
     location: "Nashville, TN"
     description: >
-      Co-working center and technology incubator. Managed Makerspace with prototyping 
-      tools (electronics center, 3D printing). Hosted cloud infrastructure for members 
-      and local hackerspace meetups.
+      Co-working center and technology incubator. Managed Makerspace with prototyping tools 
+      (electronics, 3D printing). Hosted cloud infrastructure for members and hackerspace meetups.
+  
+  - title: "Lead System Engineer"
+    company: "NationBuilder"
+    period: "November 2017 — October 2018"
+    location: "Greater Los Angeles Area"
+    description: >
+      Drove infrastructure maturity and data integrity within PostgreSQL tier. Implemented 
+      zero-downtime schema deploys. Upgraded Puppet v3 → v5 with CI/CD and testing tools. 
+      Deployed Rundeck for workflow automation, implemented DataDog for unified logging and metrics.
+  
+  - title: "Sr. Software Engineer / Evangelist"
+    company: "Puppet"
+    period: "March 2017 — October 2017"
+    location: "Portland, Oregon Area"
+    description: >
+      Developer on Lumogon Project (https://lumogon.com). Built serverless SaaS infrastructure with 
+      AWS Lambda, ElasticBeanstalk, and DynamoDB. Designed CI/CD workflows with AutoDeploy. Worked 
+      on Puppet Discovery, porting Clojure to Golang and deploying via GCE/Kubernetes/Helm.
+  
+  - title: "Infrastructure Product Owner"
+    company: "Auth0"
+    period: "March 2016 — January 2017"
+    location: "Greater Seattle Area"
+    description: >
+      Led team to implement instrumentation and metrics across primary application. Implemented 
+      Site Reliability Engineering practice, scaling two-person ops team into organized SRE function. 
+      Organized workstreams: Support/Growth, Stability/Maintenance, Common Tools, CI/CD. Implemented on-call program.
+  
+  - title: "DevOps Stormer"
+    company: "StackStorm"
+    period: "November 2014 — February 2016"
+    location: "San Francisco Bay Area"
+    description: >
+      Designed and built world's first enterprise ChatOps solution. Worldwide evangelism of event-driven 
+      automation. Worked with development team to design and deliver ChatOps features. Organized and 
+      managed integration team. Built first on-premise appliance installation.
+  
+  - title: "Operations Hacker"
+    company: "GitHub"
+    period: "October 2012 — October 2014"
+    location: "San Francisco, California"
+    description: >
+      24/7 Operations team for github.com, gist.github.com, and other properties. Optimized and extended 
+      Puppet operational usage, integrated with ChatOps. Traveled worldwide sharing large-scale 
+      infrastructure best practices. Helped grow server footprint from ~100 cloud nodes to mixed cloud/datacenter.
+  
+  - title: "Technology Strategist"
+    company: "Fryman and Associates, Inc"
+    period: "July 2011 — October 2013"
+    location: "Nashville, TN"
+    description: >
+      Small business consultancy focused on: CTO as a service (strategy advice for startups), DevOps 
+      transformations (weekly/monthly deploys → daily+), Technology delivery (Chef, Puppet, Cfengine, AWS, Ruby on Rails).
+  
+  - title: "Professional Services Engineer"
+    company: "Puppet Labs, Inc."
+    period: "April 2011 — July 2011"
+    location: "Portland, Oregon Area"
+    description: >
+      On-site classroom training (3-day course) on Puppet usage. Helped clients bootstrap and optimize 
+      Puppet installations from 50+ nodes to 5000+ node deployments.
+  
+  - title: "Sr. Network Operations Manager"
+    company: "Asurion"
+    period: "November 2009 — April 2011"
+    location: "Nashville, TN"
+    description: >
+      Daily operational management of enterprise systems. Created business plan for strategic offshoring, 
+      reducing operating costs by $1.5M over 3 years. Migrated NOC from US to Philippines on-time and 
+      under-budget with aggressive 6-month timeline.
+  
+  - title: "Security Manager"
+    company: "Asurion"
+    period: "August 2008 — November 2009"
+    location: "Nashville, TN"
+    description: >
+      Strategic planning for Security Department (Physical Security, Investigations, Internal Fraud, 
+      Technical Security, Administration). Maintained regulatory and contractual compliance. Led 
+      organization through major audits (ISO17799, PCI requirements). Process optimization via Lean-Thinking.
+  
+  - title: "Sr. Security Analyst"
+    company: "Asurion"
+    period: "April 2007 — August 2008"
+    location: "Nashville, TN"
+    description: >
+      Planned and led company-wide PCI-DSS v1.2 compliance initiative by 12/2008. Transformed security 
+      metrics for management visibility. Guided management decisions through layered security (host and 
+      network). Mentored team in security practices and risk-based approaches.
+  
+  - title: "Security Architect"
+    company: "Asurion"
+    period: "July 2006 — April 2007"
+    location: "Nashville, TN"
+    description: >
+      Developed security standards for 1500+ servers (Windows 2000/2003, RedHat Linux) in compliance 
+      with PCI-DSS v1.1 and ISO17799. Designed and implemented hardening standards. Implemented ground-floor 
+      RedHat Linux infrastructure with layered security (iptables, kernel hardening, RBAC via Kickstart).
+  
+  - title: "Information Technology Manager"
+    company: "Credit Control Corporation"
+    period: "January 2005 — July 2006"
+    location: "Nashville, TN"
+    description: >
+      Full responsibility for Windows 2003 servers (AD, Exchange) interconnected with Linux RedHat and AS/400. 
+      Implemented security policy (HIPAA/GLBA/PCI compliant). Reduced operating costs $250K/year with automated 
+      client-server call center design. Introduced VMWare virtualization, increasing utilization by 40%.
+  
+  - title: "Independent Consultant"
+    company: "Desktop Success"
+    period: "July 1997 — August 2003"
+    location: "Nashville, TN"
+    description: >
+      Computer repair, diagnosis, and analysis for local businesses, individuals, and U.S. government. 
+      IT consultation (virus concerns, server recommendations, network planning). Maintained numerous small 
+      networks. Migrated single-user Access database to multi-user SQL database.
+
+education:
+  - institution: "Harding University"
+    degree: "Bachelor of Arts"
+    field: "Mathematics/Psychology"
+    period: "2003 — 2004"
+  
+  - institution: "University of Phoenix"
+    degree: "Bachelor of Science"
+    field: "Information Technology"
 
 publications:
   - title: "Design Patterns in Configuration Management"
@@ -123,3 +242,9 @@ volunteer:
   - organization: Nashville Software School
     role: Mentor
     period: "July 2014 — July 2017"
+
+languages:
+  - language: English
+    proficiency: Native or Bilingual
+  - language: Spanish
+    proficiency: Elementary
