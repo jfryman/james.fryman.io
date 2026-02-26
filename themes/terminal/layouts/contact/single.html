@@ -3,27 +3,29 @@
 <div class="nextstep-desktop">
   <!-- NeXTSTEP Shelf (Dock) -->
   <div class="nextstep-shelf">
-    <div class="shelf-logo">NeXT</div>
+    <div class="shelf-clock" id="nextstep-clock">
+      <svg viewBox="0 0 64 64" class="clock-face">
+        <circle cx="32" cy="32" r="30" fill="#2a2a2a" stroke="#666" stroke-width="2"/>
+        <circle cx="32" cy="32" r="2" fill="#fff"/>
+        <line id="hour-hand" x1="32" y1="32" x2="32" y2="20" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <line id="minute-hand" x1="32" y1="32" x2="32" y2="14" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
     <div class="shelf-divider"></div>
     <a href="/" class="shelf-icon" title="Home">
       <div class="shelf-app">🏠</div>
-      <div class="shelf-label">Home</div>
     </a>
     <a href="/posts/" class="shelf-icon" title="Blog">
       <div class="shelf-app">📝</div>
-      <div class="shelf-label">Blog</div>
     </a>
     <a href="/projects/" class="shelf-icon" title="Projects">
       <div class="shelf-app">🔧</div>
-      <div class="shelf-label">Projects</div>
     </a>
     <a href="/resume/" class="shelf-icon" title="Resume">
       <div class="shelf-app">📄</div>
-      <div class="shelf-label">Resume</div>
     </a>
     <a href="/contact/" class="shelf-icon active" title="Contact">
       <div class="shelf-app">📧</div>
-      <div class="shelf-label">Contact</div>
     </a>
   </div>
 
@@ -67,7 +69,27 @@
 </div>
 
 <script>
-// No clock needed for NeXTSTEP - they kept it minimal
+// NeXTSTEP analog clock
+function updateAnalogClock() {
+  const now = new Date();
+  const hours = now.getHours() % 12;
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+  
+  const hourAngle = (hours * 30) + (minutes * 0.5);
+  const minuteAngle = minutes * 6;
+  
+  const hourHand = document.getElementById('hour-hand');
+  const minuteHand = document.getElementById('minute-hand');
+  
+  if (hourHand && minuteHand) {
+    hourHand.setAttribute('transform', `rotate(${hourAngle} 32 32)`);
+    minuteHand.setAttribute('transform', `rotate(${minuteAngle} 32 32)`);
+  }
+}
+
+updateAnalogClock();
+setInterval(updateAnalogClock, 1000);
 </script>
 
 <style>
@@ -83,7 +105,7 @@ body {
   height: 100vh;
   display: flex;
   padding: 20px;
-  padding-right: 100px;
+  padding-right: 20px;
   gap: 20px;
   position: relative;
 }
@@ -91,35 +113,35 @@ body {
 /* NeXTSTEP Shelf (Dock) */
 .nextstep-shelf {
   position: fixed;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 72px;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 64px;
   background: linear-gradient(90deg, #2a2a2a 0%, #1a1a1a 100%);
-  border-left: 1px solid #000;
+  border: 1px solid #000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 8px;
-  gap: 16px;
-  box-shadow: -2px 0 8px rgba(0,0,0,0.5);
+  padding: 12px 8px;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
   z-index: 1000;
+  border-radius: 4px;
 }
 
-.shelf-logo {
-  font-size: 11px;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  letter-spacing: 1px;
-  padding: 8px 4px;
-  background: #000;
-  border-radius: 3px;
+.shelf-clock {
+  width: 56px;
+  height: 56px;
+  padding: 4px;
+}
+
+.clock-face {
   width: 100%;
+  height: 100%;
 }
 
 .shelf-divider {
-  width: 100%;
+  width: 80%;
   height: 1px;
   background: #444;
   margin: 4px 0;
@@ -127,34 +149,44 @@ body {
 
 .shelf-icon {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
   text-decoration: none;
   color: #fff;
-  padding: 8px 4px;
-  border-radius: 4px;
-  transition: background 0.2s;
-  width: 100%;
+  border-radius: 3px;
+  transition: all 0.2s;
+  position: relative;
 }
 
 .shelf-icon:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.15);
+  transform: scale(1.05);
 }
 
 .shelf-icon.active {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.25);
+}
+
+.shelf-icon:hover::after {
+  content: attr(title);
+  position: absolute;
+  right: 100%;
+  margin-right: 8px;
+  background: rgba(0,0,0,0.9);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  white-space: nowrap;
+  z-index: 1001;
+  pointer-events: none;
 }
 
 .shelf-app {
-  font-size: 28px;
+  font-size: 32px;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-}
-
-.shelf-label {
-  font-size: 9px;
-  text-align: center;
-  color: #ccc;
 }
 
 /* NeXTSTEP Window */
@@ -345,15 +377,25 @@ body {
 @media (max-width: 768px) {
   .nextstep-desktop {
     padding: 10px;
-    padding-right: 80px;
   }
 
   .nextstep-shelf {
-    width: 64px;
+    right: 10px;
+    width: 56px;
+  }
+
+  .shelf-clock {
+    width: 48px;
+    height: 48px;
+  }
+
+  .shelf-icon {
+    width: 40px;
+    height: 40px;
   }
 
   .shelf-app {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .nextstep-content {
