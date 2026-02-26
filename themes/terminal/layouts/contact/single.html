@@ -1,569 +1,371 @@
 {{ define "main" }}
-<!-- BeOS Desktop -->
-<div class="beos-desktop">
-  <!-- BeOS Window -->
-  <div class="beos-window">
-    <!-- Title Bar with Yellow Tab -->
-    <div class="beos-titlebar">
-      <div class="beos-tab">
-        <span class="beos-title">{{ .Title }}</span>
-        <div class="beos-buttons">
-          <button class="beos-button minimize">_</button>
-          <button class="beos-button zoom">+</button>
-          <button class="beos-button close" onclick="window.history.back()">×</button>
-        </div>
+<!-- NeXTSTEP Desktop -->
+<div class="nextstep-desktop">
+  <!-- NeXTSTEP Shelf (Dock) -->
+  <div class="nextstep-shelf">
+    <div class="shelf-logo">NeXT</div>
+    <div class="shelf-divider"></div>
+    <a href="/" class="shelf-icon" title="Home">
+      <div class="shelf-app">🏠</div>
+      <div class="shelf-label">Home</div>
+    </a>
+    <a href="/posts/" class="shelf-icon" title="Blog">
+      <div class="shelf-app">📝</div>
+      <div class="shelf-label">Blog</div>
+    </a>
+    <a href="/projects/" class="shelf-icon" title="Projects">
+      <div class="shelf-app">🔧</div>
+      <div class="shelf-label">Projects</div>
+    </a>
+    <a href="/resume/" class="shelf-icon" title="Resume">
+      <div class="shelf-app">📄</div>
+      <div class="shelf-label">Resume</div>
+    </a>
+    <a href="/contact/" class="shelf-icon active" title="Contact">
+      <div class="shelf-app">📧</div>
+      <div class="shelf-label">Contact</div>
+    </a>
+  </div>
+
+  <!-- NeXTSTEP Window -->
+  <div class="nextstep-window">
+    <!-- Title Bar -->
+    <div class="nextstep-titlebar">
+      <div class="titlebar-left">
+        <button class="ns-button close" onclick="window.history.back()">×</button>
+        <button class="ns-button minimize">−</button>
       </div>
+      <div class="titlebar-title">{{ .Title }}</div>
+      <div class="titlebar-right"></div>
     </div>
 
     <!-- Menu Bar -->
-    <div class="beos-menubar">
-      <div class="beos-menu-item" id="nav-menu">
-        Navigation
-        <div class="beos-dropdown" id="nav-dropdown">
-          <a href="/" class="beos-menu-link">🏠 Home</a>
-          <a href="/posts/" class="beos-menu-link">📝 Blog</a>
-          <a href="/projects/" class="beos-menu-link">🔧 Projects</a>
-          <a href="/resume/" class="beos-menu-link">📄 Resume</a>
-          <a href="/contact/" class="beos-menu-link active">📧 Contact</a>
-        </div>
-      </div>
-      <span class="beos-menu-item">Help</span>
-    </div>
-
-    <!-- Toolbar -->
-    <div class="beos-toolbar">
-      <button class="beos-tool-button" onclick="window.history.back()">
-        <span class="tool-icon">⬅</span>
-        <span class="tool-label">Back</span>
-      </button>
-      <button class="beos-tool-button" onclick="window.location.href='/'">
-        <span class="tool-icon">🏠</span>
-        <span class="tool-label">Home</span>
-      </button>
-      <div class="beos-separator"></div>
-      <div class="beos-location">
-        <span class="location-label">Location:</span>
-        <span class="location-path">/boot/home/contact</span>
+    <div class="nextstep-menubar">
+      <div class="menu-section">
+        <a href="/" class="menu-link">Home</a>
+        <a href="/posts/" class="menu-link">Blog</a>
+        <a href="/projects/" class="menu-link">Projects</a>
+        <a href="/resume/" class="menu-link">Resume</a>
+        <a href="/contact/" class="menu-link active">Contact</a>
       </div>
     </div>
 
     <!-- Content Area -->
-    <div class="beos-content">
-      <div class="beos-icon-bar">
-        <a href="/" class="beos-nav-icon">
-          <div class="nav-icon-image">🏠</div>
-          <div class="nav-icon-label">Home</div>
-        </a>
-        <a href="/posts/" class="beos-nav-icon">
-          <div class="nav-icon-image">📝</div>
-          <div class="nav-icon-label">Blog</div>
-        </a>
-        <a href="/projects/" class="beos-nav-icon">
-          <div class="nav-icon-image">🔧</div>
-          <div class="nav-icon-label">Projects</div>
-        </a>
-        <a href="/resume/" class="beos-nav-icon">
-          <div class="nav-icon-image">📄</div>
-          <div class="nav-icon-label">Resume</div>
-        </a>
-        <a href="/contact/" class="beos-nav-icon active">
-          <div class="nav-icon-image">📧</div>
-          <div class="nav-icon-label">Contact</div>
-        </a>
-      </div>
-
-      <div class="beos-main-content">
-        <article class="beos-article">
-          {{ .Content }}
-        </article>
-      </div>
+    <div class="nextstep-content">
+      <article class="nextstep-article">
+        {{ .Content }}
+      </article>
     </div>
 
     <!-- Status Bar -->
-    <div class="beos-statusbar">
+    <div class="nextstep-statusbar">
       <span>{{ .WordCount }} words</span>
-      <span class="status-divider">|</span>
+      <span class="status-sep">•</span>
       <span>{{ .ReadingTime }} min read</span>
-    </div>
-  </div>
-
-  <!-- BeOS Deskbar -->
-  <div class="beos-deskbar">
-    <div class="deskbar-left">
-      <div class="deskbar-leaf">🍃</div>
-      <span class="deskbar-label">BeOS</span>
-    </div>
-    <div class="deskbar-center">
-      <div class="deskbar-app active">
-        <span class="app-icon">📧</span>
-        <span class="app-label">Contact</span>
-      </div>
-    </div>
-    <div class="deskbar-right">
-      <span class="deskbar-clock" id="beos-clock"></span>
     </div>
   </div>
 </div>
 
 <script>
-// BeOS clock
-function updateBeOSClock() {
-  const now = new Date();
-  const time = now.toLocaleTimeString('en-US', { 
-    hour: 'numeric', 
-    minute: '2-digit',
-    hour12: true 
-  });
-  const date = now.toLocaleDateString('en-US', { 
-    month: 'short', 
-    day: 'numeric' 
-  });
-  document.getElementById('beos-clock').textContent = `${date} ${time}`;
-}
-updateBeOSClock();
-setInterval(updateBeOSClock, 1000);
-
-// Navigation menu dropdown
-const navMenu = document.getElementById('nav-menu');
-const navDropdown = document.getElementById('nav-dropdown');
-
-navMenu.addEventListener('click', (e) => {
-  e.stopPropagation();
-  navDropdown.classList.toggle('visible');
-});
-
-document.addEventListener('click', () => {
-  navDropdown.classList.remove('visible');
-});
+// No clock needed for NeXTSTEP - they kept it minimal
 </script>
 
 <style>
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Verdana', 'Arial', sans-serif;
-  background: #6b6b6b;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  background: #808080;
   overflow: hidden;
 }
 
-.beos-desktop {
+.nextstep-desktop {
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 20px;
-  padding-bottom: 60px;
+  padding-right: 100px;
+  gap: 20px;
   position: relative;
 }
 
-/* BeOS Window */
-.beos-window {
-  width: 100%;
-  max-width: 900px;
-  height: calc(100vh - 100px);
-  background: #d9d9d9;
-  border: 1px solid #999;
-  box-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+/* NeXTSTEP Shelf (Dock) */
+.nextstep-shelf {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 72px;
+  background: linear-gradient(90deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-left: 1px solid #000;
   display: flex;
   flex-direction: column;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-}
-
-.beos-titlebar {
-  background: #d9d9d9;
-  padding: 5px;
-  position: relative;
-}
-
-.beos-tab {
-  background: linear-gradient(180deg, #ffcc00 0%, #ff9900 100%);
-  border: 1px solid #cc7700;
-  border-radius: 5px 5px 0 0;
-  padding: 4px 12px;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  max-width: 400px;
-}
-
-.beos-title {
-  font-weight: bold;
-  font-size: 12px;
-  color: #000;
-}
-
-.beos-buttons {
-  display: flex;
-  gap: 6px;
-}
-
-.beos-button {
-  width: 16px;
-  height: 16px;
-  border: 1px solid #666;
-  border-radius: 2px;
-  background: linear-gradient(180deg, #f0f0f0, #d0d0d0);
-  font-size: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #000;
-  padding: 0;
-}
-
-.beos-button:hover {
-  background: linear-gradient(180deg, #fff, #e0e0e0);
-}
-
-.beos-button:active {
-  background: linear-gradient(180deg, #d0d0d0, #f0f0f0);
-}
-
-.beos-button.close:hover {
-  background: linear-gradient(180deg, #ff6666, #cc0000);
-  color: #fff;
-}
-
-.beos-menubar {
-  background: #d9d9d9;
-  padding: 4px 8px;
-  display: flex;
+  padding: 20px 8px;
   gap: 16px;
-  font-size: 11px;
-  border-bottom: 1px solid #999;
-}
-
-.beos-menu-item {
-  padding: 2px 8px;
-  cursor: pointer;
-  border-radius: 2px;
-  color: #000;
-  position: relative;
-}
-
-.beos-menu-item:hover {
-  background: #ffcc00;
-}
-
-.beos-dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 2px;
-  background: #d9d9d9;
-  border: 1px solid #999;
-  border-radius: 3px;
-  box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-  min-width: 180px;
-  padding: 4px 0;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.5);
   z-index: 1000;
 }
 
-.beos-dropdown.visible {
-  display: block;
-}
-
-.beos-menu-link {
-  display: block;
-  padding: 6px 16px;
-  color: #000;
-  text-decoration: none;
+.shelf-logo {
   font-size: 11px;
-}
-
-.beos-menu-link:hover {
-  background: #ffcc00;
-}
-
-.beos-menu-link.active {
-  background: #ff9900;
-  color: #fff;
-}
-
-.beos-toolbar {
-  background: #e6e6e6;
-  padding: 6px 8px;
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  border-bottom: 1px solid #999;
-}
-
-.beos-tool-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  padding: 4px 8px;
-  background: #d9d9d9;
-  border: 1px solid #999;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 10px;
-  color: #000;
-}
-
-.beos-tool-button:hover {
-  background: #ffcc00;
-}
-
-.tool-icon {
-  font-size: 16px;
-}
-
-.tool-label {
-  font-size: 9px;
-}
-
-.beos-separator {
-  width: 1px;
-  height: 32px;
-  background: #999;
-  margin: 0 4px;
-}
-
-.beos-location {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  color: #000;
-}
-
-.location-label {
   font-weight: bold;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 8px 4px;
+  background: #000;
+  border-radius: 3px;
+  width: 100%;
 }
 
-.location-path {
-  background: #fff;
-  padding: 2px 8px;
-  border: 1px solid #999;
-  border-radius: 2px;
+.shelf-divider {
+  width: 100%;
+  height: 1px;
+  background: #444;
+  margin: 4px 0;
 }
 
-.beos-content {
-  flex: 1;
-  display: flex;
-  overflow: hidden;
-}
-
-.beos-icon-bar {
-  width: 80px;
-  background: #e6e6e6;
-  border-right: 1px solid #999;
-  padding: 12px 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  overflow-y: auto;
-}
-
-.beos-nav-icon {
+.shelf-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
   text-decoration: none;
-  color: #000;
+  color: #fff;
   padding: 8px 4px;
-  border-radius: 3px;
+  border-radius: 4px;
+  transition: background 0.2s;
+  width: 100%;
 }
 
-.beos-nav-icon:hover {
-  background: #ffcc00;
+.shelf-icon:hover {
+  background: rgba(255,255,255,0.1);
 }
 
-.beos-nav-icon.active {
-  background: #ff9900;
+.shelf-icon.active {
+  background: rgba(255,255,255,0.2);
 }
 
-.nav-icon-image {
+.shelf-app {
   font-size: 28px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
 }
 
-.nav-icon-label {
+.shelf-label {
   font-size: 9px;
   text-align: center;
-  word-wrap: break-word;
-  max-width: 100%;
+  color: #ccc;
 }
 
-.beos-main-content {
+/* NeXTSTEP Window */
+.nextstep-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #c0c0c0;
+  border: 1px solid #000;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.6);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.nextstep-titlebar {
+  height: 28px;
+  background: linear-gradient(180deg, #4a4a4a 0%, #2a2a2a 100%);
+  border-bottom: 1px solid #000;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  justify-content: space-between;
+}
+
+.titlebar-left {
+  display: flex;
+  gap: 8px;
+}
+
+.ns-button {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #6a6a6a, #3a3a3a);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.ns-button:hover {
+  background: linear-gradient(180deg, #7a7a7a, #4a4a4a);
+}
+
+.ns-button:active {
+  background: linear-gradient(180deg, #3a3a3a, #6a6a6a);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.ns-button.close:hover {
+  background: linear-gradient(180deg, #cc0000, #880000);
+}
+
+.titlebar-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  flex: 1;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+.titlebar-right {
+  width: 20px;
+}
+
+/* NeXTSTEP Menu Bar */
+.nextstep-menubar {
+  background: linear-gradient(180deg, #e8e8e8 0%, #d0d0d0 100%);
+  border-bottom: 1px solid #999;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-section {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-link {
+  font-size: 12px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+
+.menu-link:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+.menu-link.active {
+  background: #000;
+  color: #fff;
+}
+
+/* Content Area */
+.nextstep-content {
   flex: 1;
   background: #fff;
-  padding: 24px;
+  padding: 32px;
   overflow-y: auto;
+  border-top: 1px solid #e0e0e0;
 }
 
-.beos-article {
+.nextstep-article {
   max-width: 700px;
+  margin: 0 auto;
 }
 
-.beos-article h1 {
-  font-size: 22px;
-  margin: 0 0 16px;
+.nextstep-article h1 {
+  font-size: 32px;
+  font-weight: 300;
+  margin: 0 0 24px;
   color: #000;
-  font-weight: bold;
+  letter-spacing: -0.5px;
 }
 
-.beos-article h2 {
+.nextstep-article h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 32px 0 16px;
+  color: #000;
+  letter-spacing: -0.3px;
+}
+
+.nextstep-article h3 {
   font-size: 18px;
+  font-weight: 500;
   margin: 24px 0 12px;
   color: #000;
-  font-weight: bold;
 }
 
-.beos-article h3 {
-  font-size: 15px;
-  margin: 20px 0 10px;
-  color: #000;
-  font-weight: bold;
+.nextstep-article p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 16px 0;
+  color: #222;
 }
 
-.beos-article p {
-  margin: 12px 0;
-  line-height: 1.6;
-  color: #000;
-}
-
-.beos-article a {
+.nextstep-article a {
   color: #0066cc;
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: 1px solid #0066cc;
 }
 
-.beos-article a:hover {
-  color: #ff9900;
+.nextstep-article a:hover {
+  color: #004499;
+  border-bottom-color: #004499;
 }
 
-.beos-article ul {
-  margin: 12px 0;
+.nextstep-article ul {
+  margin: 16px 0;
   padding-left: 24px;
 }
 
-.beos-article li {
-  margin: 6px 0;
-  color: #000;
+.nextstep-article li {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 8px 0;
+  color: #222;
 }
 
-.beos-statusbar {
-  background: #e6e6e6;
+/* Status Bar */
+.nextstep-statusbar {
+  background: linear-gradient(180deg, #d0d0d0 0%, #b8b8b8 100%);
   border-top: 1px solid #999;
-  padding: 4px 8px;
-  font-size: 10px;
+  padding: 4px 12px;
+  font-size: 11px;
+  color: #222;
   display: flex;
   gap: 12px;
-  color: #000;
 }
 
-.status-divider {
-  color: #999;
-}
-
-/* BeOS Deskbar */
-.beos-deskbar {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  max-width: 600px;
-  height: 32px;
-  background: linear-gradient(180deg, #ffcc00 0%, #ff9900 100%);
-  border: 1px solid #cc7700;
-  border-bottom: none;
-  border-right: none;
-  border-radius: 8px 0 0 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 8px;
-  box-shadow: -2px -2px 6px rgba(0,0,0,0.3);
-  z-index: 1000;
-}
-
-.deskbar-left {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.deskbar-leaf {
-  font-size: 18px;
-  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
-}
-
-.deskbar-label {
-  font-size: 11px;
-  font-weight: bold;
-  color: #000;
-}
-
-.deskbar-center {
-  flex: 1;
-  display: flex;
-  gap: 4px;
-  padding: 0 12px;
-}
-
-.deskbar-app {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 12px;
-  background: rgba(255,255,255,0.3);
-  border: 1px solid rgba(0,0,0,0.2);
-  border-radius: 3px;
-  font-size: 11px;
-  color: #000;
-}
-
-.deskbar-app.active {
-  background: rgba(255,255,255,0.5);
-}
-
-.app-icon {
-  font-size: 14px;
-}
-
-.deskbar-right {
-  font-size: 10px;
-  font-weight: bold;
-  color: #000;
-  padding: 2px 8px;
-  background: rgba(255,255,255,0.3);
-  border: 1px solid rgba(0,0,0,0.2);
-  border-radius: 3px;
+.status-sep {
+  color: #666;
 }
 
 @media (max-width: 768px) {
-  .beos-window {
-    height: calc(100vh - 80px);
+  .nextstep-desktop {
+    padding: 10px;
+    padding-right: 80px;
   }
 
-  .beos-icon-bar {
-    width: 60px;
+  .nextstep-shelf {
+    width: 64px;
   }
 
-  .nav-icon-image {
+  .shelf-app {
     font-size: 24px;
   }
 
-  .beos-main-content {
-    padding: 16px;
+  .nextstep-content {
+    padding: 20px;
   }
 
-  .beos-deskbar {
-    max-width: 100%;
-    border-radius: 0;
+  .nextstep-article h1 {
+    font-size: 24px;
   }
 
-  .deskbar-label {
-    display: none;
+  .nextstep-article h2 {
+    font-size: 20px;
   }
 }
 </style>
