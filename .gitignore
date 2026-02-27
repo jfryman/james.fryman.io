@@ -1,1 +1,14 @@
+# Hugo build output
+public/
+resources/_gen/
+.hugo_build.lock
+
+# Generated resume formats (built from data/resume.yaml)
+static/jamesfryman-resume.json
+static/jamesfryman-resume.md
+static/jamesfryman-resume.pdf
+static/jamesfryman-resume.xml
+static/jamesfryman-resume.yaml
+
+# OS
 .DS_Store
