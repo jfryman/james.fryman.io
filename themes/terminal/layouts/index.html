@@ -96,7 +96,6 @@
     <!-- Status Line -->
     <div class="vim-statusline">
       <span class="vim-status-left">james.fryman.io</span>
-      <span class="vim-status-right">Press : for commands | Alt+Letter for menu</span>
     </div>
   </div>
 
@@ -548,7 +547,7 @@ body[data-theme="solarized-light"] {
 
 .vim-statusline {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 0.5rem 2rem;
   margin-top: 1rem;
   color: var(--status-fg);
@@ -581,7 +580,7 @@ body[data-theme="solarized-light"] {
 
 .vim-menu-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
