@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resume>
+  <name>James Fryman</name>
+  <title>Principal DevOps Engineer</title>
+  <location>Nashville, TN</location>
+  <contact>
+    <email>james@fryman.io</email>
+    <phone>615-973-9847</phone>
+    <website>https://fryman.io</website>
+    <github>https://github.com/jfryman</github>
+    <linkedin>https://www.linkedin.com/in/jamesfryman</linkedin>
+  </contact>
+  <about>Engineering leader and DevOps architect who bridges the gap between technical  excellence and human potential. I transform engineering organizations by crafting  efficient systems and cultivating high-performing teams. My approach combines deep  technical expertise with a keen understanding of how people work best, enabling  teams to focus on innovation rather than infrastructure. I thrive on challenges  that require both technical innovation and organizational transformation, always  with the goal of empowering engineers to do their best work.</about>
+  <skills>
+    <skill>3D Printing</skill>
+    <skill>AutoCAD Mechanical</skill>
+    <skill>Printed Circuit Board (PCB) Design</skill>
+    <skill>Kubernetes</skill>
+    <skill>Platform Engineering</skill>
+    <skill>DevOps</skill>
+    <skill>Infrastructure Automation</skill>
+    <skill>CI/CD</skill>
+    <skill>Terraform</skill>
+    <skill>Python</skill>
+    <skill>GoLang</skill>
+    <skill>Elixir</skill>
+  </skills>
+  <experience>
+    <position>
+      <title>Principal Member of Technical Staff</title>
+      <company>Salesforce</company>
+      <period>May 2021 — Present</period>
+      <location>Nashville Metropolitan Area</location>
+      <description>Led technical architecture and development of Salesforce Code Builder through Beta and GA launches.  Architected custom Kubernetes Operator in GoLang, served as primary technical liaison for AWS  partnership, led 12 engineers across three teams, and pioneered Elixir adoption within Hyperforce platform.</description>
+    </position>
+    <position>
+      <title>Founder & Principal Engineer</title>
+      <company>Frykin Industries, Incorporated</company>
+      <period>January 2022 — Present</period>
+      <location>Nolensville, Tennessee</location>
+      <description>Specialized engineering and manufacturing consultancy. Engineer custom PCB drive controllers for  electric vehicle conversions with CAN bus communication, operate advanced 3D printing facility,  design legacy automotive components through reverse engineering (Fusion 360).</description>
+    </position>
+    <position>
+      <title>Sr. Staff Engineer, Platform Engineering</title>
+      <company>Ripple</company>
+      <period>December 2019 — April 2021</period>
+      <location>San Francisco, California</location>
+      <description>Scaled Platform Engineering team from 3 to 9 engineers. Architected and launched Platform v2  (comprehensive Kubernetes migration). Developed custom Platform Operator using operator-sdk.  Established Kubernetes training program across global teams (Iceland, India, UK, US).</description>
+    </position>
+    <position>
+      <title>Technical Operations Engineer</title>
+      <company>Ripple</company>
+      <period>November 2018 — December 2019</period>
+      <location>San Francisco Bay Area</location>
+      <description>Authored business case for Platform Engineering team creation. Pioneered Kubernetes adoption,  reducing customer integration costs by $250K annually. Architected GCP infrastructure for data  analytics. Enhanced infrastructure security with automated certificate management (Salt + Vault).</description>
+    </position>
+    <position>
+      <title>President</title>
+      <company>The Bikeshed, LLC</company>
+      <period>October 2014 — October 2020</period>
+      <location>Nashville, TN</location>
+      <description>Co-working center and technology incubator. Managed Makerspace with prototyping tools  (electronics, 3D printing). Hosted cloud infrastructure for members and hackerspace meetups.</description>
+    </position>
+    <position>
+      <title>Lead System Engineer</title>
+      <company>NationBuilder</company>
+      <period>November 2017 — October 2018</period>
+      <location>Greater Los Angeles Area</location>
+      <description>Drove infrastructure maturity and data integrity within PostgreSQL tier. Implemented  zero-downtime schema deploys. Upgraded Puppet v3 → v5 with CI/CD and testing tools.  Deployed Rundeck for workflow automation, implemented DataDog for unified logging and metrics.</description>
+    </position>
+    <position>
+      <title>Sr. Software Engineer / Evangelist</title>
+      <company>Puppet</company>
+      <period>March 2017 — October 2017</period>
+      <location>Portland, Oregon Area</location>
+      <description>Developer on Lumogon Project (https://lumogon.com). Built serverless SaaS infrastructure with  AWS Lambda, ElasticBeanstalk, and DynamoDB. Designed CI/CD workflows with AutoDeploy. Worked  on Puppet Discovery, porting Clojure to Golang and deploying via GCE/Kubernetes/Helm.</description>
+    </position>
+    <position>
+      <title>Infrastructure Product Owner</title>
+      <company>Auth0</company>
+      <period>March 2016 — January 2017</period>
+      <location>Greater Seattle Area</location>
+      <description>Led team to implement instrumentation and metrics across primary application. Implemented  Site Reliability Engineering practice, scaling two-person ops team into organized SRE function.  Organized workstreams: Support/Growth, Stability/Maintenance, Common Tools, CI/CD. Implemented on-call program.</description>
+    </position>
+    <position>
+      <title>DevOps Stormer</title>
+      <company>StackStorm</company>
+      <period>November 2014 — February 2016</period>
+      <location>San Francisco Bay Area</location>
+      <description>Designed and built world's first enterprise ChatOps solution. Worldwide evangelism of event-driven  automation. Worked with development team to design and deliver ChatOps features. Organized and  managed integration team. Built first on-premise appliance installation.</description>
+    </position>
+    <position>
+      <title>Operations Hacker</title>
+      <company>GitHub</company>
+      <period>October 2012 — October 2014</period>
+      <location>San Francisco, California</location>
+      <description>24/7 Operations team for github.com, gist.github.com, and other properties. Optimized and extended  Puppet operational usage, integrated with ChatOps. Traveled worldwide sharing large-scale  infrastructure best practices. Helped grow server footprint from ~100 cloud nodes to mixed cloud/datacenter.</description>
+    </position>
+    <position>
+      <title>Technology Strategist</title>
+      <company>Fryman and Associates, Inc</company>
+      <period>July 2011 — October 2013</period>
+      <location>Nashville, TN</location>
+      <description>Small business consultancy focused on: CTO as a service (strategy advice for startups), DevOps  transformations (weekly/monthly deploys → daily+), Technology delivery (Chef, Puppet, Cfengine, AWS, Ruby on Rails).</description>
+    </position>
+    <position>
+      <title>Professional Services Engineer</title>
+      <company>Puppet Labs, Inc.</company>
+      <period>April 2011 — July 2011</period>
+      <location>Portland, Oregon Area</location>
+      <description>On-site classroom training (3-day course) on Puppet usage. Helped clients bootstrap and optimize  Puppet installations from 50+ nodes to 5000+ node deployments.</description>
+    </position>
+    <position>
+      <title>Sr. Network Operations Manager</title>
+      <company>Asurion</company>
+      <period>November 2009 — April 2011</period>
+      <location>Nashville, TN</location>
+      <description>Daily operational management of enterprise systems. Created business plan for strategic offshoring,  reducing operating costs by $1.5M over 3 years. Migrated NOC from US to Philippines on-time and  under-budget with aggressive 6-month timeline.</description>
+    </position>
+    <position>
+      <title>Security Manager</title>
+      <company>Asurion</company>
+      <period>August 2008 — November 2009</period>
+      <location>Nashville, TN</location>
+      <description>Strategic planning for Security Department (Physical Security, Investigations, Internal Fraud,  Technical Security, Administration). Maintained regulatory and contractual compliance. Led  organization through major audits (ISO17799, PCI requirements). Process optimization via Lean-Thinking.</description>
+    </position>
+    <position>
+      <title>Sr. Security Analyst</title>
+      <company>Asurion</company>
+      <period>April 2007 — August 2008</period>
+      <location>Nashville, TN</location>
+      <description>Planned and led company-wide PCI-DSS v1.2 compliance initiative by 12/2008. Transformed security  metrics for management visibility. Guided management decisions through layered security (host and  network). Mentored team in security practices and risk-based approaches.</description>
+    </position>
+    <position>
+      <title>Security Architect</title>
+      <company>Asurion</company>
+      <period>July 2006 — April 2007</period>
+      <location>Nashville, TN</location>
+      <description>Developed security standards for 1500+ servers (Windows 2000/2003, RedHat Linux) in compliance  with PCI-DSS v1.1 and ISO17799. Designed and implemented hardening standards. Implemented ground-floor  RedHat Linux infrastructure with layered security (iptables, kernel hardening, RBAC via Kickstart).</description>
+    </position>
+    <position>
+      <title>Information Technology Manager</title>
+      <company>Credit Control Corporation</company>
+      <period>January 2005 — July 2006</period>
+      <location>Nashville, TN</location>
+      <description>Full responsibility for Windows 2003 servers (AD, Exchange) interconnected with Linux RedHat and AS/400.  Implemented security policy (HIPAA/GLBA/PCI compliant). Reduced operating costs $250K/year with automated  client-server call center design. Introduced VMWare virtualization, increasing utilization by 40%.</description>
+    </position>
+    <position>
+      <title>Independent Consultant</title>
+      <company>Desktop Success</company>
+      <period>July 1997 — August 2003</period>
+      <location>Nashville, TN</location>
+      <description>Computer repair, diagnosis, and analysis for local businesses, individuals, and U.S. government.  IT consultation (virus concerns, server recommendations, network planning). Maintained numerous small  networks. Migrated single-user Access database to multi-user SQL database.</description>
+    </position>
+  </experience>
+  <publications>
+    <publication>
+      <title>Design Patterns in Configuration Management</title>
+      <publisher>null</publisher>
+      <date>May 2014</date>
+      <role>Author</role>
+    </publication>
+    <publication>
+      <title>DevOps: Day 2 — People and Process</title>
+      <publisher>null</publisher>
+      <date>October 2014</date>
+      <role>Speaker</role>
+    </publication>
+    <publication>
+      <title>ChatOps for Dummies</title>
+      <publisher>Wiley Publishing</publisher>
+      <date>April 2015</date>
+      <role>Foreword and contributor</role>
+    </publication>
+    <publication>
+      <title>Puppet Cookbook, 3rd Edition</title>
+      <publisher>Packt Publishing</publisher>
+      <date>February 2015</date>
+      <role>Technical reviewer</role>
+    </publication>
+    <publication>
+      <title>Puppet Reporting and Monitoring</title>
+      <publisher>Packt Publishing</publisher>
+      <date>June 2014</date>
+      <role>Technical reviewer</role>
+    </publication>
+  </publications>
+  <speaking>
+    <talk>
+      <title>ChatOps: Technology and Philosophy</title>
+      <date>January 2015</date>
+      <video>https://www.youtube.com/watch?v=37LmuHToYjQ</video>
+    </talk>
+    <talk>
+      <title>DevOps: Day 2 — People and Process</title>
+      <event>DevOpsDays Berlin</event>
+      <date>October 2014</date>
+      <video>http://vimeo.com/110484640</video>
+    </talk>
+    <talk>
+      <title>Design Patterns in Configuration Management</title>
+      <date>May 2014</date>
+    </talk>
+  </speaking>
+  <volunteer>
+    <position>
+      <organization>Nashville Software School</organization>
+      <role>Mentor</role>
+      <period>July 2014 — July 2017</period>
+    </position>
+  </volunteer>
+</resume>
