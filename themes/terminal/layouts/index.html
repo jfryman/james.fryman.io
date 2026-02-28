@@ -48,9 +48,26 @@
             <span class="contact-icon linkedin-icon"></span>
             <span>LinkedIn</span>
           </a>
+          <a href="https://bsky.app/profile/jfryman.bsky.social" target="_blank" class="menu-link contact-link">
+            <span class="contact-icon bluesky-icon"></span>
+            <span>Bluesky</span>
+          </a>
+          <a href="https://hachyderm.io/@jfryman" target="_blank" class="menu-link contact-link">
+            <span class="contact-icon mastodon-icon"></span>
+            <span>Mastodon</span>
+          </a>
+          <a href="https://www.instagram.com/jamesfryman/" target="_blank" class="menu-link contact-link">
+            <span class="contact-icon instagram-icon"></span>
+            <span>Instagram</span>
+          </a>
           <a href="https://x.com/jfryman" target="_blank" class="menu-link contact-link">
             <span class="contact-icon twitter-icon"></span>
             <span>X / Twitter</span>
+          </a>
+          <div class="menu-divider"></div>
+          <a href="https://fitzprints.co" target="_blank" class="menu-link contact-link">
+            <span class="contact-icon fitz-icon"></span>
+            <span>Fitz Prints</span>
           </a>
         </div>
       </div>
@@ -122,6 +139,10 @@
           <li><code>:github</code> — <a href="https://github.com/jfryman" target="_blank">github.com/jfryman</a></li>
           <li><code>:linkedin</code> — <a href="https://www.linkedin.com/in/jamesfryman/" target="_blank">linkedin.com/in/jamesfryman</a></li>
           <li><code>:twitter</code> — <a href="https://x.com/jfryman" target="_blank">@jfryman</a></li>
+          <li><code>:bluesky</code> — <a href="https://bsky.app/profile/jfryman.bsky.social" target="_blank">jfryman.bsky.social</a></li>
+          <li><code>:mastodon</code> — <a href="https://hachyderm.io/@jfryman" target="_blank">hachyderm.io/@jfryman</a></li>
+          <li><code>:instagram</code> — <a href="https://www.instagram.com/jamesfryman/" target="_blank">instagram.com/jamesfryman</a></li>
+          <li><code>:fitz</code> — <a href="https://fitzprints.co" target="_blank">fitzprints.co</a></li>
         </ul>
       </div>
       <div class="vim-menu-section">
@@ -159,6 +180,11 @@
     'linkedin': 'https://www.linkedin.com/in/jamesfryman/',
     'twitter': 'https://x.com/jfryman',
     'x': 'https://x.com/jfryman',
+    'bluesky': 'https://bsky.app/profile/jfryman.bsky.social',
+    'mastodon': 'https://hachyderm.io/@jfryman',
+    'instagram': 'https://www.instagram.com/jamesfryman/',
+    'fitzprints': 'https://fitzprints.co',
+    'fitz': 'https://fitzprints.co',
     'help': () => helpMenu.classList.remove('hidden'),
     'q': () => window.close(),
     'quit': () => window.close()
@@ -455,6 +481,26 @@ body[data-theme="solarized-light"] {
 
 .twitter-icon {
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23fff"><rect x="3" y="3" width="2" height="2"/><rect x="5" y="5" width="2" height="2"/><rect x="7" y="7" width="2" height="2"/><rect x="9" y="9" width="2" height="2"/><rect x="11" y="11" width="2" height="2"/><rect x="9" y="3" width="2" height="2"/><rect x="7" y="5" width="2" height="2"/><rect x="3" y="11" width="2" height="2"/><rect x="5" y="9" width="2" height="2"/></svg>') center/contain no-repeat;
+}
+
+/* Bluesky - butterfly/cloud icon */
+.bluesky-icon {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23fff"><rect x="3" y="7" width="2" height="2"/><rect x="11" y="7" width="2" height="2"/><rect x="5" y="5" width="2" height="2"/><rect x="9" y="5" width="2" height="2"/><rect x="7" y="3" width="2" height="2"/><rect x="7" y="9" width="2" height="2"/><rect x="5" y="11" width="6" height="2"/></svg>') center/contain no-repeat;
+}
+
+/* Mastodon - elephant trunk icon */
+.mastodon-icon {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23fff"><rect x="4" y="3" width="8" height="2"/><rect x="4" y="5" width="2" height="4"/><rect x="10" y="5" width="2" height="4"/><rect x="6" y="9" width="4" height="2"/><rect x="7" y="11" width="2" height="2"/><rect x="2" y="7" width="2" height="4"/></svg>') center/contain no-repeat;
+}
+
+/* Instagram - camera icon */
+.instagram-icon {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23fff"><rect x="3" y="4" width="10" height="8"/><rect x="2" y="5" width="12" height="6" fill="%2300a"/><circle cx="8" cy="8" r="2" fill="%23fff"/><rect x="11" y="6" width="1" height="1"/></svg>') center/contain no-repeat;
+}
+
+/* Fitz Prints - 3D printer icon */
+.fitz-icon {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23fff"><rect x="4" y="2" width="8" height="2"/><rect x="3" y="4" width="10" height="2"/><rect x="5" y="6" width="6" height="2"/><rect x="6" y="8" width="4" height="2"/><rect x="7" y="10" width="2" height="2"/><rect x="3" y="12" width="10" height="2"/></svg>') center/contain no-repeat;
 }
 
 /* Main container */
