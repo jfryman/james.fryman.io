@@ -87,6 +87,20 @@ echo "✓ JSON: $OUTPUT_DIR/${BASENAME}.json"
     fi
   done
   
+  # Projects section (if present)
+  num_proj=$(yq '.projects | length' "$DATA_FILE" 2>/dev/null || echo 0)
+  if [ "$num_proj" != "0" ] && [ "$num_proj" != "null" ]; then
+    echo "## Projects"
+    echo ""
+    for ((i=0; i<num_proj; i++)); do
+      echo "### $(yq ".projects[$i].title" "$DATA_FILE")"
+      echo "$(yq ".projects[$i].period" "$DATA_FILE")"
+      echo ""
+      yq ".projects[$i].description" "$DATA_FILE"
+      echo ""
+    done
+  fi
+
   echo "## Volunteer"
   echo ""
   num_vol=$(yq '.volunteer | length' "$DATA_FILE")
