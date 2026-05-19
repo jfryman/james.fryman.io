@@ -10,7 +10,7 @@ james@fryman.io · 615-973-9847 · [Website](https://james.fryman.io) · [GitHub
 
 ## About
 
-Staff-level infrastructure and platform engineer with 20+ years building, scaling, and operating distributed systems. Pioneered ChatOps at GitHub and StackStorm, authored "ChatOps for Dummies," and now builds autonomous AI agent infrastructure running Claude in production daily. Deep expertise in Kubernetes (custom operators, operator-sdk), platform engineering, SRE practices, and developer experience tooling. Career through-line: making computers work for humans in human spaces — from ChatOps to agentic computing. US Citizen.
+Staff-level infrastructure and platform engineer with 20+ years building, scaling, and operating distributed systems. Experienced the emergence of ChatOps at GitHub, collaborated on "ChatOps for Dummies" (Wiley, 2015), and spent a decade evangelizing and commercializing that philosophy. Now builds autonomous AI agent infrastructure running Claude in production daily. Deep expertise in Kubernetes (custom operators, operator-sdk), platform engineering, SRE practices, and developer experience tooling. Career through-line: making computers work for humans in human spaces — from ChatOps to agentic computing. US Citizen.
 
 ## Skills
 
