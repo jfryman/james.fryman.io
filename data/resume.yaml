@@ -75,17 +75,6 @@ experience:
       Built enterprise ChatOps product from concept to on-premise appliance deployment. 
       Worldwide evangelism: conference keynotes, customer deployments, community building.
 
-  - title: "Operations Hacker"
-    company: "GitHub"
-    period: "October 2012 — October 2014"
-    location: "San Francisco, CA"
-    description: >
-      24/7 operations for github.com and gist.github.com during a period of explosive growth. 
-      Saw ChatOps invented; became its first external evangelist. Grew server footprint from 
-      ~100 cloud nodes to mixed cloud/datacenter infrastructure. Optimized Puppet configuration 
-      management integrated with ChatOps (Hubot). Published "Design Patterns in Configuration 
-      Management."
-
   - title: "Infrastructure Product Owner"
     company: "Auth0"
     period: "March 2016 — January 2017"
@@ -112,14 +101,99 @@ experience:
       upgrade with full CI/CD pipeline. Rundeck workflow automation and DataDog observability 
       implementation across the platform.
 
-  - title: "Security Architect → Sr. Network Operations Manager"
-    company: "Asurion"
-    period: "2006 — 2011"
+  - title: "Operations Hacker"
+    company: "GitHub"
+    period: "October 2012 — October 2014"
+    location: "San Francisco, CA"
+    description: >
+      24/7 operations for github.com and gist.github.com during a period of explosive growth. 
+      Saw ChatOps invented; became its first external evangelist. Grew server footprint from 
+      ~100 cloud nodes to mixed cloud/datacenter infrastructure. Optimized Puppet configuration 
+      management integrated with ChatOps (Hubot). Published "Design Patterns in Configuration 
+      Management."
+
+  - title: "Technology Strategist"
+    company: "Self-Employed"
+    period: "July 2011 — October 2013"
     location: "Nashville, TN"
     description: >
-      Progressive leadership from security analyst through architecture to operations management. 
-      PCI-DSS compliance across 1,500+ servers. Strategic offshoring initiative reducing operating 
-      costs by $1.5M over 3 years. Managed NOC migration from US to Philippines on-time and under-budget.
+      Personally owned small business focused on technology delivery in the greater Nashville 
+      area. Three core offerings: CTO-as-a-service providing strategy-level advice to early-stage 
+      startups and growth-phase companies; DevOps transformations helping companies restructure 
+      operations and development teams to move from weekly/monthly deploys to daily or more; 
+      technology delivery assisting teams with automated infrastructure (Chef, Puppet), 
+      autoscaling cloud (AWS), and application development (Ruby on Rails).
+
+  - title: "Professional Services Engineer"
+    company: "Puppet Labs"
+    period: "April 2011 — July 2011"
+    location: "Portland, OR"
+    description: >
+      Visited client sites and performed on-site classroom training (3-day course) on Puppet 
+      usage. Helped clients with initial bootstrap, setup, and optimization of Puppet 
+      installations of various sizes (50+ to 5,000+ nodes).
+
+  - title: "Sr. Network Operations Manager"
+    company: "Asurion"
+    period: "November 2009 — April 2011"
+    location: "Nashville, TN"
+    description: >
+      Daily operational management of all enterprise systems. Created business plan for 
+      strategic offshoring opportunity, reducing overall operating costs by $1.5M over 3 years. 
+      Successfully migrated NOC from US to Philippines on-time and under-budget with aggressive 
+      6-month timeline.
+
+  - title: "Security Manager"
+    company: "Asurion"
+    period: "August 2008 — November 2009"
+    location: "Nashville, TN"
+    description: >
+      Strategic planning of Asurion's Security Department including Physical Security, 
+      Investigations, Internal Fraud, Technical Security, and Security Administration. 
+      Reporting directly to the CSO. Led organization through major ISO 17799 and PCI audits. 
+      Executed process optimization focused on lean thinking and cross-training.
+
+  - title: "Sr. Security Analyst"
+    company: "Asurion"
+    period: "April 2007 — August 2008"
+    location: "Nashville, TN"
+    description: >
+      Planned and led company-wide PCI-DSS v1.2 compliance implementation. Created 
+      management metrics to translate effectiveness of Information Security program. 
+      Mentored team in security practices and risk-based approaches.
+
+  - title: "Security Architect"
+    company: "Asurion"
+    period: "July 2006 — April 2007"
+    location: "Nashville, TN"
+    description: >
+      Developed security standards for enterprise of 1,500+ servers in mixed Windows/Linux 
+      environment for PCI-DSS v1.1 and ISO 17799 compliance. Implemented ground-floor 
+      Linux infrastructure with layered security model. Designed Role Based Access Security 
+      in Active Directory. Integrated virtualization technologies (VMware ESX).
+
+  - title: "Information Technology Manager"
+    company: "Credit Control Corporation"
+    period: "January 2005 — July 2006"
+    location: "Nashville, TN"
+    description: >
+      Full responsibility as Manager and Administrator for Windows 2003 servers, Exchange, 
+      Linux RedHat, and AS/400 infrastructure. Reduced operating costs $250K/year by 
+      architecting client-server call center design automating payment processing. Saved 
+      $60K/year by creating Perl web interface to automate AS/400 report generation. 
+      Introduced virtualization (VMware) increasing server utilization by 40%. Managed 
+      HIPAA/GLBA and PCI compliance.
+
+  - title: "Independent Consultant"
+    company: "Desktop Success"
+    period: "July 1997 — August 2003"
+    location: "Remote"
+    description: >
+      Provided IT consulting, computer repair, and network services to local businesses, 
+      individual users, and U.S. government clients. Maintained numerous small networks. 
+      Migrated government clients to current systems and converted single-user Access 
+      databases to multi-user SQL. Maintained operations during emergencies including 
+      typhoons.
 
 projects:
   - title: "Agentic Computing Infrastructure"
@@ -137,7 +211,7 @@ education:
     field: "Information Technology"
 
   - institution: "Harding University"
-    degree: "Coursework"
+    degree: "Bachelor of Arts"
     field: "Mathematics / Psychology"
     period: "2003 — 2004"
 
