@@ -8,6 +8,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 DATA_FILE="$PROJECT_DIR/data/resume.yaml"
 OUTPUT_DIR="$PROJECT_DIR/static"
+CONTENT_DIR="$PROJECT_DIR/content"
 BASENAME="jamesfryman-resume"
 
 echo "Building resume formats from $DATA_FILE..."
@@ -113,6 +114,17 @@ echo "✓ JSON: $OUTPUT_DIR/${BASENAME}.json"
 } > "$OUTPUT_DIR/${BASENAME}.md"
 
 echo "✓ Markdown: $OUTPUT_DIR/${BASENAME}.md"
+
+# Generate Hugo content page (with frontmatter) from the static markdown
+{
+  echo '---'
+  echo 'title: "Resume"'
+  echo '---'
+  echo ''
+  cat "$OUTPUT_DIR/${BASENAME}.md"
+} > "$CONTENT_DIR/resume.md"
+
+echo "✓ Hugo page: $CONTENT_DIR/resume.md"
 
 # Generate XML from YAML
 {
