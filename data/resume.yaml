@@ -41,9 +41,9 @@ experience:
       platform running VS Code for Salesforce development, now the runtime powering 
       Salesforce Vibes AI. Architected custom Kubernetes Operator in Go to manage compute 
       session lifecycle, scaling to 1,200–1,400 daily concurrent sessions with 10,000–20,000 
-      peaks during Dreamforce. Led 12 engineers across three cross-functional teams. Pioneered 
-      Elixir adoption within Hyperforce platform for high-concurrency services. Primary 
-      technical liaison for AWS partnership.
+      peaks during Dreamforce. Led 12 engineers across three cross-functional teams. Drove Elixir platform adoption 
+      across the organization for an inherited technology choice, securing cross-team uptake 
+      and acquisition integration (Spiff). Primary technical liaison for AWS partnership.
 
   - title: "Sr. Staff Engineer, Platform Engineering"
     company: "Ripple"
