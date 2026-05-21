@@ -2,14 +2,4 @@
 title: "Projects"
 ---
 
-# Projects
-
-Things I've built, contributed to, and am currently working on.
-
-## Open Source
-
-Coming soon.
-
-## Personal Projects
-
-Coming soon.
+Things I've built and continue to build — at work, on the side, and after hours. A few of the current ones:
