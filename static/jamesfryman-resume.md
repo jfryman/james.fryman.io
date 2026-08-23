@@ -27,9 +27,9 @@ Staff-level infrastructure and platform engineer with 20+ years building, scalin
 ## Experience
 
 ### Principal Member of Technical Staff
-**Salesforce** · May 2021 — Present
+**Salesforce** · May 2021 — August 2026
 
-Led Salesforce Code Builder from initial planning through GA — a cloud compute  platform running VS Code for Salesforce development, now the runtime powering  Salesforce Vibes AI. Architected custom Kubernetes Operator in Go to manage compute  session lifecycle, scaling to 1,200–1,400 daily concurrent sessions with 10,000–20,000  peaks during Dreamforce. Led 12 engineers across three cross-functional teams. Pioneered  Elixir adoption within Hyperforce platform for high-concurrency services. Primary  technical liaison for AWS partnership.
+Led Salesforce Code Builder from initial planning through GA — a cloud compute  platform running VS Code for Salesforce development, now the runtime powering  Salesforce Vibes AI. Architected custom Kubernetes Operator in Go to manage compute  session lifecycle, scaling to 1,200–1,400 daily concurrent sessions with 10,000–20,000  peaks during Dreamforce. Led 12 engineers across three cross-functional teams. Drove Elixir platform adoption  across the organization for an inherited technology choice, securing cross-team uptake  and acquisition integration (Spiff). Primary technical liaison for AWS partnership.
 
 
 ### Sr. Staff Engineer, Platform Engineering
