@@ -58,4 +58,4 @@ I'm sad to have lost Allen. I'm glad the skills I've accumulated (CNC, laser, 3D
 
 The AI didn't grieve with me. It didn't know Allen. But it turned what would have been days of manual CAD work and trial-and-error fixturing into a single focused session. Without the jig, I'd be doing the rice method at scale, one casing at a time, hoping each one came out close enough. I'm not sure I could have finished in time. With the jig, I'm running batches. I have consistency. I have a margin, even if it's thin.
 
-Sometimes the best use of a tool is the one you didn't plan for.
+RIP Allen.
