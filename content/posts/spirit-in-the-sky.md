@@ -48,6 +48,10 @@ The carrier cradles have a deliberate bit of clearance (0.35mm radial) so the ca
 
 Bob Ross would call these happy accidents. I think Allen would have liked them. No two are identical. They're all his name, in his handwriting, but each one is its own thing.
 
+<video controls playsinline style="max-width: 100%; margin: 1.5em 0;">
+  <source src="/video/spirit-in-the-sky.mp4" type="video/mp4">
+</video>
+
 ## The Math
 
 At 28 casings per load (four carriers in the large base), I can process about 40 casings per hour. Two sides per casing, with a carrier swap in between. The casings arrive Wednesday or Thursday. The funeral is Saturday. The math works, but just barely. There's no buffer for a printer failure or a bad batch of spray.
