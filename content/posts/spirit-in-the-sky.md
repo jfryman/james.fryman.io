@@ -10,7 +10,9 @@ My father-in-law Allen passed away last week after a cardiac event. His funeral 
 
 After he died, my mother-in-law asked if I could engrave something for the service. I said yes before I fully understood what I was agreeing to. I was picturing a wooden urn, maybe some text on a keepsake box. Something I could knock out on the CNC in an evening.
 
-What she actually wanted was an engraved .30-06 bullet casing for every guest at the funeral. His name on one side, "Spirit in the Sky" on the other. Allen loved guns, and she wanted everyone who showed up to take home a piece of brass that meant something.
+What she actually wanted was an engraved .30-06 bullet casing for every guest at the funeral. Allen loved guns, and she wanted everyone who showed up to take home a piece of brass with his name on it.
+
+The other side was my wife's idea: "Spirit in the Sky." It's the song being played at the end of his funeral, and the way he wanted to be remembered if he left before everyone else did.
 
 So now I had a manufacturing problem with a hard deadline and no room to slip it.
 
