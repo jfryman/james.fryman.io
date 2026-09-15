@@ -3,6 +3,11 @@ languageCode = "en-us"
 title = "James Fryman"
 theme = "terminal"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
   description = "Technologist, Entrepreneur, Hacker and General Human"
   author = "James Fryman"
