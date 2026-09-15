@@ -8,7 +8,7 @@ description: "My father-in-law's funeral is Saturday. His wife asked me to engra
 
 My father-in-law Allen passed away last week after a cardiac event. His funeral is this Saturday.
 
-A few days before he died, my mother-in-law asked if I could engrave something for the service. I said yes before I fully understood what I was agreeing to. I was picturing a wooden urn, maybe some text on a keepsake box. Something I could knock out on the CNC in an evening.
+After he died, my mother-in-law asked if I could engrave something for the service. The family had held out hope to the end, so this was a conversation that only happened once it was over. I said yes before I fully understood what I was agreeing to. I was picturing a wooden urn, maybe some text on a keepsake box. Something I could knock out on the CNC in an evening.
 
 What she actually wanted was an engraved .30-06 bullet casing for every guest at the funeral. His name on one side, "Spirit in the Sky" on the other. Allen loved guns, and she wanted everyone who showed up to take home a piece of brass that meant something.
 
