@@ -60,6 +60,4 @@ At 28 casings per load (four carriers in the large base), I can process about 40
 
 I'm sad to have lost Allen. I'm glad the skills I've accumulated (CNC, laser, 3D printing, and yes, working with AI agents) are being put to use for something that matters to the people I love. This isn't a product. It's not a business. It's a guy in his garage with a laser and a deadline, trying to honor a request from his mother-in-law for her husband's funeral.
 
-The AI didn't grieve with me. It didn't know Allen. But it turned what would have been days of manual CAD work and trial-and-error fixturing into a single focused session. Without the jig, I'd be doing the rice method at scale, one casing at a time, hoping each one came out close enough. I'm not sure I could have finished in time. With the jig, I'm running batches. I have consistency. I have a margin, even if it's thin.
-
 RIP Allen.
