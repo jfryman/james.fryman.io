@@ -12,7 +12,7 @@ Not the same company. Two different companies, for two roles that are functional
 
 One company put me through a gauntlet. Six rounds over two months. Recruiter screen, founder chat, technical deep-dive, and then the main event: a six-hour panel. Four interviews in a trenchcoat pretending to be one round. Kubernetes internals, systems design, cross-functional scenarios, the whole "tell me what happens when you type gmail.com into a browser" bit. I rambled. I forgot things I've done for years. I picked the wrong story for my biggest professional failure and tried to spin it into a learning, and I could feel it not landing while the words were still coming out of my mouth. By the time I got to the founder conversation at the end, I knew they didn't want me. Generic rejection email the next day. Fair enough.
 
-The other company bought me beers. Twice. Maybe four hours total across two casual conversations with two people in my reporting chain. No technical gotchas. No whiteboard. No "describe the lifecycle of a Pod deletion in Kubernetes." They knew me through the community, knew what I'd built, and were willing to trust that I could do it again. Seven weeks from first conversation to a formal offer letter in my inbox.
+The other company bought me beers. The first conversation was casual, getting-to-know-you, over drinks. The second was two hours in front of a whiteboard, but it was discussion, not grilling. Ideas, not gotchas. I met their CTO for thirty minutes in that same block, and it was the same energy: sharing ideas, not testing me. Maybe four hours total across two meetings with a handful of people. They knew me through the community, knew what I'd built, and were willing to trust that I could do it again. Seven weeks from first conversation to a formal offer letter in my inbox.
 
 Same week. Same job. Completely different experiences based on one variable: trust.
 
@@ -48,7 +48,7 @@ This isn't a humble brag about being "too senior to whiteboard" or whatever. I g
 
 Here's the part I wasn't going to write, but it's the honest part, so here it is.
 
-I'm a new dad. My daughter was born in January. I got laid off when I came back from leave. Business decision, not personal, but try telling that to the version of you that's sleep-deprived and holding a newborn at 3 AM wondering how long the severance lasts.
+I'm a new dad. My daughter was born in November. I got laid off when I came back from leave. Business decision, not personal, but try telling that to the version of you that's sleep-deprived and holding a newborn at 3 AM wondering how long the severance lasts.
 
 My father-in-law died two weeks ago. I spent the week before his funeral [engraving bullet casings in my garage](/posts/spirit-in-the-sky/) for the service while fielding interview scheduling emails on my phone. That's the texture of a job search in 2026: grief and technical screens in the same afternoon.
 
