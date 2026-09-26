@@ -24,6 +24,8 @@ When a company knows you (through your work, your reputation, a referral from so
 
 When a company doesn't know you, the process becomes an interrogation. They can't trust that you can do what you say you can, so they need proof. Six rounds of proof. A take-home assignment's worth of proof. A six-hour panel's worth of proof. And the thing is, I get it. I've been burned by a bad hire I made after a chill interview. I understand why companies feel like they need the gauntlet.
 
+There's another dimension here too: proximity. The trust-based process worked partly because I'm local. "Let's grab beers" is a Tuesday afternoon, not a flight and a hotel. It's easy to build trust when you can sit across from someone and read the room. Remote candidates don't get that option. I wonder how much of the gauntlet exists because companies are trying to manufacture trust at a distance, and the only tool they have is more rounds.
+
 But the gauntlet doesn't work either.
 
 I was recently venting about this in a group chat with some friends and former colleagues. "How many rounds does it take nowadays?" I asked. "Onto round 6 with several companies this and next week." The responses were immediate and visceral. One friend summarized the industry's interview process as "profoundly useless." Another pointed out that he'd been hired after talking to two people, no coding interview, no whiteboard, and it worked out fine. Someone else noted that his current employer's "four rounds" actually contained two back-to-back coding exercises, which is its own kind of absurd.
@@ -70,6 +72,8 @@ The company that offered me the job understood this. They trusted their read on 
 
 The company that rejected me might have gotten a great hire out of their gauntlet. Or they might have selected for whoever performs best under artificial pressure, which is a skill that has nothing to do with the actual job. They'll find out too.
 
-I don't have a solution. I don't think there is one that scales. Trust doesn't scale. That's the whole problem.
+I don't have a solution. I don't even know if there is one. Trust doesn't scale. Proximity doesn't scale. And the gauntlet is what you get when you try to replace both with process.
+
+I'm just a guy who built platforms for twenty years, got laid off with a newborn, and spent four months watching the industry's hiring apparatus from the inside. These aren't conclusions. They're observations from someone who's still in the middle of it.
 
 But I know which process I'd rather be on both sides of. And I know which one actually told me something about what it would be like to work there.
