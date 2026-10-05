@@ -1,79 +1,101 @@
 ---
 title: "Trust and the Gauntlet"
-date: 2026-09-26
+date: 2026-10-05
 draft: true
 tags: ["career", "hiring", "interviews", "culture", "reflection"]
-description: "I got rejected by the company that grilled me for six hours and got an offer from the one that bought me beers. Same week. Same job. What does that tell us?"
+description: "I started writing this about trust beating the gauntlet. Then I turned down the trust offer and signed with a company that ran me through the gauntlet. I was counting the wrong thing."
 ---
 
-I got rejected and offered the same job on the same day.
+<!--
+  DRAFT NOTES (delete before publishing)
+  - Body is outcome-neutral. Pick ONE of the two endings at the bottom and delete the other.
+  - No company names anywhere. Group chat friends are paraphrased; only my own words are quoted.
+-->
 
-Not the same company. Two different companies, for two roles that are functionally identical: build a platform engineering team, ship CI/CD, automate the boring stuff, bring agents into the workflow. The work I've been doing for twenty years. The job description could have been a fork of the same repo.
+A couple weeks ago I started writing a post about how broken tech hiring is. The thesis was simple: companies that trust you run a conversation, companies that don't run a gauntlet, and the gauntlet doesn't work.
 
-One company put me through a gauntlet. Six rounds over two months. Recruiter screen, founder chat, technical deep-dive, and then the main event: a six-hour panel. Four interviews in a trenchcoat pretending to be one round. Kubernetes internals, systems design, cross-functional scenarios, the whole "tell me what happens when you type gmail.com into a browser" bit. I rambled. I forgot things I've done for years. I picked the wrong story for my biggest professional failure and tried to spin it into a learning, and I could feel it not landing while the words were still coming out of my mouth. By the time I got to the founder conversation at the end, I knew they didn't want me. Generic rejection email the next day. Fair enough.
+Then I turned down the offer that came from trust, and signed with a company that ran me through the gauntlet. So this isn't that post anymore.
 
-The other company bought me beers. The first conversation was casual, getting-to-know-you, over drinks. The second was two hours in front of a whiteboard, but it was discussion, not grilling. Ideas, not gotchas. I met their CTO for thirty minutes in that same block, and it was the same energy: sharing ideas, not testing me. Maybe four hours total across two meetings with a handful of people. They knew me through the community, knew what I'd built, and were willing to trust that I could do it again. Seven weeks from first conversation to a formal offer letter in my inbox.
+## The Gauntlet
 
-Same week. Same job. Completely different experiences based on one variable: trust.
+One company put me through six rounds over two months. Recruiter screen, founder chat, a technical deep-dive, and then a six-hour panel. Four interviews in a trenchcoat pretending to be one round.
 
-## The Trust Gap
+I rambled through Kubernetes internals. I struggled to explain how a Pod gets deleted programmatically, something I've done more times than I can count. I got the classic "tell me in as much detail as you'd like what happens when you type gmail.com into a browser." In the cross-functional round I tried to spin my biggest work failure into a learning, and I could feel it not landing while the words were still coming out. I walked into the final conversation with the founders feeling defeated, and a generic rejection showed up the next day.
 
-I've been thinking about this a lot, and I think it explains most of what's broken about tech hiring right now.
+I earned that one. I'm not a good interviewer. I bounce across stacks and frameworks, and I need time to research and validate before I speak with authority. That's how I work. It's also exactly what a six-hour panel with strangers doesn't allow for.
 
-When a company knows you (through your work, your reputation, a referral from someone they trust), the interview process is a conversation. They're trying to figure out if you're someone they want to work with, and you're trying to figure out the same thing about them. Two adults talking about work over coffee or beers. It's fast, it's human, it's how hiring worked before we decided to turn it into a competitive sport.
+## The Shortcut
 
-When a company doesn't know you, the process becomes an interrogation. They can't trust that you can do what you say you can, so they need proof. Six rounds of proof. A take-home assignment's worth of proof. A six-hour panel's worth of proof. And the thing is, I get it. I've been burned by a bad hire I made after a chill interview. I understand why companies feel like they need the gauntlet.
+The same day, I had a formal offer from a company that had taken me out for beers.
 
-There's another dimension here too: proximity. The trust-based process worked partly because I'm local. "Let's grab beers" is a Tuesday afternoon, not a flight and a hotel. It's easy to build trust when you can sit across from someone and read the room. Remote candidates don't get that option. I wonder how much of the gauntlet exists because companies are trying to manufacture trust at a distance, and the only tool they have is more rounds.
+The first conversation was over drinks. The second was two hours in front of a whiteboard, but it was discussion, not grilling. I met their CTO for thirty minutes in that same block, and it was idea sharing, not a test. They knew me from the community and what I'd built. Seven weeks from first conversation to offer.
 
-But the gauntlet doesn't work either.
+It was flattering, and it felt like hiring is supposed to feel. It also felt a little too easy. I kept thinking there had to be a catch.
 
-I was recently venting about this in a group chat with some friends and former colleagues. "How many rounds does it take nowadays?" I asked. "Onto round 6 with several companies this and next week." The responses were immediate and visceral. One friend summarized the industry's interview process as "profoundly useless." Another pointed out that he'd been hired after talking to two people, no coding interview, no whiteboard, and it worked out fine. Someone else noted that his current employer's "four rounds" actually contained two back-to-back coding exercises, which is its own kind of absurd.
+There wasn't a trick. But the picture I needed to actually decide came after the offer, not before it. Meeting more of the team, getting into the details of the role and the comp: that was where it got clear the job wasn't the right fit for me. All the speed and trust up front had skipped the part where both sides find out what they're actually signing up for.
 
-The consensus was grim: we have the dumbest interview process of any industry, and we've somehow made it worse over time.
+I'm turning it down. Not because they did anything wrong. Because the shortcut got me to "yes" before either of us had enough information to mean it.
 
-One friend put it best: two one-hour conversations should be enough. The first is "let's talk about what you've worked on and ruminate on what we're working on." The second is "let's talk about if this is a place where you want to work and are you normal." That's it. That's the whole process.
+## The Other Two
 
-I have one company like that out of six active threads. And it's the one that made me an offer.
+Meanwhile, two other companies were running me through long processes too. Five and six rounds. Technical questions, architecture, design, history questions about how I'd handled specific situations. By any count, gauntlets.
 
-## I'm a Bad Interviewer
+But they didn't feel like the six-hour panel. The rounds were conversations. People asked hard questions and then actually talked with me about the answers. One interviewer came back for a second round to dig into something, which honestly made me nervous, but it was curiosity, not a trap. By the end of both processes, the later rounds were less "prove it" and more "here's what working with us looks like."
 
-I should be honest about something: I'm not good at interviews. Not the content; the performance.
+Those are the two companies I ended up choosing between.
 
-I bounce across frameworks, stacks, languages, and platforms. I've been doing this for twenty years across eight companies. The breadth is the value proposition. But it also means I'm forgetting more over time than I remember, and when someone asks me to describe in detail how a Kubernetes Deployment works under the hood, I'm reaching for knowledge I used three jobs ago while trying to sound like I used it yesterday.
+## I Was Counting the Wrong Thing
 
-I ramble. I need time to research and validate before I speak with authority on something. In a conversation, I can do that. In a six-hour panel with strangers evaluating every sentence, I can't. I second-guess myself. I pick the wrong examples. I know the material, but I can't perform it on demand like a rehearsed monologue.
+My original draft treated the number of rounds as the problem. I'd been venting about it in a group chat with some friends. "How many rounds does it take nowadays?" I asked. "Onto round 6 with several companies this and next week." A couple of them argued that two one-hour conversations should be enough: one about the work, one about whether you'd want to work there and whether you're normal. Someone else said what every candidate actually wants is to meet the team, meet the boss, and get an answer.
 
-This isn't a humble brag about being "too senior to whiteboard" or whatever. I genuinely did poorly in that panel. I earned that rejection. But I also know that my inability to recite Pod deletion semantics under pressure has absolutely nothing to do with whether I can build and lead a platform team. Those are different skills, and we've conflated them.
+I agreed with all of it. "Honestly feels like I'm in a battle royale with all the other applicants," I said. "Last standing gets an offer."
 
-## The Feels
+I still think the volume is too much. But looking back across all of it, rounds weren't the variable that mattered. Whether both sides were learning something was.
 
-Here's the part I wasn't going to write, but it's the honest part, so here it is.
+- The six-hour panel was long and one-directional. They learned how I perform under pressure. I learned almost nothing about them.
+- The beers offer was short and warm. It felt like trust, but neither of us learned enough before the offer showed up.
+- The two long, conversational processes were the only ones where I came out the other side actually knowing what I'd be walking into, and they presumably knew the same about me.
 
-I'm a new dad. My daughter was born in November. I got laid off when I came back from leave. Business decision, not personal, but try telling that to the version of you that's sleep-deprived and holding a newborn at 3 AM wondering how long the severance lasts.
+The gauntlet isn't the problem. A gauntlet where only one side is allowed to ask questions is.
 
-My father-in-law died two weeks ago. I spent the week before his funeral [engraving bullet casings in my garage](/posts/spirit-in-the-sky/) for the service while fielding interview scheduling emails on my phone. That's the texture of a job search in 2026: grief and technical screens in the same afternoon.
+## A Thesis About Proximity
 
-I've been at this for four months. Six active threads at the peak, most of them requiring multiple rounds spread across weeks. The prep alone is a full-time job. Reading up on every company, every interviewer's background, every technology they might ask about. And then performing. And then waiting. And then doing it again.
+One more thread I keep pulling on, and I'll flag that it's a thesis, not a conclusion.
 
-The worst part isn't the rejection. It's the asymmetry. I can get rejected after six rounds and twenty hours of my time, or I can get an offer after two beers. For the same job. The process tells me almost nothing about the role, and the role tells me almost nothing about the process. It's random. It's broken.
+The casual processes I had were easier to run because of proximity. "Let's grab a beer" is a Tuesday afternoon when you're local, not a flight and a hotel. The conversational on-site I had involved getting on a plane, walking a facility, and having dinner with the team. That's expensive and slow, and it's how a lot of trust actually gets built.
 
-## What I Actually Want
+I suspect a lot of the gauntlet exists because companies are trying to manufacture that trust at a distance, and the only tool they have is more rounds. Some of them use the rounds to have real conversations. Some of them use the rounds to grade you.
 
-A friend in that group chat nailed it. As a candidate, what you actually want is:
+## The Context
 
-1. Meet the team.
-2. Meet the boss.
-3. Get an offer or don't.
+For the record, I did all of this as a new dad. My daughter was born in November, and I was laid off when I came back from leave. My father-in-law died in the middle of it, and I spent the week before his funeral [engraving bullet casings in my garage](/posts/spirit-in-the-sky/) while answering scheduling emails on my phone. Four months, six active threads at the peak.
 
-Everything else is theater. The coding exercises, the system design whiteboard, the behavioral questions with their STAR-format answers that everyone rehearses. It's all an attempt to manufacture certainty in a situation where certainty doesn't exist. Interviews have a slightly-better-than-coin-flip hit rate. We've just built an enormous, stressful, time-consuming apparatus around that coin flip.
+I'm grateful I had interviews at all. A lot of people right now don't. I also don't want to do this again anytime soon.
 
-The company that offered me the job understood this. They trusted their read on me as a person and a professional. They'll find out if they were right in the first six months, the same way every company does regardless of how many rounds they ran.
+<!-- ===================================================================== -->
+<!-- ENDING A: if I sign with the remote company (5 rounds, all remote)     -->
+<!-- ===================================================================== -->
 
-The company that rejected me might have gotten a great hire out of their gauntlet. Or they might have selected for whoever performs best under artificial pressure, which is a skill that has nothing to do with the actual job. They'll find out too.
+## Where I Landed
 
-I don't have a solution. I don't even know if there is one. Trust doesn't scale. Proximity doesn't scale. And the gauntlet is what you get when you try to replace both with process.
+I'm joining the company that ran me through five rounds without ever meeting me in person.
 
-I'm just a guy who built platforms for twenty years, got laid off with a newborn, and spent four months watching the industry's hiring apparatus from the inside. These aren't conclusions. They're observations from someone who's still in the middle of it.
+If you'd asked me a month ago, I'd have told you that was the problem. Five rounds, all on video, with someone new each time. One of my later interviewers was surprised by how many people I'd already talked to. But by the last round, the person across from me spent most of the hour telling me why I should come work there. That's not a gauntlet. That's a long conversation with a lot of people who each wanted to know something different.
 
-But I know which process I'd rather be on both sides of. And I know which one actually told me something about what it would be like to work there.
+It turns out you can build trust at a distance. It just takes more rounds, and it only works if the rounds go both ways.
+
+I don't have a fix for hiring. I'm just a guy who builds platforms, got laid off with a newborn, and spent four months watching the process from the inside. These are observations, not answers.
+
+<!-- ===================================================================== -->
+<!-- ENDING B: if I sign with the in-person company (on-site, factory tour) -->
+<!-- ===================================================================== -->
+
+## Where I Landed
+
+I'm joining the company that flew me out.
+
+Their process was long too: technical rounds, architecture, history questions, an interviewer who came back for more. Then the last step was an on-site that was mostly walking a manufacturing floor, casual conversations, and dinner with whoever on the team was free that night. By then I don't think they were testing whether I could do the job. They wanted to know if they'd like working with me, and I wanted the same answer about them.
+
+That's the proximity thesis in practice. They used the rounds to confirm I could do the work, and they used the room to find out whether we'd get along. ([I wrote a little about that trip already.](/posts/detroit/))
+
+I don't have a fix for hiring. I'm just a guy who builds platforms, got laid off with a newborn, and spent four months watching the process from the inside. These are observations, not answers.
