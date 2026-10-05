@@ -84,8 +84,6 @@ If you'd asked me a month ago, I'd have told you that was the problem. Five roun
 
 It turns out you can build trust at a distance. It just takes more rounds, and it only works if the rounds go both ways.
 
-I don't have a fix for hiring. I'm just a guy who builds platforms, got laid off with a newborn, and spent four months watching the process from the inside. These are observations, not answers.
-
 <!-- ===================================================================== -->
 <!-- ENDING B: if I sign with the in-person company (on-site, factory tour) -->
 <!-- ===================================================================== -->
@@ -97,5 +95,3 @@ I'm joining the company that flew me out.
 Their process was long too: technical rounds, architecture, history questions, an interviewer who came back for more. Then the last step was an on-site that was mostly walking a manufacturing floor, casual conversations, and dinner with whoever on the team was free that night. By then I don't think they were testing whether I could do the job. They wanted to know if they'd like working with me, and I wanted the same answer about them.
 
 That's the proximity thesis in practice. They used the rounds to confirm I could do the work, and they used the room to find out whether we'd get along. ([I wrote a little about that trip already.](/posts/detroit/))
-
-I don't have a fix for hiring. I'm just a guy who builds platforms, got laid off with a newborn, and spent four months watching the process from the inside. These are observations, not answers.
