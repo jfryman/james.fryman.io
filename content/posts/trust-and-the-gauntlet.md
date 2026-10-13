@@ -7,9 +7,13 @@ tags: ["career", "hiring", "interviews", "culture", "reflection", "layoffs"]
 description: "128 applications, three offers, one yes. I knew the job market was bad. Living it was something else."
 ---
 
-Over the last four months I applied to 128 jobs. Most never answered. Eight turned into a recruiter call, four made it to a final round with leadership, and three ended in an offer. I took one.
+Over the last four months, I was tossed headfirst into the job market that is 2026. It was chaotic to say the least, anxiety-inducing to say the most, and generally an unpleasant time altogether.
+
+I applied to 128 jobs. Most never answered. Eight turned into a recruiter call, four made it to a final round with leadership, and three ended in an offer. I took one.
 
 ![128 applications to 1 accepted offer](/images/job-search-sankey.svg)
+
+The only times I actually got in front of someone for a real interview came through my network, or for a role where my résumé matched the job almost exactly. Everything else was screaming into a void. I'm super thankful my network showed up, because based on what I just went through, I don't know that there was another way in.
 
 A couple weeks ago I started writing a post about how broken tech hiring is. The thesis was simple: companies that trust you run a conversation, companies that don't run a gauntlet, and the gauntlet doesn't work.
 
