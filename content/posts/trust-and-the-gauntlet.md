@@ -1,16 +1,11 @@
 ---
-title: "Knowledge vs Awareness: Layoffs and Looking for Work in 2026"
-date: 2026-10-05
-draft: true
+title: "Knowing It vs Living It: Layoffs and Looking for Work in 2026"
+slug: "knowing-it-vs-living-it"
+date: 2026-10-13
+draft: false
 tags: ["career", "hiring", "interviews", "culture", "reflection", "layoffs"]
-description: "128 applications, four months, three offers, one yes. I started out writing about broken hiring processes and ended up writing about the people on both sides of the table."
+description: "128 applications, three offers, one yes. I knew the job market was bad. Living it was something else."
 ---
-
-<!--
-  DRAFT NOTES (delete before publishing)
-  - No company names anywhere. Group chat friends are paraphrased; only my own words are quoted.
-  - Bump `date` to the publish date.
--->
 
 Over the last four months I applied to 128 jobs. Most never answered. Eight turned into a recruiter call, four made it to a final round with leadership, and three ended in an offer. I took one.
 
