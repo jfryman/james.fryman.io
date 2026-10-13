@@ -12,6 +12,12 @@ description: "I started writing this about trust beating the gauntlet. Then I tu
   - No company names anywhere. Group chat friends are paraphrased; only my own words are quoted.
 -->
 
+Over the last four months I applied to 128 jobs. Most never answered. Eight turned into a recruiter call, four made it to a final round with leadership, and three ended in an offer. I took one.
+
+![128 applications to 1 accepted offer](/images/job-search-sankey.svg)
+
+This post is about the end of that funnel.
+
 A couple weeks ago I started writing a post about how broken tech hiring is. The thesis was simple: companies that trust you run a conversation, companies that don't run a gauntlet, and the gauntlet doesn't work.
 
 Then I turned down the offer that came from trust, and signed with a company that ran me through the gauntlet. So this isn't that post anymore.
