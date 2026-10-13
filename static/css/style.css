@@ -171,3 +171,9 @@ footer {
   .terminal-body { padding: 1rem; }
   .links-list { flex-direction: column; gap: .5rem; }
 }
+
+/* Keep images inside the viewport on small screens */
+img {
+  max-width: 100%;
+  height: auto;
+}
