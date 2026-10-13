@@ -49,7 +49,7 @@ Then I got laid off, the sure thing fell through, and I was suddenly face to fac
 
 I went all over the place with the kinds of jobs I applied for. For the last two or three years at my last job, I'd been trying to make the jump to architect, so I wasn't keen on a lateral move. But I also know I can do managerial work. I've been a senior manager, a team lead, and an individual contributor. So I cast a pretty wide net: places that needed Kubernetes experience, places that needed leadership of some sort.
 
-In most of my interviews I tried to talk about what I actually love: ChatOps, and how it intersects with AI. Over the last six months, agentic AI and harnesses have really come into their own and started doing interesting things, and that's where most of my learning has gone.
+In most of my interviews I tried to talk about what I actually love: ChatOps, and how it intersects with AI. Over the last six months, agentic AI and harnesses have really come into their own and started doing interesting things, and that's where most of my learning has gone. (I wrote about [where I've been using AI and what's come out of it](/posts/ai-psychosis/) a while back.)
 
 ## The Juggle
 
