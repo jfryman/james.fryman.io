@@ -1,24 +1,23 @@
 <svg height="800" width="600" xmlns="http://www.w3.org/2000/svg">
 <title>Job search: 128 applications to 1 accepted offer</title>
-<!-- Generated with SankeyMATIC: 10/13/2026, 8:45:38 AM -->
-<rect height="800" width="600" fill="#ffffff"></rect>
-<g transform="translate(100.98108,18)">
+<!-- Generated with SankeyMATIC: 10/13/2026, 8:47:54 AM -->
+<g transform="translate(12,18)">
 <g id="sankey_flows">
-<path id="flow0" d="M10 219.82058C194.21423 219.82058 194.21423 202.14006 378.42847 202.14006" fill="none" stroke-width="257.83359" stroke="#e377c2" opacity="0.45"><title>Applications → No Response: 115</title></path>
-<path id="flow2" d="M10 368.91565C32.0306 368.91565 32.0306 449.89037 54.06121 449.89037" fill="none" stroke-width="17.93625" stroke="#e377c2" opacity="0.45"><title>Applications → Recruiter Screen: 8</title></path>
-<path id="flow3" d="M64.06121 452.1324C86.09181 452.1324 86.09181 535.84277 108.12242 535.84277" fill="none" stroke-width="13.45219" stroke="#7f7f7f" opacity="0.45"><title>Recruiter Screen → Technical Screen: 6</title></path>
-<path id="flow1" d="M10 354.34245C194.21423 354.34245 194.21423 491.24586 378.42847 491.24586" fill="none" stroke-width="11.21016" stroke="#e377c2" opacity="0.45"><title>Applications → Rejected: 5</title></path>
-<path id="flow6" d="M118.12242 536.96379C140.15302 536.96379 140.15302 579.31207 162.18363 579.31207" fill="none" stroke-width="11.21016" stroke="#bcbd22" opacity="0.45"><title>Technical Screen → Culture Screen: 5</title></path>
-<path id="flow8" d="M172.18363 579.31207C194.21423 579.31207 194.21423 594.51209 216.24484 594.51209" fill="none" stroke-width="11.21016" stroke="#17becf" opacity="0.45"><title>Culture Screen → Team Screen: 5</title></path>
-<path id="flow9" d="M226.24484 595.63311C248.27544 595.63311 248.27544 627.79999 270.30605 627.79999" fill="none" stroke-width="8.96813" stroke="#ff7f0e" opacity="0.45"><title>Team Screen → Leadership Screen: 4</title></path>
-<path id="flow11" d="M280.30605 628.921C302.33665 628.921 302.33665 664.48864 324.36726 664.48864" fill="none" stroke-width="6.72609" stroke="#2ca02c" opacity="0.45"><title>Leadership Screen → Offer: 3</title></path>
-<path id="flow14" d="M334.36726 663.36763C356.39786 663.36763 356.39786 641.29825 378.42847 641.29825" fill="none" stroke-width="4.48406" stroke="#1f77b4" opacity="0.45"><title>Offer → Declined: 2</title></path>
-<path id="flow4" d="M64.06121 442.04326C221.24484 442.04326 221.24484 637.9352 378.42847 637.9352" fill="none" stroke-width="2.24203" stroke="#1f77b4" opacity="0.45"><title>Recruiter Screen → Declined: 1</title></path>
-<path id="flow5" d="M64.06121 444.28529C221.24484 444.28529 221.24484 332.17788 378.42847 332.17788" fill="none" stroke-width="2.24203" stroke="#bbbbbb" opacity="0.45"><title>Recruiter Screen → No Response: 1</title></path>
-<path id="flow7" d="M118.12242 530.2377C248.27544 530.2377 248.27544 334.41991 378.42847 334.41991" fill="none" stroke-width="2.24203" stroke="#bbbbbb" opacity="0.45"><title>Technical Screen → No Response: 1</title></path>
-<path id="flow10" d="M226.24484 590.02803C302.33665 590.02803 302.33665 497.97195 378.42847 497.97195" fill="none" stroke-width="2.24203" stroke="#d62728" opacity="0.45"><title>Team Screen → Rejected: 1</title></path>
-<path id="flow12" d="M280.30605 624.43694C329.36726 624.43694 329.36726 500.21398 378.42847 500.21398" fill="none" stroke-width="2.24203" stroke="#d62728" opacity="0.45"><title>Leadership Screen → Rejected: 1</title></path>
-<path id="flow13" d="M334.36726 666.73067C356.39786 666.73067 356.39786 688.7703 378.42847 688.7703" fill="none" stroke-width="2.24203" stroke="#2ca02c" opacity="0.45"><title>Offer → Accepted: 1</title></path>
+<path id="flow0" d="M10 219.82058C238.70477 219.82058 238.70477 202.14006 467.40955 202.14006" fill="none" stroke-width="257.83359" stroke="#e377c2" opacity="0.45"><title>Applications → No Response: 115</title></path>
+<path id="flow2" d="M10 368.91565C38.3864 368.91565 38.3864 449.89037 66.77279 449.89037" fill="none" stroke-width="17.93625" stroke="#e377c2" opacity="0.45"><title>Applications → Recruiter Screen: 8</title></path>
+<path id="flow3" d="M76.77279 452.1324C105.15919 452.1324 105.15919 535.84277 133.54558 535.84277" fill="none" stroke-width="13.45219" stroke="#7f7f7f" opacity="0.45"><title>Recruiter Screen → Technical Screen: 6</title></path>
+<path id="flow1" d="M10 354.34245C238.70477 354.34245 238.70477 491.24586 467.40955 491.24586" fill="none" stroke-width="11.21016" stroke="#e377c2" opacity="0.45"><title>Applications → Rejected: 5</title></path>
+<path id="flow6" d="M143.54558 536.96379C171.93198 536.96379 171.93198 579.31207 200.31838 579.31207" fill="none" stroke-width="11.21016" stroke="#bcbd22" opacity="0.45"><title>Technical Screen → Culture Screen: 5</title></path>
+<path id="flow8" d="M210.31838 579.31207C238.70477 579.31207 238.70477 594.51209 267.09117 594.51209" fill="none" stroke-width="11.21016" stroke="#17becf" opacity="0.45"><title>Culture Screen → Team Screen: 5</title></path>
+<path id="flow9" d="M277.09117 595.63311C305.47757 595.63311 305.47757 627.79999 333.86396 627.79999" fill="none" stroke-width="8.96813" stroke="#ff7f0e" opacity="0.45"><title>Team Screen → Leadership Screen: 4</title></path>
+<path id="flow11" d="M343.86396 628.921C372.25036 628.921 372.25036 664.48864 400.63675 664.48864" fill="none" stroke-width="6.72609" stroke="#2ca02c" opacity="0.45"><title>Leadership Screen → Offer: 3</title></path>
+<path id="flow14" d="M410.63675 663.36763C439.02315 663.36763 439.02315 641.29825 467.40955 641.29825" fill="none" stroke-width="4.48406" stroke="#1f77b4" opacity="0.45"><title>Offer → Declined: 2</title></path>
+<path id="flow4" d="M76.77279 442.04326C272.09117 442.04326 272.09117 637.9352 467.40955 637.9352" fill="none" stroke-width="2.24203" stroke="#1f77b4" opacity="0.45"><title>Recruiter Screen → Declined: 1</title></path>
+<path id="flow5" d="M76.77279 444.28529C272.09117 444.28529 272.09117 332.17788 467.40955 332.17788" fill="none" stroke-width="2.24203" stroke="#bbbbbb" opacity="0.45"><title>Recruiter Screen → No Response: 1</title></path>
+<path id="flow7" d="M143.54558 530.2377C305.47757 530.2377 305.47757 334.41991 467.40955 334.41991" fill="none" stroke-width="2.24203" stroke="#bbbbbb" opacity="0.45"><title>Technical Screen → No Response: 1</title></path>
+<path id="flow10" d="M277.09117 590.02803C372.25036 590.02803 372.25036 497.97195 467.40955 497.97195" fill="none" stroke-width="2.24203" stroke="#d62728" opacity="0.45"><title>Team Screen → Rejected: 1</title></path>
+<path id="flow12" d="M343.86396 624.43694C405.63675 624.43694 405.63675 500.21398 467.40955 500.21398" fill="none" stroke-width="2.24203" stroke="#d62728" opacity="0.45"><title>Leadership Screen → Rejected: 1</title></path>
+<path id="flow13" d="M410.63675 666.73067C439.02315 666.73067 439.02315 688.7703 467.40955 688.7703" fill="none" stroke-width="2.24203" stroke="#2ca02c" opacity="0.45"><title>Offer → Accepted: 1</title></path>
 </g>
 <g id="sankey_nodes">
 <g class="node">
@@ -26,69 +25,69 @@
 128</title></rect>
 </g>
 <g class="node">
-<rect id="r1" class="for_r1" x="378.42847" y="73.22327" height="262.31766" width="10" fill="#bbbbbb" fill-opacity="1"><title>No Response:
+<rect id="r1" class="for_r1" x="467.40955" y="73.22327" height="262.31766" width="10" fill="#bbbbbb" fill-opacity="1"><title>No Response:
 117</title></rect>
 </g>
 <g class="node">
-<rect id="r2" class="for_r2" x="378.42847" y="485.64078" height="15.69422" width="10" fill="#d62728" fill-opacity="1"><title>Rejected:
+<rect id="r2" class="for_r2" x="467.40955" y="485.64078" height="15.69422" width="10" fill="#d62728" fill-opacity="1"><title>Rejected:
 7</title></rect>
 </g>
 <g class="node">
-<rect id="r3" class="for_r3" x="54.06121" y="440.92224" height="17.93625" width="10" fill="#7f7f7f" fill-opacity="1"><title>Recruiter Screen:
+<rect id="r3" class="for_r3" x="66.77279" y="440.92224" height="17.93625" width="10" fill="#7f7f7f" fill-opacity="1"><title>Recruiter Screen:
 8</title></rect>
 </g>
 <g class="node">
-<rect id="r4" class="for_r4" x="108.12242" y="529.11668" height="13.45219" width="10" fill="#bcbd22" fill-opacity="1"><title>Technical Screen:
+<rect id="r4" class="for_r4" x="133.54558" y="529.11668" height="13.45219" width="10" fill="#bcbd22" fill-opacity="1"><title>Technical Screen:
 6</title></rect>
 </g>
 <g class="node">
-<rect id="r5" class="for_r5" x="378.42847" y="636.81419" height="6.72609" width="10" fill="#1f77b4" fill-opacity="1"><title>Declined:
+<rect id="r5" class="for_r5" x="467.40955" y="636.81419" height="6.72609" width="10" fill="#1f77b4" fill-opacity="1"><title>Declined:
 3</title></rect>
 </g>
 <g class="node">
-<rect id="r6" class="for_r6" x="162.18363" y="573.70699" height="11.21016" width="10" fill="#17becf" fill-opacity="1"><title>Culture Screen:
+<rect id="r6" class="for_r6" x="200.31838" y="573.70699" height="11.21016" width="10" fill="#17becf" fill-opacity="1"><title>Culture Screen:
 5</title></rect>
 </g>
 <g class="node">
-<rect id="r7" class="for_r7" x="216.24484" y="588.90702" height="11.21016" width="10" fill="#1f77b4" fill-opacity="1"><title>Team Screen:
+<rect id="r7" class="for_r7" x="267.09117" y="588.90702" height="11.21016" width="10" fill="#1f77b4" fill-opacity="1"><title>Team Screen:
 5</title></rect>
 </g>
 <g class="node">
-<rect id="r8" class="for_r8" x="270.30605" y="623.31593" height="8.96813" width="10" fill="#ff7f0e" fill-opacity="1"><title>Leadership Screen:
+<rect id="r8" class="for_r8" x="333.86396" y="623.31593" height="8.96813" width="10" fill="#ff7f0e" fill-opacity="1"><title>Leadership Screen:
 4</title></rect>
 </g>
 <g class="node">
-<rect id="r9" class="for_r9" x="324.36726" y="661.12559" height="6.72609" width="10" fill="#2ca02c" fill-opacity="1"><title>Offer:
+<rect id="r9" class="for_r9" x="400.63675" y="661.12559" height="6.72609" width="10" fill="#2ca02c" fill-opacity="1"><title>Offer:
 3</title></rect>
 </g>
 <g class="node">
-<rect id="r10" class="for_r10" x="378.42847" y="687.64928" height="2.24203" width="10" fill="#2ca02c" fill-opacity="1"><title>Accepted:
+<rect id="r10" class="for_r10" x="467.40955" y="687.64928" height="2.24203" width="10" fill="#2ca02c" fill-opacity="1"><title>Accepted:
 1</title></rect>
 </g>
 </g>
 <g id="sankey_labels" font-family="sans-serif" font-size="16px" fill="#000000">
-<text text-anchor="middle" x="199.01892" y="777" font-size="12.1338px" font-weight="400" fill="#336781">Made at SankeyMATIC.com</text>
-<rect id="label0_bg" class="for_r0" x="-88.98107" y="213.57129" width="87.34814" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
-<text id="label0" class="for_r0" text-anchor="end" x="-6.29846" y="234.39378" font-weight="400" font-size="14.4px" dy="-5.26">Applications<tspan x="-6.29846" dy="19.32" font-weight="400" font-size="17.6px">128</tspan></text>
-<rect id="label1_bg" class="for_r1" x="390.0614" y="183.55959" width="96.95752" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
-<text id="label1" class="for_r1" text-anchor="start" x="394.72693" y="204.38209" font-weight="400" font-size="14.4px" dy="-5.26">No Response<tspan x="394.72693" dy="19.32" font-weight="400" font-size="17.6px">117</tspan></text>
-<rect id="label2_bg" class="for_r2" x="390.0614" y="472.66537" width="66.54736" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
-<text id="label2" class="for_r2" text-anchor="start" x="394.72693" y="493.48789" font-weight="400" font-size="14.4px" dy="-5.26">Rejected<tspan x="394.72693" dy="19.32" font-weight="400" font-size="17.6px">7</tspan></text>
-<rect id="label3_bg" class="for_r3" x="0.39179" y="429.0679" width="117.73877" height="41.06998" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
-<text id="label3" class="for_r3" text-anchor="middle" x="59.06121" y="449.89037" font-weight="400" font-size="14.4px" dy="-5.26">Recruiter Screen<tspan x="59.06121" dy="19.32" font-weight="400" font-size="17.6px">8</tspan></text>
-<rect id="label4_bg" class="for_r4" x="53.64733" y="515.02026" width="119.3501" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
-<text id="label4" class="for_r4" text-anchor="middle" x="113.12242" y="535.84277" font-weight="400" font-size="14.4px" dy="-5.26">Technical Screen<tspan x="113.12242" dy="19.32" font-weight="400" font-size="17.6px">6</tspan></text>
-<rect id="label5_bg" class="for_r5" x="390.0614" y="619.35474" width="65.74658" height="41.06995" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
-<text id="label5" class="for_r5" text-anchor="start" x="394.72693" y="640.17723" font-weight="400" font-size="14.4px" dy="-5.26">Declined<tspan x="394.72693" dy="19.32" font-weight="400" font-size="17.6px">3</tspan></text>
-<rect id="label6_bg" class="for_r6" x="114.51028" y="558.48956" width="105.74658" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
-<text id="label6" class="for_r6" text-anchor="middle" x="167.18363" y="579.31207" font-weight="400" font-size="14.4px" dy="-5.26">Culture Screen<tspan x="167.18363" dy="19.32" font-weight="400" font-size="17.6px">5</tspan></text>
-<rect id="label7_bg" class="for_r7" x="174.17209" y="573.68958" width="94.54541" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
-<text id="label7" class="for_r7" text-anchor="middle" x="221.24484" y="594.51209" font-weight="400" font-size="14.4px" dy="-5.26">Team Screen<tspan x="221.24484" dy="19.32" font-weight="400" font-size="17.6px">5</tspan></text>
-<rect id="label8_bg" class="for_r8" x="210.22061" y="606.97748" width="130.5708" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
-<text id="label8" class="for_r8" text-anchor="middle" x="275.30605" y="627.79999" font-weight="400" font-size="14.4px" dy="-5.26">Leadership Screen<tspan x="275.30605" dy="19.32" font-weight="400" font-size="17.6px">4</tspan></text>
-<rect id="label9_bg" class="for_r9" x="308.83258" y="643.66614" width="41.67142" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
-<text id="label9" class="for_r9" text-anchor="middle" x="329.36726" y="664.48864" font-weight="400" font-size="14.4px" dy="-5.26">Offer<tspan x="329.36726" dy="19.32" font-weight="400" font-size="17.6px">3</tspan></text>
-<rect id="label10_bg" class="for_r10" x="390.0614" y="667.94788" width="69.75049" height="41.06995" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
-<text id="label10" class="for_r10" text-anchor="start" x="394.72693" y="688.7703" font-weight="400" font-size="14.4px" dy="-5.26">Accepted<tspan x="394.72693" dy="19.32" font-weight="400" font-size="17.6px">1</tspan></text>
+<text text-anchor="middle" x="288" y="777" font-size="12.1338px" font-weight="400" fill="#336781">Made at SankeyMATIC.com</text>
+<rect id="label0_bg" class="for_r0" x="11.63293" y="213.57129" width="87.34814" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label0" class="for_r0" text-anchor="start" x="16.29846" y="234.39378" font-weight="400" font-size="14.4px" dy="-5.26">Applications<tspan x="16.29846" dy="19.32" font-weight="400" font-size="17.6px">128</tspan></text>
+<rect id="label1_bg" class="for_r1" x="479.04248" y="183.55959" width="96.95752" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label1" class="for_r1" text-anchor="start" x="483.70801" y="204.38209" font-weight="400" font-size="14.4px" dy="-5.26">No Response<tspan x="483.70801" dy="19.32" font-weight="400" font-size="17.6px">117</tspan></text>
+<rect id="label2_bg" class="for_r2" x="479.04248" y="472.66537" width="66.54736" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label2" class="for_r2" text-anchor="start" x="483.70801" y="493.48789" font-weight="400" font-size="14.4px" dy="-5.26">Rejected<tspan x="483.70801" dy="19.32" font-weight="400" font-size="17.6px">7</tspan></text>
+<rect id="label3_bg" class="for_r3" x="78.40572" y="429.0679" width="117.73878" height="41.06998" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label3" class="for_r3" text-anchor="start" x="83.07125" y="449.89037" font-weight="400" font-size="14.4px" dy="-5.26">Recruiter Screen<tspan x="83.07125" dy="19.32" font-weight="400" font-size="17.6px">8</tspan></text>
+<rect id="label4_bg" class="for_r4" x="145.17853" y="515.02026" width="119.3501" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label4" class="for_r4" text-anchor="start" x="149.84405" y="535.84277" font-weight="400" font-size="14.4px" dy="-5.26">Technical Screen<tspan x="149.84405" dy="19.32" font-weight="400" font-size="17.6px">6</tspan></text>
+<rect id="label5_bg" class="for_r5" x="479.04248" y="619.35474" width="65.74658" height="41.06995" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label5" class="for_r5" text-anchor="start" x="483.70801" y="640.17723" font-weight="400" font-size="14.4px" dy="-5.26">Declined<tspan x="483.70801" dy="19.32" font-weight="400" font-size="17.6px">3</tspan></text>
+<rect id="label6_bg" class="for_r6" x="211.95131" y="558.48956" width="105.74657" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label6" class="for_r6" text-anchor="start" x="216.61684" y="579.31207" font-weight="400" font-size="14.4px" dy="-5.26">Culture Screen<tspan x="216.61684" dy="19.32" font-weight="400" font-size="17.6px">5</tspan></text>
+<rect id="label7_bg" class="for_r7" x="278.72409" y="573.68958" width="94.54541" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label7" class="for_r7" text-anchor="start" x="283.38963" y="594.51209" font-weight="400" font-size="14.4px" dy="-5.26">Team Screen<tspan x="283.38963" dy="19.32" font-weight="400" font-size="17.6px">5</tspan></text>
+<rect id="label8_bg" class="for_r8" x="345.49689" y="606.97748" width="130.5708" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label8" class="for_r8" text-anchor="start" x="350.16242" y="627.79999" font-weight="400" font-size="14.4px" dy="-5.26">Leadership Screen<tspan x="350.16242" dy="19.32" font-weight="400" font-size="17.6px">4</tspan></text>
+<rect id="label9_bg" class="for_r9" x="412.26971" y="643.66614" width="41.67142" height="41.07001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label9" class="for_r9" text-anchor="start" x="416.93522" y="664.48864" font-weight="400" font-size="14.4px" dy="-5.26">Offer<tspan x="416.93522" dy="19.32" font-weight="400" font-size="17.6px">3</tspan></text>
+<rect id="label10_bg" class="for_r10" x="479.04248" y="667.94788" width="69.75049" height="41.06995" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label10" class="for_r10" text-anchor="start" x="483.70801" y="688.7703" font-weight="400" font-size="14.4px" dy="-5.26">Accepted<tspan x="483.70801" dy="19.32" font-weight="400" font-size="17.6px">1</tspan></text>
 </g>
 </g></svg>
