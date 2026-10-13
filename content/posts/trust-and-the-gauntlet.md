@@ -40,7 +40,7 @@ There was a time I really worked at curating my network, and I'm sad I haven't b
 
 ## Real Talk: I Was Panicking
 
-I've been low-key looking for new work for a few years. After we shipped the last big product I worked on, it was a tough slog: changing business demands, a changing team and responsibilities, and a change in leadership.
+I'd been low-key looking for new work for a few years. After we shipped the last big product I worked on, it was a tough slog: changing business demands, a changing team and responsibilities, and a change in leadership.
 
 But the market, as everyone knows, has been in rough shape with AI, and my old ways of finding work just weren't working. In three years I got about one serious consideration, and it didn't go anywhere because it would have been a monumental pay cut while we were in the middle of IVF. So I stayed and worked. I told myself it was about personal growth, a shot at the next level, investing in the company.
 
@@ -82,7 +82,7 @@ It was flattering, and it felt like hiring is supposed to feel. It also felt a l
 
 There wasn't a trick. But the picture I needed to actually decide came after the offer, not before it. Meeting more of the team, getting into the details of the role and the comp: that was where it got clear the job wasn't the right fit for me. All the speed and trust up front had skipped the part where both sides find out what they're actually signing up for.
 
-I'm turning it down. Not because they did anything wrong. Because the shortcut got me to "yes" before either of us had enough information to mean it.
+I turned it down. Not because they did anything wrong. Because the shortcut got me to "yes" before either of us had enough information to mean it.
 
 ## The Other Two
 
@@ -106,21 +106,13 @@ I still think the volume is too much. But looking back across all of it, rounds 
 
 The gauntlet isn't the problem. A gauntlet where only one side is allowed to ask questions is.
 
-## A Thesis About Proximity
-
-One more thread I keep pulling on, and I'll flag that it's a thesis, not a conclusion.
-
-The casual processes I had were easier to run because of proximity. "Let's grab a beer" is a Tuesday afternoon when you're local, not a flight and a hotel. The conversational on-site I had involved getting on a plane, walking a facility, and having dinner with the team. That's expensive and slow, and it's how a lot of trust actually gets built.
-
-I suspect a lot of the gauntlet exists because companies are trying to manufacture that trust at a distance, and the only tool they have is more rounds. Some of them use the rounds to have real conversations. Some of them use the rounds to grade you.
-
 ## Where I Landed
 
-I'm joining the company that flew me out. It's where I'd wanted to land for a while.
+I signed with the company that flew me out. It's where I'd wanted to land for a while.
 
 Their process was long too: technical rounds, architecture, history questions, an interviewer who came back for more. Then the last step was an on-site that was mostly walking a manufacturing floor, casual conversations, and dinner with whoever on the team was free that night. By then I don't think they were testing whether I could do the job. They wanted to know if they'd like working with me, and I wanted the same answer about them.
 
-That's the proximity thesis in practice. They used the rounds to confirm I could do the work, and they used the room to find out whether we'd get along. ([I wrote a little about that trip already.](/posts/detroit/))
+They used the rounds to confirm I could do the work, and they used the room to find out whether we'd get along. ([I wrote a little about that trip already.](/posts/detroit/))
 
 I didn't pick it for the money. I picked the one I hope sets me up best for what's next: a future in manufacturing with AI. It ties together my personal work around robotics with real-world application. I'm hoping it's exciting and fun, and I think it's a real career pivot for me.
 
