@@ -1,5 +1,5 @@
 ---
-title: "Trust and the Gauntlet"
+title: "Knowledge vs Awareness: Layoffs and Looking for Work in 2026"
 date: 2026-10-05
 draft: true
 tags: ["career", "hiring", "interviews", "culture", "reflection", "layoffs"]
