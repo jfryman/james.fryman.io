@@ -15,9 +15,13 @@ I applied to 128 jobs. Most never answered. Eight turned into a recruiter call, 
 
 The only times I actually got in front of someone for a real interview came through my network, or for a role where my résumé matched the job almost exactly. Everything else was screaming into a void. I'm super thankful my network showed up, because based on what I just went through, I don't know that there was another way in.
 
-A couple weeks ago I started writing a post about how broken tech hiring is. The thesis was simple: companies that trust you run a conversation, companies that don't run a gauntlet, and the gauntlet doesn't work.
+This started out as a post about how broken tech hiring is. The longer I sat with it, the less it was about process and the more it was about people: the ones across the table, the ones who showed up to help, and the version of me trying to hold it together through all of it.
 
-Then I turned down the offer that came from trust, and signed with a company that ran me through the gauntlet. So this isn't that post anymore. The longer I sat with it, the less it was about process and the more it was about people: the ones across the table, the ones who showed up to help, and the version of me trying to hold it together through all of it.
+## Before the Layoff
+
+I'd been low-key looking for new work for a few years. After we shipped the last big product I worked on, it was a tough slog: changing business demands, a changing team and responsibilities, and a change in leadership.
+
+But the market, as everyone knows, has been in rough shape with AI, and my old ways of finding work just weren't working. In three years I got about one serious consideration, and it didn't go anywhere because it would have been a monumental pay cut while we were in the middle of IVF. So I stayed and worked. I told myself it was about personal growth, a shot at the next level, investing in the company.
 
 ## All My Eggs in One Basket
 
@@ -29,6 +33,8 @@ Then I waited two months.
 
 I don't know if it was timing or something else. In retrospect, I think I was the baseline. Would someone else they'd worked with be better or worse than me? I thought I'd made it, right up until the rejection showed up.
 
+Real talk: I was panicking. The sure thing had fallen through, and I was suddenly face to face with the real job market. I knew it was bad out here. I knew people were fighting hard for every job. Knowing it and living it are different things.
+
 By then I was about to hit the end of garden leave with nothing lined up. So I blasted out a post on LinkedIn telling my network I needed help. I went from stealth laid off to very publicly laid off pretty quickly.
 
 ## Testing My Network
@@ -36,14 +42,6 @@ By then I was about to hit the end of garden leave with nothing lined up. So I b
 It had been a long time since I'd tested my network. For the last several jobs, I had something lined up before I needed it. And honestly, I haven't been in regular contact with most people. Between COVID and a new kid, I've been pretty isolated, and I know it. I keep up with a few folks in a group chat, but I haven't really come up for air because I've been so tied up with family business.
 
 There was a time I really worked at curating my network, and I'm sad I haven't been as present as I was in years past. So I was touched by the random pings that came in after that post. Some people offered help. Some just said hello. I think people understand that life seasons change, and I'm glad several of them stepped up.
-
-## Real Talk: I Was Panicking
-
-I'd been low-key looking for new work for a few years. After we shipped the last big product I worked on, it was a tough slog: changing business demands, a changing team and responsibilities, and a change in leadership.
-
-But the market, as everyone knows, has been in rough shape with AI, and my old ways of finding work just weren't working. In three years I got about one serious consideration, and it didn't go anywhere because it would have been a monumental pay cut while we were in the middle of IVF. So I stayed and worked. I told myself it was about personal growth, a shot at the next level, investing in the company.
-
-Then I got laid off, the sure thing fell through, and I was suddenly face to face with the real job market. I knew it was bad out here. I knew people were fighting hard for every job. Knowing it and living it are different things.
 
 ## Casting a Wide Net
 
@@ -59,11 +57,19 @@ The calendar wasn't the hard part. The prep was. I was refreshing Go and Kuberne
 
 Exhausted is the short version. Every day I was fried, and then I still had a new baby to care for, one who was in and out of sickness. My daughter was born in November, and I was laid off when I came back from leave. My father-in-law died in the middle of it, and I spent the week before his funeral [engraving bullet casings in my garage](/posts/spirit-in-the-sky/) while answering scheduling emails on my phone.
 
-The pace was a frenzy. I was re-learning the common stuff across every stack, and every company wanted real depth in something different. That depth and breadth is what the rest of this post is about.
+The pace was a frenzy. I was re-learning the common stuff across every stack, and every company wanted real depth in something different.
 
 ## The Ones I Botched
 
 I messed up in a pretty epic manner a few times.
+
+Someone in my personal network suggested a recruiter at their company reach out, because I'd be someone good to know. No job on the table, just a hello. That was a new kind of conversation for me, and I bombed it. I unloaded the whole story: laid off right after paternity leave, resume not getting any hits. In hindsight she was keen to get off the phone. She'd mentioned making some introductions, and they never happened. Total embarrassment.
+
+There was also a technical screen I got on the strength of my work at a previous job. The hiring manager was lukewarm on me from the get-go, but he humored my questions about the job and what I'd be learning. The test was basic: write a bash script to clean up some files. Twenty-five minutes, no AI. I got halfway there. I never heard back. Maybe good riddance.
+
+Here's what I wasn't expecting. Every ghost, every screen I failed and knew I failed, hit my confidence in ways I didn't see coming. I spent this whole process fighting self-doubt just to make sure I was selling the best version of myself.
+
+And then there was the big one.
 
 One company put me through six rounds over two months. Recruiter screen, founder chat, a technical deep-dive, and then a six-hour panel. Four interviews in a trenchcoat pretending to be one round.
 
@@ -71,15 +77,13 @@ I rambled through Kubernetes internals. I struggled to explain how a Pod gets de
 
 I earned that one. I'm not a good interviewer. I bounce across stacks and frameworks, and I need time to research and validate before I speak with authority. That's how I work. It's also exactly what a six-hour panel with strangers doesn't allow for.
 
-That wasn't the only one. Someone in my personal network suggested a recruiter at their company reach out, because I'd be someone good to know. No job on the table, just a hello. That was a new kind of conversation for me, and I bombed it. I unloaded the whole story: laid off right after paternity leave, resume not getting any hits. In hindsight she was keen to get off the phone. She'd mentioned making some introductions, and they never happened. Total embarrassment.
+## The Final Three
 
-Then there was a technical screen I got on the strength of my work at a previous job. The hiring manager was lukewarm on me from the get-go, but he humored my questions about the job and what I'd be learning. The test was basic: write a bash script to clean up some files. Twenty-five minutes, no AI. I got halfway there. I never heard back. Maybe good riddance.
+The post I originally set out to write had a simple thesis: companies that trust you run a conversation, companies that don't run a gauntlet, and the gauntlet doesn't work. Then I turned down the offer that came from trust and signed with a company that ran me through the gauntlet. Here's how that actually went.
 
-Here's what I wasn't expecting. Every ghost, every screen I failed and knew I failed, hit my confidence in ways I didn't see coming. I spent this whole process fighting self-doubt just to make sure I was selling the best version of myself.
+### The Shortcut
 
-## The Shortcut
-
-The same day that panel's rejection came in, I had a formal offer from a company that had taken me out for beers.
+The same day the six-hour panel's rejection came in, I had a formal offer from a company that had taken me out for beers.
 
 The first conversation was over drinks. The second was two hours in front of a whiteboard, but it was discussion, not grilling. I met their CTO for thirty minutes in that same block, and it was idea sharing, not a test. They knew me from the community and what I'd built. Seven weeks from first conversation to offer.
 
@@ -89,7 +93,7 @@ There wasn't a trick. But the picture I needed to actually decide came after the
 
 I turned it down. Not because they did anything wrong. Because the shortcut got me to "yes" before either of us had enough information to mean it.
 
-## The Other Two
+### The Other Two
 
 Meanwhile, two other companies were running me through long processes too. Five and six rounds. Technical questions, architecture, design, history questions about how I'd handled specific situations. By any count, gauntlets.
 
@@ -97,7 +101,7 @@ But they didn't feel like the six-hour panel. The rounds were conversations. Peo
 
 Those are the two companies I ended up choosing between.
 
-## I Was Counting the Wrong Thing
+### I Was Counting the Wrong Thing
 
 My original draft treated the number of rounds as the problem. I'd been venting about it in a group chat with some friends. "How many rounds does it take nowadays?" I asked. "Onto round 6 with several companies this and next week." A couple of them argued that two one-hour conversations should be enough: one about the work, one about whether you'd want to work there and whether you're normal. Someone else said what every candidate actually wants is to meet the team, meet the boss, and get an answer.
 
