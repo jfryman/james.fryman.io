@@ -14,7 +14,7 @@ But Detroit's not dead. It's not dying. It's hurt. There's a difference.
 
 I visited the Motown Museum, the spiritual birthplace of a sound that changed American music. I saw the Henry Ford Hospital and its new expansion wings, an institution still investing in the community. There are signs of life everywhere if you're looking for them. They're just standing next to a lot of pain.
 
-My Uber driver from the airport was named Al. Same name as my father-in-law, who we buried two weeks ago. Al was proud of his city. He showed me around, asked me trivia questions about what I knew about Detroit, told me about the things that mattered to him. Everything Henry Ford built. The way the city pioneered industrialization. The fact that it's on the upswing. He wanted me to see it the way he sees it: not the blight, but the comeback.
+My Uber driver from the airport was named Al. Same name as my father-in-law, who passed away two weeks ago. Al was proud of his city. He showed me around, asked me trivia questions about what I knew about Detroit, told me about the things that mattered to him. Everything Henry Ford built. The way the city pioneered industrialization. The fact that it's on the upswing. He wanted me to see it the way he sees it: not the blight, but the comeback.
 
 I was there to interview at a company focused on manufacturing. Bringing industrialization back to America. Building things here, with American workers, in American factories. Standing in a facility in Detroit watching that happen felt different than reading about it.
 
