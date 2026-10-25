@@ -61,3 +61,7 @@ At 28 casings per load (four carriers in the large base), I can process about 40
 I'm sad to have lost Allen. I'm glad the skills I've accumulated (CNC, laser, 3D printing, and yes, working with AI agents) are being put to use for something that matters to the people I love. This isn't a product. It's not a business. It's a guy in his garage with a laser and a deadline, trying to honor a request from his mother-in-law for her husband's funeral.
 
 RIP Allen.
+
+<video controls playsinline style="max-width: 100%; margin: 1.5em 0;">
+  <source src="/video/spirit-in-the-sky-2.mp4" type="video/mp4">
+</video>
