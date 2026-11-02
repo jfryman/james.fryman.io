@@ -104,8 +104,8 @@ Because a friend sent me a video of an NES, and I have a Genesis.
 
 I took the same leap of faith with the software: that I could get all of this out of Claude. I sent it screenshots of the TV, did in-depth debugging with it, and set up recorded-traffic replays so we could test on the cart against the same flights every time. All for something that's just for fun.
 
-That's the point. This is all for fun. I'm trying to have fun.
+That's the point. This is all for fun. I'm trying to discover what I can do when I'm not weighed down by the drag and friction of integration and everything around it.
 
 It touched everything along the way: a PCB respin, firmware on two processors, a patched SDK, a Go service, a voxel renderer on a 1988 console, and a printed manual in Sega's 1989 style. It's all MIT or open hardware, and it's [on GitHub](https://github.com/jfryman/mega-wifi-radar) if you have a Genesis and a soldering iron, or just an emulator.
 
-But this also unlocks other ideas. Lots of them.
+There's something else here, too. Because I had the tools and the foundation, I could flash the cartridges and 3D print the cartridge shells myself. The long-term goal is to actually make a game for the Genesis. So this playing around is learning, just as much as it's a test of whether I can make an actual product.
