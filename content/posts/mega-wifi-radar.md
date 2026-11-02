@@ -7,12 +7,12 @@ description: "A friend dared me to beat an NES flight tracker. Now my Sega Genes
 ---
 
 <!-- DRAFT NOTES (delete before publishing)
-- Facts come from the commit history of mega-wifi-radar, mw-cart, mw-fw-rtos and flashkit-md-dotnet, plus the lode notes in each repo. Please check the opening (what John's challenge actually was) and the ending; both are my guesses at your framing.
-- John is named because you named him. Swap to "a friend" if he'd rather not be in it.
+- Facts come from the commit history of mega-wifi-radar, mw-cart, mw-fw-rtos and flashkit-md-dotnet, plus the lode notes in each repo. Please check the opening (what the challenge actually was) and the ending.
+- "How it got built": you said FreeCAD; the repo shows the board is KiCad, so the post says KiCad. Change back if you meant something else.
 - The Reddit thread wouldn't load for me, so it's only linked, not quoted.
 -->
 
-Some time ago my friend John Northrup sent me a link to a [YouTube short](https://www.youtube.com/shorts/Oe8KoSeiIBw): an NES showing the planes flying over someone's house. He meant it as a challenge.
+Some time ago a friend sent me a link to a [YouTube short](https://www.youtube.com/shorts/Oe8KoSeiIBw): an NES showing the planes flying over someone's house. It was a challenge.
 
 I have a Sega Genesis. So, challenge accepted.
 
@@ -82,14 +82,24 @@ One `sprintf` on the HUD could cost a whole frame. In the product, the relay ser
 
 ## How it got built
 
-Most of this was built with Claude. 136 of the radar repo's 137 commits are co-authored, and each repo carries a lode: the design notes, decisions, bench results and lessons that keep the agent's work consistent from one session to the next. The rules in there read like a Genesis programmer's scar tissue: no floats, never touch the VDP from the network task, no blocking network calls in the radar loop, test every hardware path from a cold boot because a soft reset keeps RAM.
+You can just do things.
 
-The hardware still had to be real. Somebody had to order the boards, flash two chips, plug a cart into a Genesis and watch a TV.
+Electronics, PCB design, programming: these are all skills I've learned the hard way, one at a time, over years. What's different now is that I can turn them into a working product in about a tenth of the time.
+
+Most of that is because I'm not fighting the parts that used to eat the time. I didn't bootstrap a Sega Genesis toolchain by hand. I didn't spend an evening working out exactly which chip could replace one that's out of stock. Claude did a lot of the heavy lifting, and I made decisions. 136 of the radar repo's 137 commits are co-authored with it.
+
+I had to step in once or twice for the critical calls, but the boards worked the first time. That's largely a tribute to doragasu's original design. I only prompted the changes; I never opened KiCad myself. At one point JLCPCB damaged components on the order. I had Claude look up equivalent parts they had in stock, and we got working boards.
+
+Could I have done all of this myself? Yes. But I didn't have to.
+
+The hardware still had to be real, too. Somebody had to plug a cart into a Genesis and watch a TV.
+
+The only limit on the energy for something like this is my imagination. I use my technical skills to get close to a one-shot, and I design the features so the thing is easy for me to live with: the cart finds the relay over mDNS, and lookup tables replace floating point the 68000 doesn't have. Claude takes the first pass, and I refine.
 
 ## Why
 
-Because John sent me a video of an NES, and I have a Genesis.
+Because a friend sent me a video of an NES, and I have a Genesis.
 
 That's most of the reason. The rest is that I like weird projects, and this one touched everything: a PCB respin, firmware on two processors, a patched SDK, a Go service, a voxel renderer on a 1988 console, and a printed manual in Sega's 1989 style. It's all MIT or open hardware, and it's [on GitHub](https://github.com/jfryman/mega-wifi-radar) if you have a Genesis and a soldering iron, or just an emulator.
 
-Your move, John.
+Your move.
