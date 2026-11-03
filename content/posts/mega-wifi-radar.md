@@ -16,7 +16,7 @@ This is [Mega WiFi Radar](https://github.com/jfryman/mega-wifi-radar): a live, A
 
 ![The Classic theme: KBNA at 25 nm, 28 aircraft, with the traffic list open](/images/mega-wifi-radar/radar-classic.png)
 
-Videos: [the radar](https://www.youtube.com/shorts/L_ipADesTKE), [cockpit mode](https://www.youtube.com/shorts/1CbnHsG0fm4), and [a '90s-style commercial](https://www.youtube.com/shorts/zIt93wNQCUw) I made to sell it. I also posted it on [Reddit](https://www.reddit.com/r/SEGAGENESIS/comments/1xirf8y/comment/19rykkxa5kbuo/?context=3) and [X](https://x.com/jfryman/status/2115992825569358328).
+Videos: [the radar](https://www.youtube.com/shorts/L_ipADesTKE), [cockpit mode](https://www.youtube.com/shorts/1CbnHsG0fm4), and [a '90s-style commercial](https://www.youtube.com/shorts/zIt93wNQCUw) I made to sell it. I also posted it on [Reddit](https://www.reddit.com/r/SEGAGENESIS/comments/1xirf8y/comment/19rykkxa5kbuo/?context=3) and [X](https://x.com/jfryman/status/2115992825569358328). Everything is MIT or open hardware, and there's an emulator build if you don't have the cart.
 
 ## First, the cartridge
 
@@ -32,7 +32,7 @@ Ten assembled boards arrived from JLCPCB on October 27. Before writing a line of
 
 ## Then, the radar
 
-The console has 64 KiB of RAM and can't do TLS, so it can't talk to an ADS-B API directly. A small Go relay on my network does that part: it fetches the JSON over HTTPS from [adsb.fi](https://adsb.fi), boils it down to a 1-2 KB binary frame, and the cart polls it once per sweep. The relay announces itself over mDNS, so the cart finds it on its own.
+The console has 64 KiB of RAM and can't do TLS, so it can't talk to an ADS-B API directly. A small Go relay on my network does that part: it fetches the JSON over HTTPS from [adsb.fi](https://adsb.fi), boils it down to a 1-2 KB binary frame, and the cart polls it once per sweep.
 
 The first bug was a good one. The cart would detect the ESP32 after a soft reset but not from a cold boot. The compiler's link-time optimization had inlined the network loop into SGDK's user task and hoisted the driver state out of the loop. The task starts before the driver is initialized, so on a cold boot it cached a NULL forever. A soft reset keeps RAM, which hid it. The fix was a memory barrier.
 
@@ -50,7 +50,7 @@ From there it turned into a sprint:
 | Nov 1 | 0.4.0 to 0.4.3 | Flyover notices from the MQTT feed of planes over my house, an emergency alert for squawk 7700/7600/7500, ambient mode, city lights at night |
 | Nov 2 | 0.4.4 to 0.6.1 | NEXRAD weather as stippled cells like a real STARS scope, runway video maps, a spotter's logbook of everything within 25 nm |
 
-0.2.0 booted to a black screen on the real cart. The new pop-up's static buffers left too little heap for SGDK's own start-up allocations, so it hung before the splash. The emulator build has less static RAM, so it booted fine there. I patched SGDK's unused DMA buffer from 8 KiB down to 2 KiB, and now the build fails if it leaves less than 8 KiB of heap at start-up. With 64 KiB total, RAM is the budget everything else answers to.
+0.2.0 booted to a black screen on the real cart. The new pop-up's static buffers left too little heap for SGDK's own start-up allocations, so it hung before the splash. The emulator build has less static RAM, so it booted fine there. I patched SGDK's unused DMA buffer from 8 KiB down to 2 KiB, and now the build fails if it leaves less than 8 KiB of heap at start-up. RAM is the budget everything else answers to.
 
 ![The nine themes](/images/mega-wifi-radar/themes.png)
 
@@ -78,28 +78,16 @@ One `sprintf` on the HUD could cost a whole frame. In the product, the relay ser
 
 You can just do things.
 
-Electronics, PCB design, programming: these are all skills I've learned the hard way, one at a time, over years. What's different now is that I can turn them into a working product in about a tenth of the time.
-
-Most of that is because I'm not fighting the parts that used to eat the time. I didn't bootstrap a Sega Genesis toolchain by hand. I didn't spend an evening working out exactly which chip could replace one that's out of stock. Claude did a lot of the heavy lifting, and I made decisions. 136 of the radar repo's 137 commits are co-authored with it.
-
-That was the real challenge for me: give up and yolo a PCB design without verifying anything, not upstream's work and not Claude's. Ordering boards is a leap of faith when you've put money on the line.
-
-I had to step in once or twice for the critical calls, but the boards worked the first time. That's largely a tribute to doragasu's original design. I only prompted the changes; I never opened KiCad myself. At one point JLCPCB damaged components on the order. I had Claude look up equivalent parts they had in stock, and we got working boards.
+Electronics, PCB design, programming: these are all skills I've learned the hard way, one at a time, over years. What's different now is that I can turn them into a working product in about a tenth of the time, because I'm not fighting the parts that used to eat it. I didn't bootstrap a Genesis toolchain by hand or spend an evening hunting for a replacement chip. Claude did the heavy lifting, and I made decisions; 136 of the radar repo's 137 commits are co-authored with it. I only prompted the board changes and never opened KiCad. When JLCPCB damaged components on the order, Claude found equivalent parts they had in stock. I stepped in once or twice for the critical calls.
 
 Could I have done all of this myself? Yes. But I didn't have to.
 
-The hardware still had to be real, too. Somebody had to plug a cart into a Genesis and watch a TV.
+The real challenge was trusting it. I yoloed a PCB design without verifying anything, not upstream's work and not Claude's, and put money on the line. The boards worked the first time, which is largely a tribute to doragasu's original design. I took the same leap with the software: sending screenshots of the TV, debugging in depth, setting up recorded-traffic replays so we could test against the same flights every time.
 
-The only limit on the energy for something like this is my imagination. I use my technical skills to get close to a one-shot, and I design the features so the thing is easy for me to live with: the cart finds the relay over mDNS, and lookup tables replace floating point the 68000 doesn't have. Claude takes the first pass, and I refine.
+I use my technical skills to get close to a one-shot, and I design features so the thing is easy for me to live with, like relay discovery over mDNS and lookup tables in place of floating point. Claude takes the first pass, and I refine. The only limit is my imagination.
 
 ## Why
 
-Because a friend sent me a video of an NES, and I have a Genesis.
+Because it's fun. I'm trying to discover what I can do without the drag and friction of integration.
 
-I took the same leap of faith with the software: that I could get all of this out of Claude. I sent it screenshots of the TV, did in-depth debugging with it, and set up recorded-traffic replays so we could test on the cart against the same flights every time. All for something that's just for fun.
-
-That's the point. This is all for fun. I'm trying to discover what I can do when I'm not weighed down by the drag and friction of integration and everything around it.
-
-It touched everything along the way: a PCB respin, firmware on two processors, a patched SDK, a Go service, a voxel renderer on a 1988 console, and a printed manual in Sega's 1989 style. It's all MIT or open hardware, and it's [on GitHub](https://github.com/jfryman/mega-wifi-radar) if you have a Genesis and a soldering iron, or just an emulator.
-
-The long game is to make an actual Genesis game. With the tools and foundation already in place, I flashed these cartridges and 3D printed their shells myself, so every piece of shipping one is already on my bench. All this playing around is practice: learning the platform, and finding out whether I can make a real product.
+The long game is to make an actual Genesis game. I flashed these cartridges and 3D printed their shells myself, so all this playing around is practice: learning the platform, and finding out whether I can make a real product.
