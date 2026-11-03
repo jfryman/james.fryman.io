@@ -108,4 +108,4 @@ That's the point. This is all for fun. I'm trying to discover what I can do when
 
 It touched everything along the way: a PCB respin, firmware on two processors, a patched SDK, a Go service, a voxel renderer on a 1988 console, and a printed manual in Sega's 1989 style. It's all MIT or open hardware, and it's [on GitHub](https://github.com/jfryman/mega-wifi-radar) if you have a Genesis and a soldering iron, or just an emulator.
 
-There's something else here, too. Because I had the tools and the foundation, I could flash the cartridges and 3D print the cartridge shells myself. The long-term goal is to actually make a game for the Genesis. So this playing around is learning, just as much as it's a test of whether I can make an actual product.
+The long game is to make an actual Genesis game. With the tools and foundation already in place, I flashed these cartridges and 3D printed their shells myself, so every piece of shipping one is already on my bench. All this playing around is practice: learning the platform, and finding out whether I can make a real product.
