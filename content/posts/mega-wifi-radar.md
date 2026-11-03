@@ -22,7 +22,7 @@ This is [Mega WiFi Radar](https://github.com/jfryman/mega-wifi-radar): a live, A
 
 ![The Classic theme: KBNA at 25 nm, 28 aircraft, with the traffic list open](/images/mega-wifi-radar/radar-classic.png)
 
-Videos: [the radar](https://www.youtube.com/shorts/L_ipADesTKE) and [cockpit mode](https://www.youtube.com/shorts/1CbnHsG0fm4). I also posted it on [Reddit](https://www.reddit.com/r/SEGAGENESIS/comments/1xirf8y/comment/19rykkxa5kbuo/?context=3) and [X](https://x.com/jfryman/status/2115992825569358328).
+Videos: [the radar](https://www.youtube.com/shorts/L_ipADesTKE), [cockpit mode](https://www.youtube.com/shorts/1CbnHsG0fm4), and [a '90s-style commercial](https://www.youtube.com/shorts/zIt93wNQCUw) I made to sell it. I also posted it on [Reddit](https://www.reddit.com/r/SEGAGENESIS/comments/1xirf8y/comment/19rykkxa5kbuo/?context=3) and [X](https://x.com/jfryman/status/2115992825569358328).
 
 ## First, the cartridge
 
