@@ -1,16 +1,10 @@
 ---
 title: "Mega WiFi Radar"
 date: 2026-11-02
-draft: true
+draft: false
 tags: ["making", "retro-gaming", "sega", "hardware", "ai", "agentic-computing"]
 description: "A friend dared me to beat an NES flight tracker. Now my Sega Genesis runs a live ATC radar scope on a Wi-Fi cartridge I respun myself."
 ---
-
-<!-- DRAFT NOTES (delete before publishing)
-- Facts come from the commit history of mega-wifi-radar, mw-cart, mw-fw-rtos and flashkit-md-dotnet, plus the lode notes in each repo. Ending uses your closing line as written.
-- "How it got built": you said FreeCAD; the repo shows the board is KiCad, so the post says KiCad. Change back if you meant something else.
-- The Reddit thread wouldn't load for me, so it's only linked, not quoted.
--->
 
 Some time ago a friend sent me a link to a [YouTube short](https://www.youtube.com/shorts/Oe8KoSeiIBw): an NES showing the planes flying over someone's house. It was a challenge.
 
