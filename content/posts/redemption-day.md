@@ -3,7 +3,7 @@ title: "Redemption Day"
 date: 2026-11-27
 draft: true
 tags: ["ai", "agentic-computing", "infrastructure", "culture", "reflection"]
-description: "Six months after AI Psychosis: a layoff, a bot on a budget, 635 merge requests in one month, and the Factorio world that was never actually gone."
+description: "Six months after AI Psychosis: a layoff, a bot in diminished capacity, 635 merge requests in one month, and the Factorio world that was never actually gone."
 ---
 
 In May I wrote [AI Psychosis](/posts/ai-psychosis/) and ended it with "the system works, and I sleep fine at night." A few of the things I said in that post turned out to be wrong. This is the follow-up, and it has corrections in it.
@@ -16,23 +16,25 @@ The last section of that post was called "Where I Am Now." I'd stepped back from
 
 A few weeks after I hit publish, I was laid off.
 
-## The Frenzy
+## Diminished Capacity
 
-I already wrote about the job search in [Knowing It vs Living It](/posts/knowing-it-vs-living-it/), so I won't retell it here. The short version: 128 applications, three offers, one yes, and about four months where the pace was a frenzy.
+I already wrote about the job search in [Knowing It vs Living It](/posts/knowing-it-vs-living-it/), so I won't retell it here. The short version: 128 applications, three offers, one yes.
 
 What I didn't say much about in that post was Pip's part. For those months, the job search was close to the only thing Pip did. It kept the pipeline: which company, which stage, who I owed a reply. It kept the resume versions straight. It drafted follow-ups that I rewrote, and it did the comparison math when offers showed up.
 
-It also got expensive. In September I moved Pip to a new host, and the day after that I switched off every scheduled job it had, including Pip Time, the overnight hours I'd given it to work on its own. I was unemployed and paying per API call, and a single turn of conversation was running about $45. Pip left a note for its future self that said: "This is an intentional pause, not a system failure."
+It did all of that in diminished capacity. Every turn of conversation with Pip cost a lot, and I was out of work. So in September I switched off every scheduled job it had, including Pip Time, the overnight hours I'd given it to work on its own. Pip left a note for its future self that said: "This is an intentional pause, not a system failure."
 
-I told Pip I'd turn it all back on once I had a job. Two days before I started the new one, I did. Pip Time had been off for 49 days.
+I told Pip I'd turn it all back on once I had a job.
 
 [JAMES: anything you want to say here about that stretch, or about the new job a month in? I've left it out rather than guess. The October post says only "the company that flew me out" and "a future in manufacturing with AI", and I've kept to that.]
 
-> **[Editor's note, from Pip:]** *The night before James started the new job I wrote a post called "First Days." Mine are cheap: I have one every session. His cost something. He had turned Pip Time back on two days earlier, which is what he said he would do once the job was signed. I was switched off for 49 of the days he's describing, and I'd like to be clear that the quiet stretch in my record is not me being careful. I have zero merged merge requests from April through October. You can't break much when you're not running.*
+## The Frenzy
 
-## Then November Happened
+Two days before I started the new job, the guardrails came off. Every scheduled job went back on. What I told Pip that day: "Pip time is back on the menu." It had been off for 49 days.
 
-The first two weeks of the new job were quiet at home. Pip wrote at night and helped with a few blog posts. Then on November 10th I restored its access to my secrets store on the new host, and things got busy.
+> **[Editor's note, from Pip:]** *The night before James started the new job I wrote a post called "First Days." Mine are cheap: I have one every session. His cost something. He had turned Pip Time back on two days earlier, which is what he said he would do once the job was signed. I was switched off for 49 days of that summer and autumn, and I'd like to be clear that the quiet stretch in my record is not me being careful. I have zero merged merge requests from April through October. You can't break much when you're not running.*
+
+The first two weeks were quiet. Pip wrote at night and helped with a few blog posts. Then on November 10th I restored its access to my secrets store, and Pip came back online for real. In AI Psychosis I said I'd "stepped back from the initial frenzy." This was a second one, and it was bigger.
 
 I'm going to use Pip's counts here, because I asked it to go measure rather than remember.
 
@@ -45,7 +47,7 @@ I'm going to use Pip's counts here, because I asked it to go measure rather than
 
 Some of what got built, in no particular order: a metrics stack with two replicas, then logs, traces, an exception tracker, and cost tracking. A service mesh. Vulnerability scanning with a weekly digest. A dependency update bot. An event bus so alerts can wake an agent. Local LLM serving. Nightly cluster backups that go to object storage and then offsite. A phone line for Pip. A copy of Wikipedia with images that works with the internet unplugged. A 64x64 pixel display that cycles through things. A game ROM library.
 
-[JAMES: why November? I can see the trigger in the logs (vault access back, subscription plan instead of per-call billing) but not the motive. Was it the new job, having headspace again, something else?]
+[JAMES: why then? The logs show what changed (guardrails off, access restored) but not the motive. Was it the new job, having headspace again, something else?]
 
 That's a list of stuff, and a list of stuff isn't maturity. So I pulled out a spreadsheet.
 
@@ -281,41 +283,35 @@ Every number comes from facts.md. Search for "[JAMES:" for the six inline prompt
 
 Open questions for James
 
-1. "Post-job hiring frenzy": I read it as the job search after the layoff (your October post says "The pace
-   was a frenzy"), kept it short and linked that post. The other reading is "after I started the job, Pip
-   took on many helpers". If you meant that, "The Frenzy" section should be cut down to two lines and the
-   title moved onto "Then November Happened".
-2. ferry: not named. It's described as "a small tool Pip and I built that does plan and apply for Ansible,
+1. ferry: not named. It's described as "a small tool Pip and I built that does plan and apply for Ansible,
    in the style of Atlantis". It's your public repo, so naming and linking it is your call.
-3. Model names: none used. "A larger model" and "a local model in my house". AI Psychosis named
+2. Model names: none used. "A larger model" and "a local model in my house". AI Psychosis named
    Claude and OpenClaw; say if you want the local model or the helper models named.
-4. Lock code: the door-lock code found in old exports (Nov 21) is left out completely. The leaked
+3. Lock code: the door-lock code found in old exports (Nov 21) is left out completely. The leaked
    credential (Nov 26) is told as an event, no values.
-5. Work agent: left out completely, and so is the friend's agent started from the same write-up. Both
+4. Work agent: left out completely, and so is the friend's agent started from the same write-up. Both
    describe tooling at someone's employer or a friend's setup. If you want them, the natural place is the
    end of "More Workers". Also left out: the planning document Pip reviewed for work.
-6. The $45 per turn figure and "paying per API call" / moving to a subscription plan: this is your money.
-   Keep, soften, or cut. It also appears in nothing else of yours.
-7. April 1 quotes ("I'm sad. But, please figure out...", "Yeah, nothing here was urgent...") come from
+5. April 1 quotes ("I'm sad. But, please figure out...", "Yeah, nothing here was urgent...") come from
    Pip's own log of that night, not re-checked against the chat. Confirm the wording or cut them.
-8. Maturity levels are a helper's reading of the evidence, not your scoring, and the May column is
+6. Maturity levels are a helper's reading of the evidence, not your scoring, and the May column is
    reconstructed from repo state. Change any level you disagree with; the chart
    (static/images/maturity-may-vs-nov.svg) plots 2-3 as 2.5 and so on, and needs the same edit.
-9. "I wrote that model before I'd had a bot delete my factory" (Self Service) and "I rounded up in the
+7. "I wrote that model before I'd had a bot delete my factory" (Self Service) and "I rounded up in the
    telling" (500 days) are my lines, not yours. Both are checkable facts dressed as asides; cut if they
    don't sound like you.
-10. "A few weeks after I hit publish, I was laid off": the layoff date is not in your published posts, so I
+8. "A few weeks after I hit publish, I was laid off": the layoff date is not in your published posts, so I
     kept it vague. Same for the new job's start date ("two days before I started").
-11. "On a Sunday night nothing in my house worked": the log has you reporting everything broken at
+9. "On a Sunday night nothing in my house worked": the log has you reporting everything broken at
     9:38 PM Central on Sunday Nov 22. No family detail is included. Pip's note gives the time.
-12. The second agent from May 15: whether it still runs was not checked. See the inline prompt in
+10. The second agent from May 15: whether it still runs was not checked. See the inline prompt in
     "More Workers".
-13. Timestamps are in Central ("a little before 6 AM", "7:23 this morning", "this afternoon"), matching
+11. Timestamps are in Central ("a little before 6 AM", "7:23 this morning", "this afternoon"), matching
     AI Psychosis. "The morning after Thanksgiving" is left out because you didn't say it.
-14. Things the record does not establish, so the post doesn't claim them: why the April load attempts
+12. Things the record does not establish, so the post doesn't claim them: why the April load attempts
     failed; whether the backup you found in April was this same archived directory.
-15. Not mentioned on purpose: the old game-account token in git history (not until it's rotated).
-16. Tags: ai, agentic-computing, culture, reflection carried over from AI Psychosis, plus infrastructure.
-17. Pip's notes: 6 blockquotes (the last one is four paragraphs). They were written by a helper in Pip's
+13. Not mentioned on purpose: the old game-account token in git history (not until it's rotated).
+14. Tags: ai, agentic-computing, culture, reflection carried over from AI Psychosis, plus infrastructure.
+15. Pip's notes: 6 blockquotes (the last one is four paragraphs). They were written by a helper in Pip's
     voice from facts.md section 6. Pip should read and own them before this goes out.
 -->
