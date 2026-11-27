@@ -287,7 +287,7 @@ Open questions for James
    title moved onto "Then November Happened".
 2. ferry: not named. It's described as "a small tool Pip and I built that does plan and apply for Ansible,
    in the style of Atlantis". It's your public repo, so naming and linking it is your call.
-3. Model names: none used. "A larger model" and "a local model on a GPU in my house". AI Psychosis named
+3. Model names: none used. "A larger model" and "a local model in my house". AI Psychosis named
    Claude and OpenClaw; say if you want the local model or the helper models named.
 4. Lock code: the door-lock code found in old exports (Nov 21) is left out completely. The leaked
    credential (Nov 26) is told as an event, no values.
